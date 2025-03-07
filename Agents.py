@@ -282,13 +282,8 @@ def main():
 
     user_input = """
     Please generate a test case "test_agent_func_21_1" for the following test steps:
-    0. Ensure the dependency test is run and passed
-    1. Click [Undo] button on main page > Click [Cancel] button on search library
-    2. Search component ('Disturbance') in library > Drag Transition ('Disturbance') to timeline clip ('Mood Stickers 07')
-    3. Set timecode ('00_00_00_27')
-    4. Check preview (locator=L.base.Area.preview.only_mtk_view, file_name=Auto_Ground_Truth_Folder + 'L66_disturbance.png')
-    matches GT (Ground_Truth_Folder + 'L66_disturbance.png') with similarity 0.95.
-    After generating the test case, run it.
+    1. Start APP
+    2. Enter Room (Media)(1)
     """
 
 
