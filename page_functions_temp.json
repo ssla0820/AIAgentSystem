@@ -1,0 +1,2442 @@
+[
+    {
+        "name": "particle_designer_page.get_particle_designer_title()",
+        "description": "[Action][Particle Designer] Get Particle Designer title"
+    },
+    {
+        "name": "particle_designer_page.set_timecode(timecode)",
+        "description": "[Action][Particle Designer] Set Timecode"
+    },
+    {
+        "name": "particle_designer_page.get_timecode()",
+        "description": "[Action][Particle Designer] Get Timecode"
+    },
+    {
+        "name": "particle_designer_page.click_OK()",
+        "description": "[Action][Particle Designer] Click [OK] button to close Particle Designer window"
+    },
+    {
+        "name": "particle_designer_page.save_as_name(name)",
+        "description": "[Action][Particle Designer] Save as template"
+    },
+    {
+        "name": "particle_designer_page.save_as_ok()",
+        "description": "[Action][Particle Designer] Save as OK"
+    },
+    {
+        "name": "particle_designer_page.express_mode.drag_Emit_slider(value)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Emit] slider"
+    },
+    {
+        "name": "particle_designer_page.express_mode.get_Emit_value()",
+        "description": "[Action][Express Mode][Particle Designer] Get [Emit] value"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Emit_plus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Emit] plus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Emit_minus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Emit] minus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.drag_Max_slider(value)",
+        "description": "[Action][Express Mode][Particle Designer] Drag [Max] slider"
+    },
+    {
+        "name": "particle_designer_page.express_mode.get_Max_value()",
+        "description": "[Action][Express Mode][Particle Designer] Get [Max] value"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Max_plus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Max] plus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Max_minus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Max] minus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.drag_Life_slider(value)",
+        "description": "[Action][Express Mode][Particle Designer] Drag [Life] slider"
+    },
+    {
+        "name": "particle_designer_page.express_mode.get_Life_value()",
+        "description": "[Action][Express Mode][Particle Designer] Get [Life] value"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Life_plus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Life] plus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Life_minus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Life] minus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.drag_Size_slider(value)",
+        "description": "[Action][Express Mode][Particle Designer] Drag [Speed] slider"
+    },
+    {
+        "name": "particle_designer_page.express_mode.get_Size_value()",
+        "description": "[Action][Express Mode][Particle Designer] Get [Size] value"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Size_plus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Size] plus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Size_minus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Size] minus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.drag_Speed_slider(value)",
+        "description": "[Action][Express Mode][Particle Designer] Drag [Speed] slider"
+    },
+    {
+        "name": "particle_designer_page.express_mode.get_Speed_value()",
+        "description": "[Action][Express Mode][Particle Designer] Get [Speed] value"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Speed_plus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Speed] plus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Speed_minus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Speed] minus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.drag_Opacity_slider(value)",
+        "description": "[Action][Express Mode][Particle Designer] Drag [Gravity] slider"
+    },
+    {
+        "name": "particle_designer_page.express_mode.get_Opacity_value()",
+        "description": "[Action][Express Mode][Particle Designer] Get [Opacity] value"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Opacity_plus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Opacity] plus button"
+    },
+    {
+        "name": "particle_designer_page.express_mode.click_Opacity_minus_btn(times=1)",
+        "description": "[Action][Express Mode][Particle Designer] Click [Opacity] minus button"
+    },
+    {
+        "name": "playback_window_page.get_timecode_slidebar()",
+        "description": "[Action][Playback_window] Get timecode from slidebar"
+    },
+    {
+        "name": "playback_window_page.Edit_Timeline_PreviewOperation(operation)",
+        "description": "[Action][Playback_window] Click preview operation -- play, pause, stop, previous frame, next frame, fast forward"
+    },
+    {
+        "name": "produce.get_preview_timecode()",
+        "description": "[Action][Produce] Get timecode"
+    },
+    {
+        "name": "produce.local.check_visible_upload_copy_to_cyberlink_cloud()",
+        "description": "[Action][Produce][Local] Check [Upload Copy to CyberLink Cloud] is visible"
+    },
+    {
+        "name": "produce.local.set_check_upload_copy_to_cyberlink_cloud(is_check=1)",
+        "description": "[Action][Produce][Local] Enable/ Disable [Upload Copy to CyberLink Cloud]"
+    },
+    {
+        "name": "produce.local.click_option_convert_cyberlink_cloud_copy_to_mp4_dialog(option=1)",
+        "description": "[Action][Produce][Local] Click [Yes]/ [No] button on [Convert CyberLink Cloud Copy to MP4] dialog"
+    },
+    {
+        "name": "produce.local.check_back_btn_shows_on_upload_to_cyberlink_cloud_in_secs(wait_time=40)",
+        "description": "[Verify][Produce][Local] Check [Back] button show on [Produce] page after produce complete"
+    },
+    {
+        "name": "produce.local.click_back_btn_on_produce_page_after_upload()",
+        "description": "[Action][Produce][Local] Click [Back] button on [Produce] page after produce complete"
+    },
+    {
+        "name": "produce.local.select_file_extension(value)",
+        "description": "[Action][Produce][Local] Select [File Extension]"
+    },
+    {
+        "name": "produce.local.get_file_extension()",
+        "description": "[Action][Produce][Local] Get [File Extension] value"
+    },
+    {
+        "name": "produce.local.select_profile_name(index)",
+        "description": "[Action][Produce][Local] Select [Profile Name] by index"
+    },
+    {
+        "name": "produce.local.get_profile_name()",
+        "description": "[Action][Produce][Local] Get [Profile Name] value"
+    },
+    {
+        "name": "produce.local.set_fast_video_rendering_hardware_encode()",
+        "description": "[Action][Produce][Local] Set [Fast Video Rendering] to (Hardware Encode)"
+    },
+    {
+        "name": "produce.local.get_fast_video_rendering_hardware_encode_status()",
+        "description": "[Action][Produce][Local] Get [Fast Video Rendering - Hardware Encode] status"
+    },
+    {
+        "name": "produce.local.set_preview_timecode(str_timecode)",
+        "description": "[Action][Produce][Local] Set timecode"
+    },
+    {
+        "name": "produce.get_produced_filename()",
+        "description": "[Action][Produce] get [Produced Filename]"
+    },
+    {
+        "name": "produce.click_start()",
+        "description": "[Action][Produce] Click [Start] button to produce"
+    },
+    {
+        "name": "produce.check_produce_complete(wait_time=60)",
+        "description": "[Verify][Produce] Check [Produce] is completed"
+    },
+    {
+        "name": "file_missing_dialog.click_browse()",
+        "description": "[Action][Project_New][File Missing Dialog] Click [Browse] button"
+    },
+    {
+        "name": "main_page.compare(source_path, target_path, similarity=0.95, color=False)",
+        "description": "[Action] Base_page: Compare Images"
+    },
+    {
+        "name": "main_page.snapshot(locator, file_name=None)",
+        "description": "[Action] Base_page: Snapshot"
+    },
+    {
+        "name": "main_page.double_click(locator=None, btn=\"left\")",
+        "description": "[Action][Base_page] Double click"
+    },
+    {
+        "name": "main_page.right_click(locator=None, btn=\"right\")",
+        "description": "[Action][Base_page] Right Click"
+    },
+    {
+        "name": "main_page.select_LibraryRoom_category(name)",
+        "description": "[Action][Base_page] Select Library Room category"
+    },
+    {
+        "name": "main_page.select_right_click_menu(*arg, return_elem=False, click_it=True, return_is_selected=False)",
+        "description": "[Action][Base_page] Select right click menu"
+    },
+    {
+        "name": "main_page.select_file(full_path, btn_confirm=None, click_times=2)",
+        "description": "[Action][Base_page] Select file in file picker"
+    },
+    {
+        "name": "main_page.input_keyboard(key)",
+        "description": "[Action][Base_page] Input keyboard"
+    },
+    {
+        "name": "main_page.input_text(text)",
+        "description": "[Action][Base_page] Input text"
+    },
+    {
+        "name": "main_page.press_esc_key()",
+        "description": "[Action][Base_page] Press [Esc] key"
+    },
+    {
+        "name": "main_page.press_enter_key()",
+        "description": "[Action][Base_page] Press [Enter] key"
+    },
+    {
+        "name": "main_page.press_space_key()",
+        "description": "[Action][Base_page] Press [Space] key"
+    },
+    {
+        "name": "main_page.hover_launcher_btn(locator)",
+        "description": "[Action][Base_page] Hover on button on launcher"
+    },
+    {
+        "name": "main_page.tap_NewWorkspace_hotkey()",
+        "description": "[Action][Base_page] Open [New Workspace] via hotkey"
+    },
+    {
+        "name": "main_page.tap_SelectAll_hotkey()",
+        "description": "[Action][Base_page] Tap [Select All] via hotkey"
+    },
+    {
+        "name": "main_page.tap_PiPRoom_hotkey()",
+        "description": "[Action][Base_page] Tap [PiP Room] via hotkey"
+    },
+    {
+        "name": "main_page.Check_PreviewWindow_is_different(area=None, sec=1)",
+        "description": "[Action][Base_page] Check if the preview window is different when playing"
+    },
+    {
+        "name": "main_page.delete_folder(path)",
+        "description": "[Action][Base_page] Delete folder"
+    },
+    {
+        "name": "main_page.clear_log_in()",
+        "description": "[Initial] clear login account cache"
+    },
+    {
+        "name": "main_page.clear_cache_and_gdpr()",
+        "description": "[Initial] clear cache and GDPR"
+    },
+    {
+        "name": "main_page.clear_cache()",
+        "description": "[Initial] clear cache"
+    },
+    {
+        "name": "main_page.drag_mouse(start_pos, dest_pos)",
+        "description": "[Action][Base_page] Drag Mouse"
+    },
+    {
+        "name": "main_page.click_new_project_on_launcher()",
+        "description": "[Action][Base_page] click 'New Project' button on Launcher"
+    },
+    {
+        "name": "main_page.get_value_in_checkbox_show_launcher()",
+        "description": "[Verify] Get the value of 'Show launcher after closing program' checkbox"
+    },
+    {
+        "name": "main_page.delete_first_recently_project()",
+        "description": "[Action][Base_page] Delte 1st recently project"
+    },
+    {
+        "name": "adjustset.adjust_slider(value)",
+        "description": "[Action][Base_page][AdjustSet] Adjust slider value"
+    },
+    {
+        "name": "adjustset.set_value(value)",
+        "description": "[Action][Base_page][AdjustSet] Set value"
+    },
+    {
+        "name": "adjustset.get_value()",
+        "description": "[Action][Base_page][AdjustSet] Get value"
+    },
+    {
+        "name": "easeset.set_checkbox(value=1)",
+        "description": "[Action][Base_page][EaseSet] Enable/ Disable ease checkbox"
+    },
+    {
+        "name": "easeset.get_checkbox()",
+        "description": "[Action][Base_page][EaseSet] Get status of ease checkbox"
+    },
+    {
+        "name": "keyframeset.click_previous()",
+        "description": "[Action][Base_page][KeyframeSet] Click previous keyframe"
+    },
+    {
+        "name": "keyframeset.click_next()",
+        "description": "[Action][Base_page][KeyframeSet] Click next keyframe"
+    },
+    {
+        "name": "getty_image_page.handle_what_is_stock_media()",
+        "description": "Handle What is Stock Media dialog"
+    },
+    {
+        "name": "getty_image_page.switch_to_GI()",
+        "description": "[Action][Getty Image] Switch to [Getty Image] tab in [Download from Shutterstock] window"
+    },
+    {
+        "name": "getty_image_page.click_filter_button()",
+        "description": "[Action][Getty Image] Click [Filter] button"
+    },
+    {
+        "name": "getty_image_page.filter.set_collection_type(index)",
+        "description": "[Action][Getty Image][Filter] Set collection type"
+    },
+    {
+        "name": "import_downloaded_media_from_cl.close_download_media_window()",
+        "description": "[Action][Import Download Media From CL] Close [Downloaded Media] Window"
+    },
+    {
+        "name": "import_downloaded_media_from_cl.tap_select_deselect_all_btn()",
+        "description": "[Action][Import Download Media From CL] Tap Select/Deselect All button"
+    },
+    {
+        "name": "import_downloaded_media_from_cl.get_remove_btn_status()",
+        "description": "[Action][Import Download Media From CL] Get [Remove] button status"
+    },
+    {
+        "name": "import_downloaded_media_from_cl.tap_remove_btn()",
+        "description": "[Action][Import Download Media From CL] Tap [Remove] button"
+    },
+    {
+        "name": "import_downloaded_media_from_cl.input_text_in_seacrh_library(strName)",
+        "description": "[Action][Import Download Media From CL] Input text in search library"
+    },
+    {
+        "name": "import_downloaded_media_from_cl.select_content_in_folder_level(folder_index, click_times=2)",
+        "description": "[Action][Import Download Media From CL] Select content in folder level"
+    },
+    {
+        "name": "UnknownClass.editbox_set_value(obj, locator, value, verify=1)",
+        "description": "[Action][Preferences_Page] Set editbox value"
+    },
+    {
+        "name": "preferences_page.click_ok()",
+        "description": "[Action][Preferences_Page] Click [OK] button to leave [Preferences page]"
+    },
+    {
+        "name": "preferences_page.switch_to_editing()",
+        "description": "[Action][Preferences_Page] Switch to [Editing] tab"
+    },
+    {
+        "name": "preferences_page.switch_to_project()",
+        "description": "[Action][Preferences_Page] Switch to [Project] tab"
+    },
+    {
+        "name": "preferences_page.editing.durations_title_set_value(value)",
+        "description": "[Action][Preferences_Page] Set Title default Duration"
+    },
+    {
+        "name": "preferences_page.project.numbers_of_recently_used_project_set_value(value)",
+        "description": "[Action][Preferences_Page][Project] Set [Numbers of Recently Used Projects] to value"
+    },
+    {
+        "name": "preferences_page.project.numbers_of_recently_used_project_get_value()",
+        "description": "[Action][Preferences_Page][Project] Get [Numbers of Recently Used Projects] value"
+    },
+    {
+        "name": "media_room_page.import_media_file(full_path)",
+        "description": "[Action][Media Room] Import [Media File] from local"
+    },
+    {
+        "name": "media_room_page.import_media_from_cyberlink_cloud()",
+        "description": "[Action][Media Room] import media from CyberLink Cloud"
+    },
+    {
+        "name": "media_room_page.import_media_from_shutterstock()",
+        "description": "[Action][Media Room] Open [Shutterstock] dialog in media room"
+    },
+    {
+        "name": "media_room_page.enter_media_content()",
+        "description": "[Action][Media Room] Enter [Media Content] Category"
+    },
+    {
+        "name": "media_room_page.enter_color_boards()",
+        "description": "[Action][Media Room] Enter [Color Boards]"
+    },
+    {
+        "name": "media_room_page.enter_background_music_CL()",
+        "description": "[Action][Media Room] Enter [Background Music (CL)] Category"
+    },
+    {
+        "name": "media_room_page.enter_background_music()",
+        "description": "[Action][Media Room] Enter [Background Music (meta)] Category"
+    },
+    {
+        "name": "media_room_page.enter_sound_clips()",
+        "description": "[Action][Media Room] Enter [Sound Clip] Category"
+    },
+    {
+        "name": "media_room_page.enter_downloaded()",
+        "description": "[Action][Media Room] Enter [Download] Category"
+    },
+    {
+        "name": "media_room_page.search_library(name, intro_room=False)",
+        "description": "[Action][Media Room] Search conponent in library"
+    },
+    {
+        "name": "media_room_page.search_SFX_library(name)",
+        "description": "[Action][Media Room] Search conponent in Media Room (Sound Effects) category"
+    },
+    {
+        "name": "media_room_page.search_library_click_cancel()",
+        "description": "[Action][Media Room] Click [Cancel] button in search library"
+    },
+    {
+        "name": "media_room_page.click_display_hide_explore_view()",
+        "description": "[Action][Media Room] Click [Display/Hide Explore View] button"
+    },
+    {
+        "name": "media_room_page.add_new_tag(name)",
+        "description": "[Action][Media Room] Add new tag with name"
+    },
+    {
+        "name": "media_room_page.right_click_delete_tag(name, count=0)",
+        "description": "[Action][Media Room] Delete tag by right click"
+    },
+    {
+        "name": "media_room_page.right_click_rename_tag(name, name_new, count=0)",
+        "description": "[Action][Media Room] Rename tag by right click"
+    },
+    {
+        "name": "media_room_page.library_menu_new_color_board(hex_color)",
+        "description": "[Action][Media Room] Modify [Color Board] Color"
+    },
+    {
+        "name": "media_room_page.library_menu_new_gradient_color(hex_color)",
+        "description": "[Action][Media Room] Set [Gradient Color]"
+    },
+    {
+        "name": "media_room_page.handle_color_gradient(hex_color)",
+        "description": "[Action][Media Room] Handle Color Gradient"
+    },
+    {
+        "name": "media_room_page.library_clip_context_menu_add_to(tag_name)",
+        "description": "[Action][Media Room] Add media to specific tag by right click"
+    },
+    {
+        "name": "media_room_page.library_clip_context_menu_move_to_trash_can()",
+        "description": "[Action][Media Room] Move clip in library to trash can"
+    },
+    {
+        "name": "media_room_page.library_clip_context_menu_open_file_location()",
+        "description": "[Action][Media Room] Open [File Location] from [Library Clip] context menu by right click"
+    },
+    {
+        "name": "media_room_page.select_specific_category(category_name)",
+        "description": "[Action] Select specific category"
+    },
+    {
+        "name": "media_room_page.select_specific_category_in_meta(category_name)",
+        "description": "[Action][Media Room] Select specific category in meta by name"
+    },
+    {
+        "name": "media_room_page.sound_clips_select_media(name)",
+        "description": "[Action][Media Room] Select specific sound clips in library by name"
+    },
+    {
+        "name": "media_room_page.background_music_check_download_mark(name)",
+        "description": "[Verify][Media Room] Check [Download] mark if shown on BG music for specific music"
+    },
+    {
+        "name": "media_room_page.background_music_check_download_ok_mark(name)",
+        "description": "[Verify][Media Room] Check [Download OK] mark if shown on BG music for specific music"
+    },
+    {
+        "name": "media_room_page.handle_high_definition_dialog(option='no')",
+        "description": "[Action][Media_Room] Handle high definition dialog"
+    },
+    {
+        "name": "shape_designer.properties.unfold_shape_type(set_unfold=1)",
+        "description": "[Action][Properties] Fold/ Unfold Shape Type"
+    },
+    {
+        "name": "shape_designer.properties.unfold_shape_preset(set_unfold=1)",
+        "description": "[Action][Properties] Fold/ Unfold Shape Preset"
+    },
+    {
+        "name": "shape_designer.properties.unfold_shape_fill(set_unfold=1)",
+        "description": "[Action][Properties] Fold/ Unfold Shape Fill"
+    },
+    {
+        "name": "shape_designer.properties.unfold_shape_outline(set_unfold=1)",
+        "description": "[Action][Properties] Fold/ Unfold Shape Outline"
+    },
+    {
+        "name": "shape_designer.properties.unfold_shadow(set_unfold=1)",
+        "description": "[Action][Properties] Fold/ Unfold Shadow"
+    },
+    {
+        "name": "shape_designer.properties.shape_type.drag_scroll_bar(value)",
+        "description": "[Action][Properties][Shape Type] Drag Scroll Bar"
+    },
+    {
+        "name": "shape_designer.properties.shape_type.apply_type(index=1)",
+        "description": "[Action][Properties][Shape Type] Apply Shape Type"
+    },
+    {
+        "name": "shape_designer.properties.shape_preset.apply_preset(index=1)",
+        "description": "[Action][Properties][Shape Preset] Apply Shape Preset"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.apply_checkbox(bCheck=1)",
+        "description": "[Action][Properties][Shape Fill] Enable/ Disable Fill"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.set_uniform_color(hexcolor)",
+        "description": "[Action][Properties][Shape Fill] Set Uniform Color to hexcolor"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.set_gradient_begin(hexcolor)",
+        "description": "[Action][Properties][Shape Fill] Set Gradient Begin Color"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.set_gradient_end(hexcolor)",
+        "description": "[Action][Properties][Shape Fill] Set Gradient End Color"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.blur.get_value()",
+        "description": "[Action][Properties][Shape Fill][Blur] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.blur.set_value(value)",
+        "description": "[Action][Properties][Shape Fill][Blur] Set Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.opacity.get_value()",
+        "description": "[Action][Properties][Shape Fill][Opacity] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_fill.opacity.click_arrow(option, times=1)",
+        "description": "[Action][Properties][Shape Fill][Opacity] Click Arrow to Adjust Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.size.get_value()",
+        "description": "[Action][Properties][Shape Outline][Size] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.size.set_value(value)",
+        "description": "[Action][Properties][Shape Outline][Size] Set Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.blur.get_value()",
+        "description": "[Action][Properties][Shape Outline][Blur] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.blur.set_slider(value)",
+        "description": "[Action][Properties][Shape Outline][Blur] Set Value by Slider"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.apply_checkbox(bCheck=1)",
+        "description": "[Action][Properties][Shape Outline] Enable/ Disable Outline"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.set_line_type(index)",
+        "description": "[Action][Properties][Shape Outline] Set Line Type"
+    },
+    {
+        "name": "shape_designer.properties.shape_outline.set_uniform_color(hexcolor)",
+        "description": "[Action][Properties][Shape Outline] Set Uniform Color"
+    },
+    {
+        "name": "shape_designer.properties.shadow.apply_checkbox(bCheck=1)",
+        "description": "[Action][Properties][Shadow] Enable/ Disable Shadow"
+    },
+    {
+        "name": "shape_designer.properties.shadow.set_apply_shadow_to(current_type=1)",
+        "description": "[Action][Properties][Shadow] Set Apply Shadow To"
+    },
+    {
+        "name": "shape_designer.properties.shadow.distance.get_value()",
+        "description": "[Action][Properties][Shadow][Distance] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shadow.distance.set_value(value)",
+        "description": "[Action][Properties][Shadow][Distance] Set Value"
+    },
+    {
+        "name": "shape_designer.properties.shadow.blur.get_value()",
+        "description": "[Action][Properties][Shadow][Blur] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shadow.blur.set_value(value)",
+        "description": "[Action][Properties][Shadow][Blur] Set Value"
+    },
+    {
+        "name": "shape_designer.properties.shadow.opacity.get_value()",
+        "description": "[Action][Properties][Shadow][Opacity] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shadow.opacity.set_slider(value)",
+        "description": "[Action][Properties][Shadow][Opacity] Set Value by Slider"
+    },
+    {
+        "name": "shape_designer.properties.shadow.fill_shadow.get_checkbox()",
+        "description": "[Action][Properties][Shadow][Fill Shadow] Get status of Fill Shadow"
+    },
+    {
+        "name": "shape_designer.properties.shadow.fill_shadow.apply_checkbox(bCheck=1)",
+        "description": "[Action][Properties][Shadow][Fill Shadow] Enable/ Disable Fill Shadow"
+    },
+    {
+        "name": "shape_designer.properties.shadow.direction.get_value()",
+        "description": "[Action][Properties][Shadow][Direction] Get Value"
+    },
+    {
+        "name": "shape_designer.properties.shadow.direction.set_value(value)",
+        "description": "[Action][Properties][Shadow][Direction] Set Value"
+    },
+    {
+        "name": "shape_designer.properties.title.get_font_type()",
+        "description": "[Action][Properties][Title][Font Type] Get Font Type"
+    },
+    {
+        "name": "shape_designer.properties.title.set_font_type(strType)",
+        "description": "[Action][Properties][Title][Font Type] Set Font Type"
+    },
+    {
+        "name": "shape_designer.properties.title.get_font_size()",
+        "description": "[Action][Properties][Title][Font Size] Get Font Size"
+    },
+    {
+        "name": "shape_designer.properties.title.set_font_size(strSize)",
+        "description": "[Action][Properties][Title][Font Size] Set Font Size"
+    },
+    {
+        "name": "shape_designer.properties.title.set_font_color(hexcolor)",
+        "description": "[Action][Properties][Title][Font Color] Get Font Color"
+    },
+    {
+        "name": "shape_designer.check_in_shape_designer()",
+        "description": "[Verify][Shape Designer] Check Shape Designer is opened"
+    },
+    {
+        "name": "shape_designer.click_restore_btn()",
+        "description": "[Action][Shape Designer] Maximize Shape Designer"
+    },
+    {
+        "name": "shape_designer.click_undo()",
+        "description": "[Action][Shape Designer] Click Undo"
+    },
+    {
+        "name": "shape_designer.get_title()",
+        "description": "[Action][Shape Designer] Get Title Name"
+    },
+    {
+        "name": "shape_designer.set_timecode(timecode)",
+        "description": "[Action][Shape Designer] Set Timecode"
+    },
+    {
+        "name": "shape_designer.get_timecode()",
+        "description": "[Action][Shape Designer] Get Timecode"
+    },
+    {
+        "name": "shape_designer.click_properties_tab()",
+        "description": "[Action][Shape Designer] Click Properties Tab"
+    },
+    {
+        "name": "shape_designer.click_keyframe_tab()",
+        "description": "[Action][Shape Designer] Click Keyframe Tab"
+    },
+    {
+        "name": "shape_designer.click_preview_operation(operation)",
+        "description": "[Action][Shape Designer] Click Play/ Pause/ Stop/ Previous Frame/ Next Frame/ Fast Forward"
+    },
+    {
+        "name": "shape_designer.adjust_object_on_Canvas_resize_to_large()",
+        "description": "[Action][Shape Designer] Adjust object on Canvas to large"
+    },
+    {
+        "name": "shape_designer.adjust_object_on_Canvas_move_to_left()",
+        "description": "[Action][Shape Designer] Move object on Canvas to left"
+    },
+    {
+        "name": "shape_designer.unselect_title_on_Canvas()",
+        "description": "[Action][Shape Designer] Unselect title on Canvas"
+    },
+    {
+        "name": "shape_designer.click_center_on_Canvas()",
+        "description": "[Action][Shape Designer] Click center on Canvas"
+    },
+    {
+        "name": "shape_designer.edit_title_on_Canvas(strTitle)",
+        "description": "[Action][Shape Designer] Edit title on Canvas"
+    },
+    {
+        "name": "shape_designer.click_ok()",
+        "description": "[Action][Shape Designer] Click [OK] button on shape designer window"
+    },
+    {
+        "name": "shape_designer.click_cancel(option=None)",
+        "description": "[Action][Shape Designer] Click Cancel to leave Shape Designer"
+    },
+    {
+        "name": "shape_designer.click_save_as()",
+        "description": "[Action][Shape Designer] Click Save to save the template"
+    },
+    {
+        "name": "shape_designer.saveas.set_name(name)",
+        "description": "[Action][Shape Designer][Save As] Set Name"
+    },
+    {
+        "name": "shape_designer.saveas.click_ok()",
+        "description": "[Action][Shape Designer][Save As] Click OK"
+    },
+    {
+        "name": "shape_designer.simple_timeline.position.click_next_keyframe()",
+        "description": "[Action][Shape Designer][Simple Timeline][Position] Click Next Keyframe"
+    },
+    {
+        "name": "scale.set_aspect_ratio_chx(value=1)",
+        "description": "[Action][Shape Designer][Keyframe][Object Setting][Scale] Set Maintain Aspect Ratio Checkbox"
+    },
+    {
+        "name": "scale.get_aspect_ratio_chx()",
+        "description": "[Action][Shape Designer][Keyframe][Object Setting][Scale] Get Maintain Aspect Ratio Checkbox"
+    },
+    {
+        "name": "tips_area_page.click_TipsArea_btn_insert_project()",
+        "description": "[Action][TipsArea] Click [Insert to Selected Track] button"
+    },
+    {
+        "name": "tips_area_page.click_TipsArea_btn_Trim(type)",
+        "description": "[Action][TipsArea] Click [Trim] button in [Tips Area]"
+    },
+    {
+        "name": "tips_area_page.click_TipsArea_btn_ChangeColor(color=None)",
+        "description": "[Action][TipsArea] Click [Change Color] button in [Tips Area] and change color"
+    },
+    {
+        "name": "tips_area_page.click_TipsArea_btn_VideoCollage()",
+        "description": "[Action][TipsArea] Click [Video Collage] button in [Tips Area]"
+    },
+    {
+        "name": "pip_designer_page.get_selected_track_checkbox_status()",
+        "description": "[Action][Pip Designer] Get [Only show selected track] Checkbox Status"
+    },
+    {
+        "name": "pip_designer_page.resize_on_canvas(drag_x=30, drag_y=30, direction='lt', is_large=True)",
+        "description": "[Action][Pip Designer] Resize Object on Canvas"
+    },
+    {
+        "name": "pip_designer_page.move_to_left_on_canvas(drag_x=50)",
+        "description": "[Action][Pip Designer] Move Object on Canvas"
+    },
+    {
+        "name": "pip_designer_page.add_remove_position_current_keyframe()",
+        "description": "[Action][Pip Designer] Add/ Remove Position Keyframe"
+    },
+    {
+        "name": "pip_designer_page.reset_position_keyframe()",
+        "description": "[Action][Pip Designer] Reset Position Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_position_previous_keyframe()",
+        "description": "[Action][Pip Designer] Switch to Previous Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_position_next_keyframe()",
+        "description": "[Action][Pip Designer] Switch to Next Keyframe"
+    },
+    {
+        "name": "pip_designer_page.get_x_position_value()",
+        "description": "[Action][Pip Designer] Get X Position Value"
+    },
+    {
+        "name": "pip_designer_page.input_x_position_value(value)",
+        "description": "[Action][Pip Designer] Input X Position Value"
+    },
+    {
+        "name": "pip_designer_page.get_y_position_value()",
+        "description": "[Action][Pip Designer] Get Y Position Value"
+    },
+    {
+        "name": "pip_designer_page.input_y_position_value(value)",
+        "description": "[Action][Pip Designer] Input Y Position Value"
+    },
+    {
+        "name": "pip_designer_page.click_position_ease_in_checkbox(bCheck=1)",
+        "description": "[Action][Pip Designer] Enable/ Disable Ease In Checkbox"
+    },
+    {
+        "name": "pip_designer_page.input_position_ease_in_value(value)",
+        "description": "[Action][Pip Designer] Input Ease In Value"
+    },
+    {
+        "name": "pip_designer_page.click_position_ease_out_checkbox(bCheck=1)",
+        "description": "[Action][Pip Designer] Enable/ Disable Ease Out Checkbox"
+    },
+    {
+        "name": "pip_designer_page.input_position_ease_out_value(value)",
+        "description": "[Action][Pip Designer] Input Ease Out Value"
+    },
+    {
+        "name": "pip_designer_page.add_remove_scale_current_keyframe()",
+        "description": "[Action][Pip Designer] Add/ Remove Scale Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_scale_previous_keyframe()",
+        "description": "[Action][Pip Designer] Switch to Scale Previous Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_scale_next_keyframe()",
+        "description": "[Action][Pip Designer] Switch to Scale Next Keyframe"
+    },
+    {
+        "name": "pip_designer_page.get_scale_width_value()",
+        "description": "[Action][Pip Designer] Get Scale Width Value"
+    },
+    {
+        "name": "pip_designer_page.get_scale_height_value()",
+        "description": "[Action][Pip Designer] Get Scale Height Value"
+    },
+    {
+        "name": "pip_designer_page.input_scale_height_value(value)",
+        "description": "[Action][Pip Designer] Input Scale Height Value"
+    },
+    {
+        "name": "pip_designer_page.input_rotation_degree_value(value)",
+        "description": "[Action][Pip Designer] Input Rotation Degree Value"
+    },
+    {
+        "name": "pip_designer_page.tap_rotation_next_keyframe()",
+        "description": "[Action][Pip Designer] Switch to Rotation Next Keyframe"
+    },
+    {
+        "name": "pip_designer_page.apply_chromakey(bApply=1)",
+        "description": "[Action][Pip Designer] Enable/ Disable Chromakey"
+    },
+    {
+        "name": "pip_designer_page.apply_border(bApply=1)",
+        "description": "[Action][Pip Designer] Enable/ Disable Border"
+    },
+    {
+        "name": "pip_designer_page.drag_border_size_slider(value)",
+        "description": "[Action][Pip Designer] Set [Border Size] by Slider"
+    },
+    {
+        "name": "pip_designer_page.input_border_blur_value(value)",
+        "description": "[Action][Pip Designer] Input Border Blur Value"
+    },
+    {
+        "name": "pip_designer_page.drag_border_opacity_slider(value)",
+        "description": "[Action][Pip Designer] Apply Border Opacity"
+    },
+    {
+        "name": "pip_designer_page.apply_border_uniform_color(red='255', green='255', blue='255')",
+        "description": "[Action][Pip Designer] Apply [Border Uniform Color] by RGB code"
+    },
+    {
+        "name": "pip_designer_page.apply_shadow(bApply=1)",
+        "description": "[Action][Pip Designer] Enable/ Disable Shadow"
+    },
+    {
+        "name": "pip_designer_page.drag_shadow_distance_slider(value)",
+        "description": "[Action][Pip Designer] Set [Shadow Distance] by Slider"
+    },
+    {
+        "name": "pip_designer_page.input_shadow_distance_value(value)",
+        "description": "[Action][Pip Designer] Input Shadow Distance Value"
+    },
+    {
+        "name": "pip_designer_page.select_shadow_color(red='0', green='0', blue=\"0\")",
+        "description": "[Action][Pip Designer] Select [Shadow Color] by RGB color"
+    },
+    {
+        "name": "pip_designer_page.apply_enable_fade_in(bApply=1)",
+        "description": "[Action][Pip Designer] Apply Enable Fade In"
+    },
+    {
+        "name": "pip_designer_page.apply_enable_fade_out(bApply=1)",
+        "description": "[Action][Pip Designer] Apply Enable Fade Out"
+    },
+    {
+        "name": "pip_designer_page.click_preview_operation(strOperation)",
+        "description": "[Action][Pip Designer] Click Play/ Stop/ Pause/ Previous Frame/ Next Frame/ Fast Forward"
+    },
+    {
+        "name": "pip_designer_page.tap_scale_track_previous_keyframe()",
+        "description": "[Action][Pip Designer] Tap Scale Track Previous Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_scale_track_next_keyframe()",
+        "description": "[Action][Pip Designer] Tap Scale Track Next Keyframe"
+    },
+    {
+        "name": "pip_designer_page.add_remove_opacity_track_current_keyframe()",
+        "description": "[Action] Add/Remove Opacity Track Current Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_opacity_track_previous_keyframe()",
+        "description": "[Action] Tap Opacity Track Previous Keyframe"
+    },
+    {
+        "name": "pip_designer_page.tap_opacity_track_next_keyframe()",
+        "description": "[Action] Tap Opacity Track Next Keyframe"
+    },
+    {
+        "name": "pip_designer_page.add_remove_rotation_track_current_keyframe()",
+        "description": "[Action] Add/Remove Rotation Track Current Keyframe"
+    },
+    {
+        "name": "pip_designer_page.click_ok()",
+        "description": "[Action] Click OK button on pip designer window"
+    },
+    {
+        "name": "pip_designer_page.input_template_name_and_click_ok(name)",
+        "description": "[Action] Input Template Name and Click OK"
+    },
+    {
+        "name": "pip_designer_page.share_to_cloud(name, tags, collection, description, verify_dz_link=0, only_dz=0)",
+        "description": "[Action][Pip Designer] Share to Cloud"
+    },
+    {
+        "name": "pip_designer_page.switch_mode(mode)",
+        "description": "[Action][Pip Designer] Switch mode"
+    },
+    {
+        "name": "pip_designer_page.click_maximize_btn()",
+        "description": "[Action][Pip Designer] Click [Maximize] button"
+    },
+    {
+        "name": "pip_designer_page.click_specific_keyframe(index)",
+        "description": "[Action][Pip Designer] Click specific keyframe"
+    },
+    {
+        "name": "pip_designer_page.drag_properties_scroll_bar(value)",
+        "description": "[Action][Pip Designer] Drag properties scroll bar"
+    },
+    {
+        "name": "pip_designer_page.drag_simple_timeline_track_to_lager()",
+        "description": "[Action][Pip Designer] Drag timeline scroll bar to larger"
+    },
+    {
+        "name": "pip_designer_page.apply_flip_horizontally()",
+        "description": "[Action][Pip Designer] Apply Flip Horizontally"
+    },
+    {
+        "name": "pip_designer_page.apply_flip_vertically()",
+        "description": "[Action][Pip Designer] Apply Flip Vertically"
+    },
+    {
+        "name": "pip_designer_page.express_mode.get_current_mode()",
+        "description": "[Action][Pip Designer][Express Mode] Get current mode"
+    },
+    {
+        "name": "pip_designer_page.express_mode.unfold_properties_object_setting_tab(unfold=1)",
+        "description": "[Action][Pip Designer][Express Mode] Fold/ Unfold Object Setting tab"
+    },
+    {
+        "name": "pip_designer_page.express_mode.unfold_properties_chroma_key_tab(unfold=1)",
+        "description": "[Action][Pip Designer] Unfold Properties Chroma Key tab"
+    },
+    {
+        "name": "pip_designer_page.express_mode.unfold_properties_border_tab(unfold=1)",
+        "description": "[Action][Pip Designer][Express Mode] Fold/ Unfold Properties Border tab"
+    },
+    {
+        "name": "pip_designer_page.express_mode.unfold_properties_shadow_tab(unfold=1)",
+        "description": "[Action][Pip Designer][Express Mode] Fold/ Unfold Properties Shadow tab"
+    },
+    {
+        "name": "pip_designer_page.express_mode.unfold_properties_fades_tab(type, unfold=1)",
+        "description": "[Action][Pip Designer][Express Mode] Fold/ Unfold Properties Fades tab"
+    },
+    {
+        "name": "pip_designer_page.express_mode.get_object_setting_opacity_value()",
+        "description": "[Action][Pip Designer][Express Mode] Get Object Setting -- Opacity value"
+    },
+    {
+        "name": "pip_designer_page.express_mode.drag_object_setting_opacity_slider(value)",
+        "description": "[Action][Pip Designer][Express Mode] Adjust Object Setting -- Opacity by slider"
+    },
+    {
+        "name": "pip_designer_page.express_mode.click_object_setting_opacity_arrow_btn(mode, times=1)",
+        "description": "[Action][Pip Designer][Express Mode] Adjust Object Setting -- Opacity by arrow"
+    },
+    {
+        "name": "pip_designer_page.express_mode.get_border_size_value()",
+        "description": "[Action][Pip Designer][Express Mode] Get Border Size value"
+    },
+    {
+        "name": "pip_designer_page.express_mode.click_border_size_arrow_btn(mode, times=1)",
+        "description": "[Action][Pip Designer][Express Mode] Click Border Size arrow button"
+    },
+    {
+        "name": "pip_designer_page.express_mode.get_border_blur_value()",
+        "description": "[Action][Pip Designer][Express Mode] Get Border Blur value"
+    },
+    {
+        "name": "pip_designer_page.express_mode.get_border_opacity_value()",
+        "description": "[Action][Pip Designer][Express Mode] Get Border Opacity value"
+    },
+    {
+        "name": "pip_designer_page.advanced.switch_to_motion()",
+        "description": "[Action][Pip Designer][Advanced Mode] Switch to Motion tab"
+    },
+    {
+        "name": "pip_designer_page.advanced.switch_to_properties()",
+        "description": "[Action][Pip Designer][Advanced Mode] Switch to Properties tab"
+    },
+    {
+        "name": "pip_designer_page.advanced.switch_to_animation()",
+        "description": "[Action][Pip Designer][Advanced Mode] Switch to Animation tab"
+    },
+    {
+        "name": "pip_designer_page.advanced.unfold_in_animation_menu(set_unfold=1)",
+        "description": "[Action][Pip Designer][Advanced Mode] Fold/ Unfold in animation menu"
+    },
+    {
+        "name": "pip_designer_page.advanced.unfold_path_menu(set_unfold=1)",
+        "description": "[Action][Pip Designer][Advanced Mode] Fold/ Unfold path menu"
+    },
+    {
+        "name": "pip_designer_page.advanced.unfold_motion_blur_menu(set_unfold=1)",
+        "description": "[Action][Pip Designer][Advanced Mode] Fold/ Unfold motion blur menu"
+    },
+    {
+        "name": "pip_designer_page.in_animation.select_template(index=1)",
+        "description": "[Action][Pip Designer][In Animation] Select template"
+    },
+    {
+        "name": "pip_designer_page.path.select_template(index=1)",
+        "description": "[Action][Pip Designer][Path] Select certain template"
+    },
+    {
+        "name": "pip_designer_page.motion_blur.set_checkbox(tick=1)",
+        "description": "[Action][Pip Designer][Motion Blur] Tick/ Untick checkbox"
+    },
+    {
+        "name": "pip_designer_page.motion_blur.length.set_value(value)",
+        "description": "[Action][Pip Designer][Motion Blur][Length] Set value"
+    },
+    {
+        "name": "pip_designer_page.motion_blur.density.adjust_slider(value)",
+        "description": "[Action][Pip Designer][Motion Blur][Density] Adjust slider"
+    },
+    {
+        "name": "pip_designer_page.simple_timeline.right_click_menu.get_ease_in_status()",
+        "description": "[Action][Pip Designer][Simple Timeline] Get Ease In Status"
+    },
+    {
+        "name": "pip_designer_page.simple_timeline.right_click_menu.get_ease_out_status()",
+        "description": "[Action][Pip Designer][Simple Timeline] Get Ease Out Status"
+    },
+    {
+        "name": "precut_page.edit_precut_switch_trim_mode(mode)",
+        "description": "[Action][Precut] Switch [Trim Mode] in [Precut Window]"
+    },
+    {
+        "name": "precut_page.get_precut_single_trim_duration()",
+        "description": "[Action][Precut] Get Single Trim Duration"
+    },
+    {
+        "name": "precut_page.set_single_trim_precut_in_position(value)",
+        "description": "[Action][Precut] Set Single Trim Precut In Position"
+    },
+    {
+        "name": "precut_page.click_ok()",
+        "description": "[Action][Precut] Click [OK] Button to leave Precut Window"
+    },
+    {
+        "name": "title_designer_page.click_maximize_btn()",
+        "description": "[Action][Title Designer] Maximize/ Minimize Title Designer Window"
+    },
+    {
+        "name": "title_designer_page.set_timecode(timecode)",
+        "description": "[Action][Title Designer] Set Time Code"
+    },
+    {
+        "name": "title_designer_page.get_title_text_content()",
+        "description": "[Action][Title Designer] Get Title Text Content"
+    },
+    {
+        "name": "title_designer_page.drag_object_vertical_slider(value)",
+        "description": "[Action][Title Designer] Drag Vertical Slider"
+    },
+    {
+        "name": "title_designer_page.insert_title(text)",
+        "description": "[Action][Title Designer] Insert Title"
+    },
+    {
+        "name": "title_designer_page.edit_object_title(strText)",
+        "description": "[Action][Title Designer] Edit Title"
+    },
+    {
+        "name": "title_designer_page.click_insert_particle_btn()",
+        "description": "[Action][Title Designer] Click [Insert Particle] Button"
+    },
+    {
+        "name": "title_designer_page.insert_particle(menu_index, particle_index)",
+        "description": "[Action][Title Designer] Insert Particle"
+    },
+    {
+        "name": "title_designer_page.click_insert_image_btn()",
+        "description": "[Action][Title Designer] Click [Insert Image] Button"
+    },
+    {
+        "name": "title_designer_page.insert_image(file_path)",
+        "description": "[Action][Title Designer] Insert Image"
+    },
+    {
+        "name": "title_designer_page.click_insert_background_btn()",
+        "description": "[Action][Title Designer] Click [Insert Background] Button"
+    },
+    {
+        "name": "title_designer_page.insert_background(file_path)",
+        "description": "[Action][Title Designer] Insert Background"
+    },
+    {
+        "name": "title_designer_page.insert_background_adjust_setting(index)",
+        "description": "[Action][Title Designer] Adjust setting for [Insert Background]"
+    },
+    {
+        "name": "title_designer_page.click_delete_background_btn()",
+        "description": "[Action][Title Designer] Click [Delete Background] Button"
+    },
+    {
+        "name": "title_designer_page.switch_mode(mode=1)",
+        "description": "[Action][Title Designer] Switch mode"
+    },
+    {
+        "name": "title_designer_page.click_object_tab()",
+        "description": "[Action][Title Designer] Click [Object] Tab"
+    },
+    {
+        "name": "title_designer_page.click_animation_tab()",
+        "description": "[Action][Title Designer] Click animation tab"
+    },
+    {
+        "name": "title_designer_page.click_motion_tab()",
+        "description": "[Action][Title Designer] Click [Motion] Tab"
+    },
+    {
+        "name": "title_designer_page.click_ok()",
+        "description": "[Action][Title Designer] Click [OK] button"
+    },
+    {
+        "name": "title_designer_page.click_custom_name_ok(name)",
+        "description": "[Action][Title Designer] Set template name when saving template"
+    },
+    {
+        "name": "title_designer_page.click_cancel(option=None)",
+        "description": "[Action][Title Designer] Click [Cancel] Button"
+    },
+    {
+        "name": "title_designer_page.save_as_name(name, click_ok=0)",
+        "description": "[Action][Title Designer] Save template as"
+    },
+    {
+        "name": "title_designer_page.share_to_dz(name, upload_option, style, tags, collection, description, verify_dz_link=0)",
+        "description": "[Action][Title Designer] Share to DZ"
+    },
+    {
+        "name": "title_designer_page.click_preview_operation(operation)",
+        "description": "[Action][Title Designer] Click preview operation -- play, pause, stop, previous frame, next frame, fast forward"
+    },
+    {
+        "name": "title_designer_page.apply_character_presets(index, character_type=1)",
+        "description": "[Action][Title Designer] Apply Character Presets"
+    },
+    {
+        "name": "title_designer_page.set_font_type(type)",
+        "description": "[Action][Title Designer] Set Font Type"
+    },
+    {
+        "name": "title_designer_page.set_font_size(value)",
+        "description": "[Action][Title Designer] Set Font Size"
+    },
+    {
+        "name": "title_designer_page.set_line_spacing_amount(value)",
+        "description": "[Action][Title Designer] Set Line Spacing Amount"
+    },
+    {
+        "name": "title_designer_page.set_text_spacing_amount(value)",
+        "description": "[Action][Title Designer] Set Text Spacing Amount"
+    },
+    {
+        "name": "title_designer_page.set_font_face_color(red='255', green='255', blue='255')",
+        "description": "[Action][Title Designer] Set Font Face Color"
+    },
+    {
+        "name": "title_designer_page.set_kerning_check(bCheck=1)",
+        "description": "[Action][Title Designer] Set Kerning Check"
+    },
+    {
+        "name": "title_designer_page.set_align(type)",
+        "description": "[Action][Title Designer] Set Align"
+    },
+    {
+        "name": "title_designer_page.set_check_font_face(bCheck=1)",
+        "description": "[Action][Title Designer] Set Check Font Face"
+    },
+    {
+        "name": "title_designer_page.set_check_shadow(bCheck=1)",
+        "description": "[Action][Title Designer] Enable/ Disable Check Shadow"
+    },
+    {
+        "name": "title_designer_page.apply_border(bApply)",
+        "description": "[Action][Title Designer] Enable/Disable Border"
+    },
+    {
+        "name": "title_designer_page.input_border_depth_value(value)",
+        "description": "[Action][Title Designer] Set Border Depth by Value"
+    },
+    {
+        "name": "title_designer_page.drag_border_depth_slider(value)",
+        "description": "[Action][Title Designer] Set Border Depth by Slider"
+    },
+    {
+        "name": "title_designer_page.apply_shadow(bApply)",
+        "description": "[Action][Title Designer] Enable/ Disable Check Shadow"
+    },
+    {
+        "name": "title_designer_page.drag_shadow_distance_slider(value, image=0)",
+        "description": "[Action][Title Designer] Drag Shadow Distance Slider"
+    },
+    {
+        "name": "title_designer_page.click_shadow_distance_arrow_btn(index, image=0)",
+        "description": "[Action][Title Designer] Click Shadow Distance Arrow Button"
+    },
+    {
+        "name": "title_designer_page.input_shadow_blur_value(value, image=0)",
+        "description": "[Action][Title Designer] Input Shadow Blur Value"
+    },
+    {
+        "name": "title_designer_page.drag_shadow_opacity_slider(value, image=0)",
+        "description": "[Action][Title Designer] Drag Shadow Opacity Slider"
+    },
+    {
+        "name": "title_designer_page.input_shadow_opacity_value(value, image=0)",
+        "description": "[Action][Title Designer] Input Shadow Opacity Value"
+    },
+    {
+        "name": "title_designer_page.set_check_shadow_fill_shadow(bCheck=1)",
+        "description": "[Action][Title Designer] Enable/ Disable Check Fill Shadow"
+    },
+    {
+        "name": "title_designer_page.set_shadow_fill_shadow_color(red='255', green='255', blue='255', image=0)",
+        "description": "[Action][Title Designer] Set Shadow Fill Shadow Color"
+    },
+    {
+        "name": "title_designer_page.click_undo_btn()",
+        "description": "[Action][Title Designer] Click Undo button"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_position_add_keyframe_control()",
+        "description": "[Action][Title Designer] Add Keyframe Control"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_position_reset_keyframe_control()",
+        "description": "[Action][Title Designer] Reset Keyframe Control in Position"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_position_previous_keyframe()",
+        "description": "[Action][Title Designer] Click Previous Keyframe Control in Position"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_position_next_keyframe()",
+        "description": "[Action][Title Designer] Click Next Keyframe Control in Position"
+    },
+    {
+        "name": "title_designer_page.input_object_setting_x_position_value(value, image=0)",
+        "description": "[Action][Title Designer] Input Object Setting Position X Value"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_x_position_arrow_btn(index)",
+        "description": "[Action][Title Designer] Click Object Setting Position X Arrow Button"
+    },
+    {
+        "name": "title_designer_page.input_object_setting_y_position_value(value, image=0)",
+        "description": "[Action][Title Designer] Input Object Setting Position Y Value"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_scale_add_keyframe_control()",
+        "description": "[Action][Title Designer] Add Keyframe Control in Scale"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_scale_reset_keyframe_control()",
+        "description": "[Action][Title Designer] Reset Keyframe Control in Scale"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_scale_previous_keyframe()",
+        "description": "[Action][Title Designer] Click Previous Keyframe Control in Scale"
+    },
+    {
+        "name": "title_designer_page.get_object_setting_scale_width_value()",
+        "description": "[Action][Title Designer] Get Object Setting Scale Width Value"
+    },
+    {
+        "name": "title_designer_page.input_object_setting_scale_height_value(value, image=0)",
+        "description": "[Action][Title Designer] Input Object Setting Scale Height Value"
+    },
+    {
+        "name": "title_designer_page.get_object_setting_scale_height_value()",
+        "description": "[Action][Title Designer] Get Object Setting Scale Height Value"
+    },
+    {
+        "name": "title_designer_page.set_check_object_setting_scale_ease_in(bCheck=1)",
+        "description": "[Action][Title Designer] Set Check Object Setting Scale Ease In"
+    },
+    {
+        "name": "title_designer_page.drag_object_setting_scale_ease_in_slider(value)",
+        "description": "[Action][Title Designer] Drag Object Setting -- Scale -- Ease In Slider"
+    },
+    {
+        "name": "title_designer_page.get_object_setting_scale_ease_in_value()",
+        "description": "[Action][Title Designer] Get Object Setting -- Scale -- Ease In Value"
+    },
+    {
+        "name": "title_designer_page.set_check_object_setting_scale_ease_out(bCheck=1)",
+        "description": "[Action][Title Designer] Set Check Object Setting -- Scale -- Ease Out"
+    },
+    {
+        "name": "title_designer_page.get_object_setting_scale_ease_out_value()",
+        "description": "[Action][Title Designer] Get Object Setting -- Scale -- Ease Out Value"
+    },
+    {
+        "name": "title_designer_page.drag_object_setting_scale_ease_out_slider(value)",
+        "description": "[Action][Title Designer] Drag Object Setting -- Scale -- Ease Out Slider"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_opacity_add_keyframe_control()",
+        "description": "[Action][Title Designer] Add Keyframe Control in Opacity"
+    },
+    {
+        "name": "title_designer_page.drag_object_setting_opacity_slider(value)",
+        "description": "[Action][Title Designer] Drag Object Setting -- Opacity Slider"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_rotation_add_keyframe_control()",
+        "description": "[Action][Title Designer] Add Keyframe Control in Rotation"
+    },
+    {
+        "name": "title_designer_page.click_object_setting_rotation_next_keyframe()",
+        "description": "[Action][Title Designer] Click Next Keyframe Control in Rotation"
+    },
+    {
+        "name": "title_designer_page.input_object_setting_rotation_value(value, image=0)",
+        "description": "[Action][Title Designer] Input Object Setting Rotation Value"
+    },
+    {
+        "name": "title_designer_page.get_object_setting_rotation_value()",
+        "description": "[Action][Title Designer] Get Object Setting Rotation Value"
+    },
+    {
+        "name": "title_designer_page.set_check_object_setting_rotation_ease_out(bCheck=1)",
+        "description": "[Action][Title Designer] Set Check Object Setting -- Rotation -- Ease Out"
+    },
+    {
+        "name": "title_designer_page.input_object_setting_rotation_ease_out_value(value)",
+        "description": "[Action][Title Designer] Input Object Setting -- Rotation -- Ease Out Value"
+    },
+    {
+        "name": "title_designer_page.select_animation_in_animation_effect(category_index, select_tmp_index)",
+        "description": "[Action][Title Designer] Apply in Animation Effect"
+    },
+    {
+        "name": "title_designer_page.click_simple_track_opacity_keyframe_control(track_no)",
+        "description": "[Action][Title Designer] Click Object Settings -- Simple Track Opacity -- Keyframe Control"
+    },
+    {
+        "name": "title_designer_page.click_simple_track_opacity_previous_keyframe(track_no)",
+        "description": "[Action][Title Designer] Click Object Settings -- Simple Track Opacity -- Previous Keyframe"
+    },
+    {
+        "name": "title_designer_page.click_simple_track_opacity_next_keyframe(track_no)",
+        "description": "[Action][Title Designer] Click Object Settings -- Simple Track Opacity -- Next Keyframe"
+    },
+    {
+        "name": "title_designer_page.unfold_object_font_face_tab(unfold=1)",
+        "description": "[Action][TitleDesigner] Fold or Unfold [Font Face] Tab"
+    },
+    {
+        "name": "title_designer_page.unfold_object_shadow_tab(unfold=1)",
+        "description": "[Action][TitleDesigner] Fold/ Unfold [Shadow] Tab"
+    },
+    {
+        "name": "title_designer_page.unfold_object_object_setting_tab(unfold=1)",
+        "description": "[Action][TitleDesigner] Fold/ Unfold [Object Setting] Tab"
+    },
+    {
+        "name": "title_designer_page.unfold_animation_in_animation_tab(unfold=1)",
+        "description": "[Action][TitleDesigner] Fold/ Unfold [In Animation] Tab"
+    },
+    {
+        "name": "title_designer_page.unfold_animation_out_animation_tab(unfold=1)",
+        "description": "[Action][TitleDesigner] Fold/ Unfold [Out Animation] Tab"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.handle_warning_msg(tick_option=1)",
+        "description": "[Action][TitleDesigner][MGT] Check if warning message show up and deal with dont show again option"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_warning_msg_ok()",
+        "description": "[Action][TitleDesigner][MGT] Click OK button on warning message dialog"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.select_title_track(value)",
+        "description": "[Action][TitleDesigner][MGT] Select title track"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.input_title_text(text)",
+        "description": "[Action][TitleDesigner][MGT] Input title text"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.apply_font_type(text)",
+        "description": "[Action][TitleDesigner][MGT] Apply font type"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_bold_btn()",
+        "description": "[Action][TitleDesigner][MGT] Click Bold button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.apply_font_face_color(HexColor)",
+        "description": "[Action][TitleDesigner][MGT] Apply font face color"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.apply_graphics_color(group_no, HexColor)",
+        "description": "[Action][TitleDesigner][MGT] Apply Graphics Color"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.set_position_x_value(value)",
+        "description": "[Action][TitleDesigner][MGT] Set Position X value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.get_position_x_value()",
+        "description": "[Action][TitleDesigner][MGT] Get position x value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_position_x_arrow_btn(index, times=1)",
+        "description": "[Action][TitleDesigner][MGT] Click position x arrow button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.set_position_y_value(value)",
+        "description": "[Action][TitleDesigner][MGT] Set Position Y value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.get_position_y_value()",
+        "description": "[Action][TitleDesigner][MGT] Get position y value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_position_y_arrow_btn(index, times=1)",
+        "description": "[Action][TitleDesigner][MGT] Click position y arrow button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.get_scale_width_value()",
+        "description": "[Action][TitleDesigner][MGT] Get scale width value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_scale_width_arrow_btn(index, times=1)",
+        "description": "[Action][TitleDesigner][MGT] Click scale width arrow button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.drag_scale_width_slider(value)",
+        "description": "[Action][TitleDesigner][MGT] Drag scale width slider"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.set_scale_height_value(value)",
+        "description": "[Action][TitleDesigner][MGT] Set scale height value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.get_scale_height_value()",
+        "description": "[Action][TitleDesigner][MGT] Get scale height value"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_scale_height_arrow_btn(index, times=1)",
+        "description": "[Action][TitleDesigner][MGT] Click scale height arrow button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.drag_scale_height_slider(value)",
+        "description": "[Action][TitleDesigner][MGT] Drag scale height slider"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_maintain_aspect_ratio(bCheck=1)",
+        "description": "[Action][TitleDesigner][MGT] Tick/ Untick Maintain Aspect Ratio"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.unfold_title_tab(unfold=1)",
+        "description": "[Action][TitleDesigner][MGT] Fold/ Unfold Title Tab"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.unfold_object_setting_tab(unfold=1)",
+        "description": "[Action][TitleDesigner][MGT] Fold/ Unfold Object Setting Tab"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_viewer_zoom_menu(value='Fit')",
+        "description": "[Action][TitleDesigner][MGT] Set zoom value by menu"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_zoom_in(times=1)",
+        "description": "[Action][TitleDesigner][MGT] Click Zoom in button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_preview_operation(operation)",
+        "description": "[Action][Title Designer][MGT] Click preview operation -- play, pause, stop, previous frame, next frame, fast forward"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_undo_btn()",
+        "description": "[Action][TitleDesigner][MGT] Click Undo button"
+    },
+    {
+        "name": "title_designer_page.motion_graphic_title.click_zoom_out_btn(times=1)",
+        "description": "[Action][TitleDesigner][MGT] Click Zoom out button"
+    },
+    {
+        "name": "title_designer_page.handle_special_effect_want_to_continue(option=1)",
+        "description": "[Action][TitleDesigner][MotionGraphic] Handle special effect want to continue dialog"
+    },
+    {
+        "name": "title_designer_page.backdrop.set_unfold_tab(unfold=1)",
+        "description": "[Action][TitleDesigner][Backdrop] Fold/ Unfold the tab"
+    },
+    {
+        "name": "title_designer_page.backdrop.set_checkbox(bApply)",
+        "description": "[Action][TitleDesigner][Backdrop] Enable/ Disable the checkbox"
+    },
+    {
+        "name": "title_designer_page.backdrop.get_type()",
+        "description": "[Action][TitleDesigner][Backdrop] Get the type of backdrop"
+    },
+    {
+        "name": "title_designer_page.backdrop.check_width_disable()",
+        "description": "[Action][TitleDesigner][Backdrop] Get the status of width"
+    },
+    {
+        "name": "title_designer_page.backdrop.apply_uniform_color(HexColor)",
+        "description": "[Action][TitleDesigner][Backdrop] Apply color to backdrop"
+    },
+    {
+        "name": "title_designer_page.backdrop.set_maintain_aspect_ratio(bApply)",
+        "description": "[Action][TitleDesigner][Backdrop] Enable/ Disable maintain aspect ratio"
+    },
+    {
+        "name": "specialeffect.set_unfold_tab(unfold=1)",
+        "description": "[Action][TitleDesigner][SpecialEffect] Fold/ Unfold the tab"
+    },
+    {
+        "name": "specialeffect.apply_effect(index)",
+        "description": "[Action][TitleDesigner][SpecialEffect] Apply effect"
+    },
+    {
+        "name": "specialeffect.set_look_menu(index)",
+        "description": "[Action][TitleDesigner][SpecialEffect] Set the look of effect"
+    },
+    {
+        "name": "path.set_unfold(unfold=1)",
+        "description": "[Action][TitleDesigner][Path] Fold/ Unfold the tab"
+    },
+    {
+        "name": "path.select_path(index)",
+        "description": "[Action][TitleDesigner][Path] Select and apply the path"
+    },
+    {
+        "name": "adjusttitleoncanvas.resize_to_small(x, y, dot='lt')",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Resize the title to small"
+    },
+    {
+        "name": "adjusttitleoncanvas.drag_move_to_left(x)",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Move the title to left"
+    },
+    {
+        "name": "adjusttitleoncanvas.drag_move_to_right(x)",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Move the title to right"
+    },
+    {
+        "name": "adjusttitleoncanvas.drag_rotate_clockwise(angle)",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Rotate the title clockwise"
+    },
+    {
+        "name": "adjusttitleoncanvas.drag_rotate_anticlockwise(angle)",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Rotate the title anticlockwise"
+    },
+    {
+        "name": "adjusttitleoncanvas.drag_move_MGT_to_right(drag_x=50, mouse_default_multiple=0.5)",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Move the title to right"
+    },
+    {
+        "name": "adjusttitleoncanvas.drag_move_particle_to_left(x)",
+        "description": "[Action][TitleDesigner][AdjustTitleOnCanvas] Move [Particle] to left"
+    },
+    {
+        "name": "adjustset.set_value(value)",
+        "description": "[Action][Mask Designer][AdjustSet] Set value"
+    },
+    {
+        "name": "easeset.set_checkbox(value)",
+        "description": "[Action][Mask Designer][EaseSet] Enable/ Disable checkbox"
+    },
+    {
+        "name": "mask_designer.save_as.click_ok()",
+        "description": "[Action][Mask Designer][Save As] Click OK"
+    },
+    {
+        "name": "mask_designer.save_as.input_name(name)",
+        "description": "[Action][Mask Designer][Save As] Input name"
+    },
+    {
+        "name": "mask_designer.object_settings.moduleset.click_previous_keyframe()",
+        "description": "[Action][Mask Designer][Object Settings][ModuleSet] Click Previous Keyframe"
+    },
+    {
+        "name": "mask_designer.object_settings.moduleset.click_add_remove_keyframe()",
+        "description": "[Action][Mask Designer][Object Settings][ModuleSet] Click Add/Remove Keyframe"
+    },
+    {
+        "name": "mask_designer.object_settings.moduleset.click_next_keyframe()",
+        "description": "[Action][Mask Designer][Object Settings][ModuleSet] Click Next Keyframe"
+    },
+    {
+        "name": "mask_designer.object_settings.moduleset.click_reset_keyframe()",
+        "description": "[Action][Mask Designer][Object Settings][ModuleSet] Click Reset Keyframe"
+    },
+    {
+        "name": "mask_designer.object_settings.get_rotation_value()",
+        "description": "[Action][Mask Designer][Object Settings] Get Rotation Value"
+    },
+    {
+        "name": "mask_designer.object_settings.set_rotation(value)",
+        "description": "[Action][Mask Designer][Object Settings] Set Rotation"
+    },
+    {
+        "name": "mask_designer.simple_timeline.position.add_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Position] Add Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.position.click_previous_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Position] Click Previous Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.position.click_next_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Position] Click Next Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.scale.add_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Scale] Add Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.scale.click_previous_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Scale] Click Previous Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.scale.click_next_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Scale] Click Next Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.opacity.add_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Opacity] Add Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.opacity.click_previous_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Opacity] Click Previous Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.opacity.click_next_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Opacity] Click Next Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.rotation.add_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Rotation] Add Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.rotation.click_previous_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Rotation] Click Previous Keyframe"
+    },
+    {
+        "name": "mask_designer.simple_timeline.rotation.click_next_keyframe()",
+        "description": "[Action][Mask Designer][Simple Track][Rotation] Click Next Keyframe"
+    },
+    {
+        "name": "mask_designer.set_MaskDesigner_timecode(timecode)",
+        "description": "[Action][Mask Designer] Set timecode"
+    },
+    {
+        "name": "mask_designer.get_timecode()",
+        "description": "[Action][Mask Designer] Get timecode"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_Only_Show_Selected_track_SetCheck(check_it=True)",
+        "description": "[Action][Mask Designer] Tick/ Untick [Only Show Selected Track]"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_ClickOK()",
+        "description": "[Action][Mask Designer] Click [OK] on Mask Designer"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_ClickSaveAs()",
+        "description": "[Action][Mask Designer] Click [Save As]"
+    },
+    {
+        "name": "mask_designer.share_to_cloud(name, tags, collection, description, verify_dz_link=0, only_dz=0)",
+        "description": "[Action][Mask Designer] Share template to cloud"
+    },
+    {
+        "name": "mask_designer.drag_Mask_Settings_Scroll_Bar(value)",
+        "description": "[Action][Mask Designer] Scroll bar"
+    },
+    {
+        "name": "mask_designer.MaskDesigner_Apply_template(index)",
+        "description": "[Action][Mask Designer] Apply mask preset by index"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_CreateImageMask(full_path)",
+        "description": "[Action][Mask Designer] Create Custom Mask from Image"
+    },
+    {
+        "name": "mask_designer.click_create_text_mask_btn()",
+        "description": "[Action][Mask Designer] Click [Create Text Mask]"
+    },
+    {
+        "name": "mask_designer.is_enter_brush_mask_designer()",
+        "description": "[Verify][Mask Designer] Check [Brush Mask Designer] is opened"
+    },
+    {
+        "name": "mask_designer.click_create_brush_mask_btn()",
+        "description": "[Action][Mask Designer] Click [Create Brush Mask]"
+    },
+    {
+        "name": "mask_designer.brush_mask.click_reset()",
+        "description": "[Action][Mask Designer][Brush Mask] Click [Reset]"
+    },
+    {
+        "name": "mask_designer.brush_mask.tools.set_smart_brush()",
+        "description": "[Action][Mask Designer][Brush Mask][Tools] Set Smart Brush"
+    },
+    {
+        "name": "mask_designer.brush_mask.drag_tool_on_canvas_from_upper_left()",
+        "description": "[Action][Mask Designer][Brush Mask] Drag tool on canvas from upper left"
+    },
+    {
+        "name": "mask_designer.brush_mask.drag_tool_on_canvas_from_upper_middle()",
+        "description": "[Action][Mask Designer][Brush Mask] Drag tool on canvas from upper middle"
+    },
+    {
+        "name": "mask_designer.brush_mask.drag_tool_on_canvas_from_upper_right()",
+        "description": "[Action][Mask Designer][Brush Mask] Drag tool on canvas from upper right"
+    },
+    {
+        "name": "mask_designer.brush_mask.width.set_value(value)",
+        "description": "[Action][Mask Designer][Brush Mask][Width] Set width"
+    },
+    {
+        "name": "mask_designer.brush_mask.click_ok_btn()",
+        "description": "[Action][Mask Designer][Brush Mask] Click [OK] button"
+    },
+    {
+        "name": "mask_designer.switch_to_motion()",
+        "description": "[Action][Mask Designer] Switch to [Motion] tab"
+    },
+    {
+        "name": "mask_designer.switch_to_mask()",
+        "description": "[Action][Mask Designer] Switch to [Mask] tab"
+    },
+    {
+        "name": "mask_designer.motion_tab.open_path_tag(open=1)",
+        "description": "[Action][Mask Designer][Motion] Click [Path] Tab"
+    },
+    {
+        "name": "mask_designer.motion_tab.select_path_template(index)",
+        "description": "[Action][Mask Designer][Motion] Select [Path] Template by index"
+    },
+    {
+        "name": "mask_designer.adjust_object_on_canvas_resize(x=100, y=100)",
+        "description": "[Action][Mask Designer] Resize object on canvas"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_Invert_mask_SetCheck(check=True)",
+        "description": "[Action][Mask Designer] Enable/ Disable [Invert Mask]"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_Feather_radius_InputValue(value)",
+        "description": "[Action][Mask Designer] Set Feather Radius Value by textbox"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_PreviewOperation(operation)",
+        "description": "[Action][Mask Designer] Click preview operation -- play, pause, stop, previous frame, next frame, fast forward"
+    },
+    {
+        "name": "mask_designer.Edit_MaskDesigner_RemoveCustomMask(index)",
+        "description": "[Action][Mask Designer] Remove custom mask by index"
+    },
+    {
+        "name": "mask_designer.move_object_on_canvas(offset_x=50, offset_y=50)",
+        "description": "[Action][Mask Designer] Move the object on canvas by offset_x and offset_y"
+    },
+    {
+        "name": "mask_designer.rotate_object_on_canvas(degrees=90)",
+        "description": "[Action][Mask Designer] Rotate the object on canvas by degrees"
+    },
+    {
+        "name": "mask_designer.click_create_selection_mask_btn()",
+        "description": "[Action][Mask Designer] Click [Create Selection Mask] button"
+    },
+    {
+        "name": "mask_designer.draw_triangle_on_canvas(angle=3)",
+        "description": "[Action][Mask Designer] Draw a triangle on canvas"
+    },
+    {
+        "name": "downloadfromcldz.select_template(name)",
+        "description": "[Action][DownloadFromCLDZ] Select template"
+    },
+    {
+        "name": "downloadfromcldz.tap_delete_button()",
+        "description": "[Action][DownloadFromCLDZ] Delete template"
+    },
+    {
+        "name": "timeline_operation_page.click_view_entire_video_btn()",
+        "description": "[Action] Click the [View Entire Video] button"
+    },
+    {
+        "name": "timeline_operation_page.select_timeline_media(track_index, clip_index)",
+        "description": "[Action][Timeline] Select a clip on timeline"
+    },
+    {
+        "name": "timeline_operation_page.edit_specific_video_track_set_lock_unlock(track_index)",
+        "description": "[Action][Timeline Operation] Set the track lock/unlock"
+    },
+    {
+        "name": "pip_room.click_DownloadContent_from_DZCL()",
+        "description": "[Action][Pip Room] Click \"Download Content from DirectorZone/ Cloud\""
+    },
+    {
+        "name": "project_room_page.enter_project_room()",
+        "description": "[Action][Project_Room] Enter [My Project]"
+    },
+    {
+        "name": "project_room_page.tips_area_insert_project_to_selected_track()",
+        "description": "[Action][Project_Room] Insert Project to seleted track"
+    },
+    {
+        "name": "particle_room_page.click_DownloadContent_from_DZCloud()",
+        "description": "[Action][Particle Room] Click Download Content from DirectorZone/Cloud"
+    },
+    {
+        "name": "particle_room_page.search_Particle_room_library(name=None)",
+        "description": "[Action][Particle Room] Search Particle room library"
+    },
+    {
+        "name": "title_room.click_DownloadContent_from_DZCL()",
+        "description": "[Action][TitleRoom] Click \"Download Content from DirectorZone/Cloud\""
+    },
+    {
+        "name": "download_from_ss_page.click_close()",
+        "description": "[Action][ShutterStock Page][ShutterStock] Close Getty Image window"
+    },
+    {
+        "name": "download_from_ss_page.is_enabled_download()",
+        "description": "[Verify][ShutterStock Page][ShutterStock] Check if [Download] button is enabled or not"
+    },
+    {
+        "name": "download_from_ss_page.switch_to_video()",
+        "description": "[Action][ShutterStock Page][ShutterStock] Switch to [Video] tab"
+    },
+    {
+        "name": "download_from_ss_page.switch_to_photo()",
+        "description": "[Action][ShutterStock Page][ShutterStock] Switch to [Photo] tab"
+    },
+    {
+        "name": "video.select_thumbnail_for_video_intro_designer(index)",
+        "description": "[Action][ShutterStock Page][Video] Select stock media by thumbnail index"
+    },
+    {
+        "name": "video.select_clip(value)",
+        "description": "[Action][ShutterStock Page][Video] Select Clip"
+    },
+    {
+        "name": "photo.select_thumbnail_then_download(index)",
+        "description": "[Verify][ShutterStock Page][Photo] Select stock media by thumbnail index and Download"
+    },
+    {
+        "name": "search.click_clear()",
+        "description": "[Action][ShutterStock Page][Search] Click [Clear] Button"
+    },
+    {
+        "name": "search.search_text(value)",
+        "description": "[Action][ShutterStock Page][Search] Search content by text"
+    },
+    {
+        "name": "intro_video_page.enter_intro_video_room()",
+        "description": "[Action][Intro Video Room] Enter Intro Video Room"
+    },
+    {
+        "name": "intro_video_page.click_intro_specific_category(strName)",
+        "description": "[Action][Intro Video Room] Click specific category by name"
+    },
+    {
+        "name": "intro_video_page.select_intro_template_method_2(index)",
+        "description": "[Action][Intro Video Room] Select Intro Template with method 2"
+    },
+    {
+        "name": "intro_video_page.enter_saved_category()",
+        "description": "[Action][Intro Video Room] Enter Saved Category"
+    },
+    {
+        "name": "intro_video_page.enter_my_favorites()",
+        "description": "[Action][Intro Video Room] Enter My Favorites"
+    },
+    {
+        "name": "intro_video_page.enter_my_profile()",
+        "description": "[Action][Intro Video Room] Enter My Profile"
+    },
+    {
+        "name": "intro_video_page.click_btn_add_to_timeline()",
+        "description": "[Action][Intro Video Room] Click Add to Timeline Button"
+    },
+    {
+        "name": "intro_video_page.set_designer_timecode(timecode)",
+        "description": "[Action][Intro Video Room] Set Timecode"
+    },
+    {
+        "name": "intro_video_page.get_designer_timecode()",
+        "description": "[Action][Intro Video Room] Set preview Timecode"
+    },
+    {
+        "name": "intro_video_page.click_btn_save_as(custom_name, option=1)",
+        "description": "[Action][Intro Video Room] Click Save As Button and Save"
+    },
+    {
+        "name": "intro_video_page.click_btn_share_template(custom_name)",
+        "description": "[Action][Intro Video Room] Click Share template button and share"
+    },
+    {
+        "name": "intro_video_page.click_preview_operation(operation)",
+        "description": "[Action][Intro Video Room] Click Preview Operation for Play/Pause/Stop"
+    },
+    {
+        "name": "intro_video_page.hover_preview_center(y_threshold=0.4)",
+        "description": "[Action][Intro Video Room] Hover at Center of Preview Area"
+    },
+    {
+        "name": "intro_video_page.click_preview_center()",
+        "description": "[Action][Intro Video Room] Click Preview Center"
+    },
+    {
+        "name": "intro_video_page.move_preview_object_to_left_upper(x_threshold=0.3, y_threshold=0.1)",
+        "description": "[Action][Intro Video Room] Move Preview Object to Left Upper"
+    },
+    {
+        "name": "intro_video_page.move_preview_object_to_down(y_threshold=0.6)",
+        "description": "[Action][Intro Video Room] Move Preview Object to Down"
+    },
+    {
+        "name": "intro_video_page.click_duration_btn()",
+        "description": "[Action][Intro Video Room] Click Duration button"
+    },
+    {
+        "name": "intro_video_page.click_replace_media(option)",
+        "description": "[Action][Intro Video Room] Click Replace Media and choose option"
+    },
+    {
+        "name": "intro_video_page.click_trim_btn()",
+        "description": "[Action][Intro Video Room] Click Crop button"
+    },
+    {
+        "name": "intro_video_page.click_crop_btn()",
+        "description": "[Action][Intro Video Room] Click Crop button"
+    },
+    {
+        "name": "intro_video_page.click_LUT_btn()",
+        "description": "[Action][Intro Video Room] Click LUT button"
+    },
+    {
+        "name": "intro_video_page.click_add_text(option)",
+        "description": "[Action][Intro Video Room] Click Add Text button and choose option"
+    },
+    {
+        "name": "intro_video_page.click_add_image(option)",
+        "description": "[Action][Intro Video Room] Click Add Image button and choose option"
+    },
+    {
+        "name": "intro_video_page.click_add_pip_object()",
+        "description": "[Action][Intro Video Room] Click Add PIP Object Button"
+    },
+    {
+        "name": "intro_video_page.cancel_selection_button()",
+        "description": "[Action][Intro Video Room] Cancel Selection"
+    },
+    {
+        "name": "intro_video_page.select_pip_template(index, category=None)",
+        "description": "[Action][Intro Video Room] Select and Insert PIP Template"
+    },
+    {
+        "name": "intro_video_page.click_layer_order(option)",
+        "description": "[Action][Intro Video Room] Click Layer Order and choose option to modify order"
+    },
+    {
+        "name": "intro_video_page.duration_setting.get_org_duration()",
+        "description": "[Action][Intro Video Room] Get Original Duration Time"
+    },
+    {
+        "name": "intro_video_page.duration_setting.set_new_duration(value)",
+        "description": "[Action][Intro Video Room] Set Duration Time to target value"
+    },
+    {
+        "name": "intro_video_page.duration_setting.get_new_duration()",
+        "description": "[Action][Intro Video Room] Get New Duration Time"
+    },
+    {
+        "name": "intro_video_page.duration_setting.click_OK()",
+        "description": "[Action][Intro Video Room] Click OK to confirm the duration setting"
+    },
+    {
+        "name": "intro_video_page.color_filter.close_x()",
+        "description": "[Action][Intro Video Room] Close LUT window"
+    },
+    {
+        "name": "intro_video_page.color_filter.select_LUT_template(index, category=None)",
+        "description": "[Action][Intro Video Room] Select LUT template"
+    },
+    {
+        "name": "intro_video_page.backdrop_settings.enable_backdrop(value=1)",
+        "description": "[Action][Intro Video Room] Enable Backdrop"
+    },
+    {
+        "name": "intro_video_page.backdrop_settings.set_type(index, fit_type=None)",
+        "description": "[Action][Intro Video Room] Set Backdrop Type"
+    },
+    {
+        "name": "intro_video_page.general_title.click_backdrop_button()",
+        "description": "[Action][Intro Video Room] Click Backdrop Button"
+    },
+    {
+        "name": "intro_video_page.general_title.click_remove_button()",
+        "description": "[Action][Intro Video Room] Click Remove Button in Preview Center"
+    },
+    {
+        "name": "intro_video_page.general_title.in_animation.unfold_setting(option)",
+        "description": "[Action][Intro Video Room][In Animation] Unfold Setting"
+    },
+    {
+        "name": "intro_video_page.general_title.in_animation.select_template(index)",
+        "description": "[Action][Intro Video Room][In Animation] Select Template and Apply"
+    },
+    {
+        "name": "intro_video_page.motion_graphics.select_template(index, category=None)",
+        "description": "[Action][Intro Video Room] Select Template and Import in Motion Graphics"
+    },
+    {
+        "name": "intro_video_page.image.click_animation_btn()",
+        "description": "[Action][Intro Video Room] Click Animation Button"
+    },
+    {
+        "name": "intro_video_page.cropzoompan.resize_to_small()",
+        "description": "[Action][Intro Video Room][Crop] Resize to small by dragging left-upper node"
+    },
+    {
+        "name": "intro_video_page.cropzoompan.leave_crop(option=None)",
+        "description": "[Action][Intro Video Room][Crop] Click option on Crop window"
+    },
+    {
+        "name": "intro_video_page.my_profile.delete_1st_template()",
+        "description": "[Action][Intro Video Room] Delete 1st Template"
+    },
+    {
+        "name": "intro_video_page.share_temp.click_confirm()",
+        "description": "[Action][Intro Video Room] Confirm Copyright for sharing Tempalte"
+    },
+    {
+        "name": "intro_video_page.share_temp.click_share(input_description='Have a nice day')",
+        "description": "[Action][Intro Video Room] Click Share button to Share Template"
+    },
+    {
+        "name": "main_page.tap_TipsArea_Tools_menu(index)",
+        "description": "[Action][Main Page] Tap [Tool Menu] on [Tips Area]"
+    },
+    {
+        "name": "main_page.tips_area_insert_media_to_selected_track(option=-1)",
+        "description": "[Action][Main_page] Insert media to selected track"
+    },
+    {
+        "name": "main_page.tips_area_click_designer(check_designer=1)",
+        "description": "[Action][Main_page] Open [designer window] by [tips area]"
+    },
+    {
+        "name": "main_page.set_time_code(el_locator, duration, is_verify=True)",
+        "description": "[Action][Main_page] Set Timecode"
+    },
+    {
+        "name": "main_page.tips_area_click_set_length_of_selected_clip(duration)",
+        "description": "[Action][Main_page] Click Set Length of Selected Clip"
+    },
+    {
+        "name": "main_page.set_timeline_timecode(time_code, is_verify=True)",
+        "description": "[Action][Main_page] Set timeline timecode"
+    },
+    {
+        "name": "main_page.set_library_preview_timecode(time_code)",
+        "description": "[Action][Main_page] Set Timecode on Library Preview"
+    },
+    {
+        "name": "main_page.enter_room(index)",
+        "description": "[Action][Main_page] Enter Room"
+    },
+    {
+        "name": "main_page.select_library_icon_view_media(name)",
+        "description": "[Action][Main_page] Select media by library icon view"
+    },
+    {
+        "name": "main_page.close_and_restart_app()",
+        "description": "[Action][Main_page] Close and Restart App"
+    },
+    {
+        "name": "main_page.click_undo()",
+        "description": "[Action][Main_page] Click [Undo] button"
+    },
+    {
+        "name": "main_page.click_produce()",
+        "description": "[Action][Main_page] Click [Produce] button"
+    },
+    {
+        "name": "main_page.timeline_select_track(track_no)",
+        "description": "[Action][Main_page] select target track on timeline"
+    },
+    {
+        "name": "main_page.set_project_aspect_ratio_4_3()",
+        "description": "[Action][Main_page] Set [Project Aspect Ratio] as (4:3)"
+    },
+    {
+        "name": "main_page.set_project_aspect_ratio_9_16()",
+        "description": "[Action][Main_page] Set [Project Aspect Ratio] as (9:16)"
+    },
+    {
+        "name": "main_page.set_project_aspect_ratio_1_1()",
+        "description": "[Action][Main_page] Set [Project Aspect Ratio] as (1:1)"
+    },
+    {
+        "name": "main_page.handle_save_file_dialog(name, folder_path)",
+        "description": "[Action][Main_page] Handle [Save Project] Dialog"
+    },
+    {
+        "name": "main_page.top_menu_bar_file_open_project(save_changes=None)",
+        "description": "[Action][Main_page] Open Project from top menu bar"
+    },
+    {
+        "name": "main_page.handle_open_project_dialog(file_path, uncompress_folder_path='')",
+        "description": "[Action][Main_page] Deal with [Open Project] dialog"
+    },
+    {
+        "name": "main_page.handle_merge_media_to_current_library_dialog(option='yes', do_not_show_again='yes', timeout=30)",
+        "description": "[Action][Main_page] Deal with merge media to current library dialog"
+    },
+    {
+        "name": "main_page.top_menu_bar_file_new_project()",
+        "description": "[Action][Main_page] Click [New Project] from top menu bar"
+    },
+    {
+        "name": "main_page.top_menu_bar_file_save_project_as()",
+        "description": "[Action][Main_page] Save project as from top menu bar"
+    },
+    {
+        "name": "main_page.handle_no_save_project_dialog(option='no')",
+        "description": "[Action][Main_page] Handle [Do you want to save changes] dialog"
+    },
+    {
+        "name": "main_page.top_menu_bar_file_pack_project_materials(project_path)",
+        "description": "[Action][Main_page] Open [Pack Project Materials] from top menu bar"
+    },
+    {
+        "name": "main_page.top_menu_bar_plugins_video_collage_designer()",
+        "description": "[Action][Main_page] Open [Video Collage Designer] from top menu bar"
+    },
+    {
+        "name": "main_page.top_menu_bar_view_show_library_preview_window(is_enable=1)",
+        "description": "[Action][Main_page] Click [Show Library Preview Window] from top menu bar"
+    },
+    {
+        "name": "main_page.top_menu_bar_view_show_timeline_preview_volume_meter()",
+        "description": "[Action][Main_page] Enable/ Disable [Show Timeline Preview Volume Meter] from top menu bar"
+    },
+    {
+        "name": "main_page.click_set_user_preferences()",
+        "description": "[Action][Main_page] Click [Set User Preferences]"
+    },
+    {
+        "name": "main_page.drag_media_to_timeline_playhead_position(name, track_no=1)",
+        "description": "[Action][Main_page] Drag media to timeline playhead position"
+    },
+    {
+        "name": "main_page.drag_transition_to_timeline_clip(transition_name, clip_2nd_name, clip_index=0)",
+        "description": "[Action][Main Page] Drag Transition to timeline clip"
+    },
+    {
+        "name": "main_page.handle_aspect_ratio_conflict(option='no')",
+        "description": "[Action][Main_page] Handle [Aspect Ratio Conflict] dialog"
+    },
+    {
+        "name": "main_page.click_close_then_back_to_launcher()",
+        "description": "[Action] Close AP and back to launcher"
+    },
+    {
+        "name": "trim.check_in_Trim()",
+        "description": "[Verify][Trim Page] Check if enter [Trim] Window"
+    },
+    {
+        "name": "videocollagedesigner.check_window_opened()",
+        "description": "[Verify][VideoCollageDesigner] Check if [Video Collage Designer] window opened"
+    },
+    {
+        "name": "videocollagedesigner.set_timecode(timecode)",
+        "description": "[Action][VideoCollageDesigner] Set Timecode"
+    },
+    {
+        "name": "videocollagedesigner.get_timecode()",
+        "description": "[Action][VideoCollageDesigner] Get Timecode"
+    },
+    {
+        "name": "videocollagedesigner.click_ok()",
+        "description": "[Action][VideoCollageDesigner] Click [OK] button to leave [Video Collage Designer] window"
+    },
+    {
+        "name": "videocollagedesigner.click_save_as_with_name(name)",
+        "description": "[Action][VideoCollageDesigner] Save As the custom layout with name"
+    },
+    {
+        "name": "videocollagedesigner.share_to_dz(name)",
+        "description": "[Action][VideoCollageDesigner] Share to DZ with name"
+    },
+    {
+        "name": "videocollagedesigner.click_preview_operation(op)",
+        "description": "[Action][VideoCollageDesigner] Click preview operation -- play, pause, stop, previous frame, next frame, fast forward"
+    },
+    {
+        "name": "videocollagedesigner.border.set_scroll_bar(value)",
+        "description": "[Action][VideoCollageDesigner][Border] Scroll bar"
+    },
+    {
+        "name": "videocollagedesigner.border.get_border_value()",
+        "description": "[Action][VideoCollageDesigner][Border] Get Value"
+    },
+    {
+        "name": "videocollagedesigner.border.set_border_slider(value)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Value by Slider"
+    },
+    {
+        "name": "videocollagedesigner.border.is_border_color(color)",
+        "description": "[Verify][VideoCollageDesigner][Border] Check if Border Color as Expected"
+    },
+    {
+        "name": "videocollagedesigner.border.set_border_color(color, _target=None)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Border Color"
+    },
+    {
+        "name": "videocollagedesigner.border.get_interclip_value()",
+        "description": "[Action][VideoCollageDesigner][Border] Get Interclip Value"
+    },
+    {
+        "name": "videocollagedesigner.border.set_interclip_slider(value)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Interclip by Slider"
+    },
+    {
+        "name": "videocollagedesigner.border.set_interclip_value(value)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Interclip Value by Input"
+    },
+    {
+        "name": "videocollagedesigner.border.set_fill_type(index)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Fill Type"
+    },
+    {
+        "name": "videocollagedesigner.border.set_uniform_color(color)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Uniform Color"
+    },
+    {
+        "name": "videocollagedesigner.border.get_uniform_color()",
+        "description": "[Action][VideoCollageDesigner][Border] Get Uniform Color"
+    },
+    {
+        "name": "videocollagedesigner.border.select_interclip_texture(path)",
+        "description": "[Action][VideoCollageDesigner][Border] Select Interclip Texture by Path"
+    },
+    {
+        "name": "videocollagedesigner.border.set_frame_animation(index)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Frame Animation"
+    },
+    {
+        "name": "videocollagedesigner.border.set_start_playback(index)",
+        "description": "[Action][VideoCollageDesigner][Border] Set Start Clip Playback by index"
+    },
+    {
+        "name": "videocollagedesigner.border.set_before_after_clip_playback(index)",
+        "description": "[Action][VideoCollageDesigner][Border] Set [Before/ After Clip Playback] by index"
+    },
+    {
+        "name": "videocollagedesigner.border.set_before_after_color_board(color)",
+        "description": "[Action][VideoCollageDesigner][Border] Set [Before/ After Clip Playback -- Color Board] Color"
+    },
+    {
+        "name": "videocollagedesigner.border.click_advanced_setting()",
+        "description": "[Action][VideoCollageDesigner][Border] Click [Advanced Setting] button"
+    },
+    {
+        "name": "videocollagedesigner.border.advanced.set_playback_timing(index)",
+        "description": "[Action][VideoCollageDesigner][Border][Advanced] Set [Playback Timing] by index"
+    },
+    {
+        "name": "videocollagedesigner.border.advanced.set_delay_sec(sec)",
+        "description": "[Action][VideoCollageDesigner][Border][Advanced] Set [Playback Timing - Delay Time] by sec"
+    },
+    {
+        "name": "videocollagedesigner.border.advanced.set_match_collage_duration_to(index)",
+        "description": "[Action][VideoCollageDesigner][Border][Advanced] Set match collage duration"
+    },
+    {
+        "name": "videocollagedesigner.border.advanced.click_ok()",
+        "description": "[Action][VideoCollageDesigner][Border][Advanced] Click [OK] button to leave Advanced Setting"
+    },
+    {
+        "name": "videocollagedesigner.media.import_media(file_path, option=0, timeout = 30)",
+        "description": "[Action][VideoCollageDesigner][Media] Import media"
+    },
+    {
+        "name": "videocollagedesigner.media.select_category(index)",
+        "description": "[Action][VideoCollageDesigner][Media] Select media category"
+    },
+    {
+        "name": "videocollagedesigner.media.click_auto_fill()",
+        "description": "[Action][VideoCollageDesigner][Media] Click [Auto Fill] button"
+    },
+    {
+        "name": "videocollagedesigner.media.select_media(name)",
+        "description": "[Action][VideoCollageDesigner][Media] Select media by name"
+    },
+    {
+        "name": "videocollagedesigner.layout.select_layout(index)",
+        "description": "[Action][VideoCollageDesigner][Layout] Select layout"
+    },
+    {
+        "name": "videocollagedesigner.layout.click_remove_yes()",
+        "description": "[Action][VideoCollageDesigner][Layout] Remove layout with [Yes]"
+    },
+    {
+        "name": "videocollagedesigner.preview.enter_duration_setting_by_right_click_menu()",
+        "description": "[Action][VideoCollageDesigner][Preview] Enter [Dutation Settings] Window by Right Click Menu"
+    },
+    {
+        "name": "videocollagedesigner.preview.remove_clip_on_preview_by_right_click_menu()",
+        "description": "[Action][VideoCollageDesigner][Preview] Remove Clip on Preview by Right Click Menu"
+    },
+    {
+        "name": "videocollagedesigner.preview.exchange_media_by_drag_mouse_on_preview()",
+        "description": "[Action][VideoCollageDesigner][Preview] Exchange Media by Drag Mouse on Preview"
+    },
+    {
+        "name": "videocollagedesigner.preview.hover_on_slot_with_layout_10(times_of_size_w, times_of_size_h)",
+        "description": "[Action][VideoCollageDesigner][Preview] Hover on slot with layout 10"
+    },
+    {
+        "name": "videocollagedesigner.preview.zoom.zoom_in_by_arrow(times)",
+        "description": "[Action][VideoCollageDesigner][Preview][Zoom] Zoom In by Arrow"
+    },
+    {
+        "name": "videocollagedesigner.preview.zoom.zoom_out_by_arrow(times)",
+        "description": "[Action][VideoCollageDesigner][Preview][Zoom] Zoom Out by Arrow"
+    },
+    {
+        "name": "videocollagedesigner.preview.zoom.zoom_by_slider(value)",
+        "description": "[Action][VideoCollageDesigner][Preview][Zoom] Zoom by Slider"
+    },
+    {
+        "name": "videocollagedesigner.preview.trim.open_trim_window()",
+        "description": "[Action][VideoCollageDesigner][Preview][Trim] Click [Trim] button and check opened Trim Window"
+    },
+    {
+        "name": "library_preview_page.library_preview_click_dock()",
+        "description": "[Action][Library Preview] Click [Dock] button on [Preview Window]"
+    },
+    {
+        "name": "library_preview_page.library_preview_click_undock()",
+        "description": "[Action][Library Preview] Dock/ Undock [Preview Window]"
+    },
+    {
+        "name": "library_preview_page.library_preview_click_close_preview()",
+        "description": "[Action][Library Preview] Click [Close] button on [Preview Window]"
+    },
+    {
+        "name": "library_preview_page.library_preview_click_minimize()",
+        "description": "[Action][Library Preview] Click [Minimize] button on [Preview Window]"
+    },
+    {
+        "name": "library_preview_page.library_preview_show_library_preview()",
+        "description": "[Action][Library Preview] Click [Show Library Preview] button when [Minimized window]"
+    },
+    {
+        "name": "library_preview_page.library_preview_window_preview_operation(operation)",
+        "description": "[Action][Library Preview] Click Preview Operation for Play/ Pause/ Stop/ Previous Frame/ Next Frame/ Fast Forward"
+    },
+    {
+        "name": "library_preview_page.edit_library_preview_window_click_mark_in()",
+        "description": "[Action][Library Preview] Click [Mark In]"
+    },
+    {
+        "name": "library_preview_page.edit_library_preview_window_click_mark_out()",
+        "description": "[Action][Library Preview] Click [Mark Out]"
+    },
+    {
+        "name": "library_preview_page.edit_library_preview_window_click_insert_on_selected_track()",
+        "description": "[Action][Library Preview] Click [Insert] on selected track"
+    },
+    {
+        "name": "library_preview_page.edit_library_preview_window_add_clip_marker()",
+        "description": "[Action][Library Preview] Click [Add Clip Marker]"
+    },
+    {
+        "name": "library_preview_page.edit_library_preview_window_clip_marker_input_text(text)",
+        "description": "[Action][Library Preview] Input [Text] on [Modify Clip Marker]"
+    }
+]

@@ -1,6 +1,12 @@
 import re
 import json
-from db.mapping_table import class_mapping
+import os
+import sys
+
+parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(parent_path)
+
+from GenTestCaseCode.db.mapping_table import class_mapping
 
 class ExtractorClass():
     def __init__(self, max_lines=50000):
