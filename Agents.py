@@ -65,7 +65,7 @@ def read_config():
     description=(
         "Create a test case code file via the given test case name and test steps. "
         "Input: test_case_name (string) and test_steps (string). "
-        "Output: The file path of the generated test case code."
+        "Output: Generate test case successfully or not."
     )
 )
 def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: bool) -> str:
@@ -76,7 +76,7 @@ def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: 
         test_steps: str: The test steps of the test case.
         force_update: bool: Whether to force update the generator.
     return:
-        str: The file path of the generated test case code.
+        str: Generate test case successfully or not.
     """
 
     path_settings = {
@@ -86,6 +86,8 @@ def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: 
         'test_case_json': TEST_CASE_JSON_PATH,
         'page_functions_faiss': PAGE_FUNCTIONS_FAISS_PATH,
         'test_case_faiss': TEST_CASE_FAISS_PATH,
+        'pytest_file_name': PYTEST_FILE_NAME,
+        'pytest_file_path': PYTEST_FILE_PATH
     }
     gen = GenerateCase(path_settings=path_settings, force_update=force_update)
 
@@ -112,11 +114,11 @@ def run_pytest_func(test_case_name: str) -> dict:
     """
     try:
         if test_case_name:
-            test_path = f'{PYTEST_FILE_NAME}::{test_case_name}'
+            test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME, f"::{test_case_name}")
             # add "Single Test" to reportportal test name
 
         else:
-            test_path = PYTEST_FILE_NAME
+            test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME)
 
         result = subprocess.run(
             ["python3.9", "-m", "pytest", "--reportportal", "--color=yes", test_path],
@@ -248,8 +250,8 @@ def setup_agent():
     tools = [
         gen_test_case_code_func,
         run_pytest_func,
-        get_fail_cases_func,
-        analysis_error_func,
+        # get_fail_cases_func,
+        # analysis_error_func,
         # refactor_code_func
     ]
 
@@ -272,12 +274,24 @@ def main():
     agent = setup_agent()
     
     # Example user input
+    # user_input = """
+    # Please help me generate a test case named 'login_flow' that tests the user login flow.
+    # After generating the test case, run it, analyze any errors, and fix them if possible.
+    # If it's an application issue, prepare a bug report.
+    # """
+
     user_input = """
-    Please help me generate a test case named 'login_flow' that tests the user login flow.
-    After generating the test case, run it, analyze any errors, and fix them if possible.
-    If it's an application issue, prepare a bug report.
+    Please generate a test case "test_agent_func_21_1" for the following test steps:
+    0. Ensure the dependency test is run and passed
+    1. Click [Undo] button on main page > Click [Cancel] button on search library
+    2. Search component ('Disturbance') in library > Drag Transition ('Disturbance') to timeline clip ('Mood Stickers 07')
+    3. Set timecode ('00_00_00_27')
+    4. Check preview (locator=L.base.Area.preview.only_mtk_view, file_name=Auto_Ground_Truth_Folder + 'L66_disturbance.png')
+    matches GT (Ground_Truth_Folder + 'L66_disturbance.png') with similarity 0.95.
+    After generating the test case, run it.
     """
-    
+
+
     # Run the agent
     response = agent.run(user_input)
     print("\n[Agent Response]\n", response["output"])

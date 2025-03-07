@@ -14,6 +14,7 @@ class GenerateCase():
         self.force_update = force_update
         self.page_functions_json = path_settings['page_functions_json']
         self.test_case_json = path_settings['test_case_json']
+        self.pytest_entire_file_path = os.path.join(path_settings['pytest_file_path'], path_settings['pytest_file_name'])
         self.extract_obj = ExtractorClass()
         self.chat_api_connector = ChatAPIConnector()
         
@@ -89,19 +90,28 @@ Generate a complete pytest test function using the given test steps.
         system_role_msg = "You are a helpful AI that generates pytest test functions based on provided instructions."
         return self.chat_api_connector.generate_chat_response(prompt, system_role_msg)
             
-    def _generate_test(self, prompt):
-        file_path = ''
-        return file_path
-    
+    def _generate_test(self, code):
+        # add the generated test case to the end of the test case file and add @pytest.mark.generated_testing_case
+        try:
+            with open(self.pytest_entire_file_path, 'a') as f:
+                f.write('\n\n@pytest.mark.generated_testing_case\n')
+                f.write(code)
+            return True
+        except Exception as e:
+            print(f"Error writing to file: {e}")
+            return False
+        
     def generate_process(self, test_name, test_steps):
         prompt = self._generate_prompts(test_name, test_steps)
-        print(prompt)
-        # code = self._ask_llm(prompt)
-        # print(code)
-        # file_path = self.generate_test(prompt)
-        # return file_path
+        print(f'Generated Prompt is:\n {prompt}')
+        code = self._ask_llm(prompt)
+        print(f'Generated code is:\n {code}')
+        return self._generate_test(code)
 
-path_settings = {
+
+
+if __name__ == '__main__':
+    path_settings = {
     'page_functions_dir': r"E:\Debby\9_Scripts\AIAgentSystem\GenTestCaseCode\refer_data\page_function", # Can provide None if page_functions_json is existed
     'test_case_dir': r"E:\Debby\9_Scripts\AIAgentSystem\GenTestCaseCode\refer_data\test_case", # Can provide None if test_case_json is existed
     'page_functions_json': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page_functions_temp.json'),
@@ -109,8 +119,7 @@ path_settings = {
     'page_functions_faiss': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page_functions_temp.faiss'),
     'test_case_faiss': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'test_cases_temp.faiss'),
 }
-
-if __name__ == '__main__':
+    
     force_update = False
 
     test_name = "test_aaaaa_func_20_9"
