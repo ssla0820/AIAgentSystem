@@ -1,12 +1,19 @@
 import os
 import subprocess
-import openai
 import configparser
 
-from langchain.agents import tool, initialize_agent, AgentType
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import SystemMessagePromptTemplate
-from langchain.schema import HumanMessage
+# from langchain.agents import tool, initialize_agent, AgentType
+
+# from langchain.prompts import SystemMessagePromptTemplate
+# from langchain.schema import HumanMessage
+
+from langchain_openai import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain.chains import LLMChain
+from langchain.schema import SystemMessage, HumanMessage
+from langchain.agents import AgentType, initialize_agent
+from langchain.tools import tool
+
 
 from GenTestCaseCode.Generator import GenerateCase
 from GetFailCases.FailedCollector import FailedCollector
@@ -23,7 +30,7 @@ def read_config():
     global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH, \
            TEST_CASE_PATH, TEST_CASE_JSON_PATH, TEST_CASE_FAISS_PATH, \
            PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, \
-           SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS
+           SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY
 
     if not os.path.exists(CONFIG_FILE):
         raise FileNotFoundError(f"Config file '{CONFIG_FILE}' not found.")
@@ -50,6 +57,8 @@ def read_config():
     AP_FAIL_REASONS = [item.strip() for line in config.get('General', "AP_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
     AT_FAIL_REASONS = [item.strip() for line in config.get('General', "AT_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
 
+    # API Key
+    API_KEY = config.get('General', 'API_KEY')
 
 @tool(
     name="GenTestCaseCodeTool",
@@ -210,65 +219,69 @@ def refactor_code_func(path_settings: dict, test_case_name: str, error_reason: s
 #     # 這裡僅示範輸出訊息，實際上可整合 Jira / GitHub Issue 等系統
 #     return f"AP Bug 已回報。錯誤日誌如下：\n{pytest_result}"
 
-# -----------------------------
-# 2. 建立 LLM 與 Agent
-# -----------------------------
-
-# 使用 ChatOpenAI 作為 LLM
-llm = ChatOpenAI(
-    model_name="gpt-3.5-turbo",  # 或選用 gpt-4
-    temperature=0.2
-)
-
-# 收集所有工具
-tools = [
-    gen_test_case_code_func,
-    run_pytest_func, 
-    get_fail_cases_func, 
-    analysis_error_func, 
-    refactor_code_func
+def setup_agent():
+    """Setup and return the LangChain agent with all tools."""
+    # Read configuration first
+    read_config()
     
-]
+    # Create system prompt
+    system_prompt = """
+    You are a professional testing and debugging AI Agent that helps users create, run, analyze, and fix automated tests.
+    Your workflow typically follows these steps:
+    1. Generate test case code based on test case name and steps
+    2. Execute the test case using pytest
+    3. If the test fails, analyze the error to determine if it's an Application Error (AP) or Automation Test Error (AT)
+    4. For AT errors, refactor the test code to fix the issue
+    5. For AP errors, provide a detailed error report
 
-# 建立 Agent 的系統提示，說明 Agent 的角色與可用工具
-system_prompt = SystemMessagePromptTemplate.from_template("""
-你是一個專業的測試與修復 AI Agent，你可以使用下列工具：
-- CreateTestCaseTool
-- RunPytestTool
-- AnalyzeErrorTool
-- RefactorCodeTool
-- ReportBugTool
+    Always report your progress clearly, and when using tools, make sure to provide the necessary information in the correct format.
+    """
 
-當需要時，請呼叫對應工具以完成測試產生、執行、錯誤分析與修正流程。
-""")
+    # Initialize LLM
+    llm = ChatOpenAI(
+        model="gpt-4o",
+        temperature=0.7,
+        system_message=SystemMessage(content=system_prompt)  # Add system prompt here
+    )
 
-agent = initialize_agent(
-    tools=tools,
-    llm=llm,
-    agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # 這裡採用常用 Agent 類型
-    verbose=True
-)
+    # Collect all tools
+    tools = [
+        gen_test_case_code_func,
+        run_pytest_func,
+        get_fail_cases_func,
+        analysis_error_func,
+        # refactor_code_func
+    ]
 
-# -----------------------------
-# 3. 實作主流程 (可加入迴圈控制)
-# -----------------------------
+    # Initialize agent
+    agent = initialize_agent(
+        tools=tools,
+        llm=llm,
+        agent=AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION,
+        verbose=True,
+        handle_parsing_errors=True,
+        max_iterations=5
+    )
+    
+    return agent
+
 
 def main():
-    # 範例使用：產生測試案例、執行測試、並根據結果進行後續處理
-    # 初始輸入：測試案例名稱與測試場景
-    user_input = "請幫我產生一個測試案例，名稱為 'login_flow'，測試場景為 '測試使用者登入流程'。" \
-                 "然後執行測試，若測試失敗請分析錯誤，若為測試程式碼問題請修正；" \
-                 "若確定是應用程式問題請建立 Bug 報告。"
+    """Main execution function for the testing agent."""
+    # Initialize the agent
+    agent = setup_agent()
+    
+    # Example user input
+    user_input = """
+    Please help me generate a test case named 'login_flow' that tests the user login flow.
+    After generating the test case, run it, analyze any errors, and fix them if possible.
+    If it's an application issue, prepare a bug report.
+    """
+    
+    # Run the agent
+    response = agent.run(user_input)
+    print("\n[Agent Response]\n", response["output"])
 
-    # 建立初始對話訊息：包含 system 與 user 的訊息
-    system_message = system_prompt.format()
-    human_message = HumanMessage(content=user_input)
-
-    # 若要執行自動迴圈，可在此處加入多次調用邏輯
-    # 這裡示範一次 Agent 呼叫，實際上可以透過外層迴圈重複執行直到成功或達到最大次數
-    response = agent.run([system_message, human_message])
-    print("\n[Agent Response]\n", response)
 
 if __name__ == "__main__":
-    flow_changed_func = ''
     main()
