@@ -4,7 +4,7 @@ import base64
 
 class ChatAPIConnector():
     def __init__(self):
-        self.api_key = "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"
+        self.api_key = "your api key"
         self.client = openai.OpenAI(api_key=self.api_key)
 
     def _encode_image(image_path):
