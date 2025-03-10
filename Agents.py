@@ -114,14 +114,16 @@ def run_pytest_func(test_case_name: str) -> dict:
     """
     try:
         if test_case_name:
+            # If test_case_name is provided, use the mark "generated_testing_case"
             test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME, f"::{test_case_name}")
-            # add "Single Test" to reportportal test name
-
+            mark_option = "-m generated_testing_case"
         else:
+            # Otherwise, run the full test file
             test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME)
+            mark_option = ""
 
         result = subprocess.run(
-            ["python3.9", "-m", "pytest", "--reportportal", "--color=yes", test_path],
+            ["python3.9", "-m", "pytest", mark_option, "--reportportal", "--color=yes", test_path],
             capture_output=True,
             text=True
         )
@@ -129,6 +131,7 @@ def run_pytest_func(test_case_name: str) -> dict:
     except Exception as e:
         print(f'Error happened when executing pytest: {e}')
         return False
+
     
 
 @tool(
