@@ -2,10 +2,10 @@ import sys
 import os
 parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_path)
-
+import re
 from _ChatAPIConnector.ChatAPIConnector import ChatAPIConnector
-from Extractor_v3 import ExtractorClass
-from Searcher import SearchPageFunctions, SearchTestCases
+from GenTestCaseCode.Extractor_v3 import ExtractorClass
+from GenTestCaseCode.Searcher import SearchPageFunctions, SearchTestCases
 
 
 
@@ -13,7 +13,10 @@ class GenerateCase():
     def __init__(self, path_settings, force_update=False):
         self.force_update = force_update
         self.page_functions_json = path_settings['page_functions_json']
+        self.page_functions_faiss = path_settings['page_functions_faiss']
         self.test_case_json = path_settings['test_case_json']
+        self.test_case_faiss = path_settings['test_case_faiss']
+        self.force_update = force_update
         self.pytest_entire_file_path = os.path.join(path_settings['pytest_file_path'], path_settings['pytest_file_name'])
         self.extract_obj = ExtractorClass()
         self.chat_api_connector = ChatAPIConnector()
@@ -60,8 +63,8 @@ class GenerateCase():
         self._extract_page_functions()
         self._extract_test_cases()
 
-        self.search_page_functions_obj = SearchPageFunctions(path_settings['page_functions_json'], path_settings['page_functions_faiss'], force_update=force_update)
-        self.search_test_cases_obj = SearchTestCases(path_settings['test_case_json'], path_settings['test_case_faiss'], force_update=force_update)
+        self.search_page_functions_obj = SearchPageFunctions(self.page_functions_json, self.page_functions_faiss, force_update=self.force_update)
+        self.search_test_cases_obj = SearchTestCases(self.test_case_json, self.test_case_faiss, force_update=self.force_update)
 
         # search similar test cases and page functions
         similar_tests = self._search_similar_test_cases(test_steps)
@@ -88,14 +91,52 @@ Generate a complete pytest test function using the given test steps.
     
     def _ask_llm(self, prompt):
         system_role_msg = "You are a helpful AI that generates pytest test functions based on provided instructions."
-        return self.chat_api_connector.generate_chat_response(prompt, system_role_msg)
+        code = self.chat_api_connector.generate_chat_response(prompt, system_role_msg)
+        # print(code)
+#         code = """
+# ```python
+# @pytest.mark.agent_func
+# @pytest.mark.name('[test_agent_func_21_1] Start APP')
+# @exception_screenshot
+# def test_agent_func_21_1(self):
+#     '''
+#     1. Start APP
+#     '''
+#     with step('[Action] Start APP'):
+#         if not main_page.start_app() or not main_page.is_app_exist():
+#             assert False, "Start APP failed!"
+
+#     assert True
+# ```"""
+        # reorg the generated result, start from @pytest, and end before ```
+        org_code = re.search(r"(@pytest.*?)(?=```\n)", code, re.DOTALL)
+        # Check if a match is found
+        if org_code:
+            # If match is found, process the result
+            result = org_code.group(1)
+            print(result)
+        else:
+            # Handle the case where no match is found
+            print("No match found!")
             
-    def _generate_test(self, code):
-        # add the generated test case to the end of the test case file and add @pytest.mark.generated_testing_case
+    def _write_generated_test(self, code):
+        import textwrap
+        # Add the generated test case to the end of the test case file
+        # and add @pytest.mark.generated_testing_case
         try:
+            print('Start to write test case')
+
+            # Define the prefix to add to each line
+            prefix = '    '  # Four spaces
+
+            # Indent each line of the code with the defined prefix
+            indented_code = textwrap.indent(code, prefix)
+
+            # Open the file in append mode and write the indented code
             with open(self.pytest_entire_file_path, 'a') as f:
-                f.write('\n\n@pytest.mark.generated_testing_case\n')
-                f.write(code)
+                f.write('\n\n    @pytest.mark.generated_testing_case\n')
+                f.write(indented_code)
+
             return True
         except Exception as e:
             print(f"Error writing to file: {e}")
@@ -104,20 +145,21 @@ Generate a complete pytest test function using the given test steps.
     def generate_process(self, test_name, test_steps):
         prompt = self._generate_prompts(test_name, test_steps)
         print(f'Generated Prompt is:\n {prompt}')
-        code = self._ask_llm(prompt)
-        print(f'Generated code is:\n {code}')
-        return self._generate_test(code)
-
+        generated_code = self._ask_llm(prompt)
+        print(f'Generated code is:\n {generated_code}')
+        return self._write_generated_test(generated_code)
 
 
 if __name__ == '__main__':
     path_settings = {
-    'page_functions_dir': r"E:\Debby\9_Scripts\AIAgentSystem\GenTestCaseCode\refer_data\page_function", # Can provide None if page_functions_json is existed
-    'test_case_dir': r"E:\Debby\9_Scripts\AIAgentSystem\GenTestCaseCode\refer_data\test_case", # Can provide None if test_case_json is existed
+    'page_functions_dir': "/Users/qadf_at/Desktop/AT/PDRMac_BFT_reportportal/pages", # Can provide None if page_functions_json is existed
+    'test_case_dir': "/Users/qadf_at/Desktop/AT/PDRMac_BFT_reportportal/Debby_agent_test", # Can provide None if test_case_json is existed
     'page_functions_json': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page_functions_temp.json'),
     'test_case_json': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'test_cases_temp.json'),
     'page_functions_faiss': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'page_functions_temp.faiss'),
     'test_case_faiss': os.path.join(os.path.dirname(os.path.abspath(__file__)), 'test_cases_temp.faiss'),
+    'pytest_file_path': '/Users/qadf_at/Desktop/AT/PDRMac_BFT_reportportal/SFT',
+    'pytest_file_name': 'test_BFT_PDR23_stage1_reportportal.py'
 }
     
     force_update = False

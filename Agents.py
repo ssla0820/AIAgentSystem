@@ -1,6 +1,7 @@
 import os
 import subprocess
 import configparser
+import pytest
 
 # from langchain.agents import tool, initialize_agent, AgentType
 
@@ -11,8 +12,9 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.chains import LLMChain
 from langchain.schema import SystemMessage, HumanMessage
-from langchain.agents import AgentType, initialize_agent
+from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.tools import tool
+
 
 
 from GenTestCaseCode.Generator import GenerateCase
@@ -61,14 +63,14 @@ def read_config():
     API_KEY = config.get('General', 'API_KEY')
 
 @tool(
-    name="GenTestCaseCodeTool",
+    name_or_callable="GenTestCaseCodeTool",
     description=(
         "Create a test case code file via the given test case name and test steps. "
-        "Input: test_case_name (string) and test_steps (string). "
+        "Input: input_str (string) as test_case_name; test_steps; force_update"
         "Output: Generate test case successfully or not."
     )
 )
-def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: bool) -> str:
+def gen_test_case_code_func(input_str: str) -> str:
     """
     Generate the test case code file by openai API via the given test case name and test steps.
     args:
@@ -78,7 +80,7 @@ def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: 
     return:
         str: Generate test case successfully or not.
     """
-
+    test_case_name, test_steps, force_update = input_str.split(';')
     path_settings = {
         'page_functions_dir': PAGE_FUNCTIONS_PATH,
         'test_case_dir': TEST_CASE_PATH,
@@ -89,13 +91,13 @@ def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: 
         'pytest_file_name': PYTEST_FILE_NAME,
         'pytest_file_path': PYTEST_FILE_PATH
     }
-    gen = GenerateCase(path_settings=path_settings, force_update=force_update)
+    gen = GenerateCase(path_settings=path_settings, force_update=bool(force_update))
 
     return gen.generate_process(test_case_name, test_steps)
 
 
 @tool(
-    name="RunPytestTool",
+    name_or_callable="RunPytestTool",
     description=(
         "Run the test case in local environment via pytest. "
         "Input: \
@@ -104,38 +106,50 @@ def gen_test_case_code_func(test_case_name: str, test_steps: str, force_update: 
         "Output: A Bool value indicates whether the test case run successfully."
     )
 )
-def run_pytest_func(test_case_name: str) -> dict:
+def run_pytest_func(test_case_name: str = None) -> bool:
     """
-    Run the test case in local environment via pytest.
-    args:
-        test_case_name: str: The name of the test case.
-    return:
-        Bool: Whether the test case run successfully.
+    Run the specified test case in the local environment using pytest.
+    Args:
+        test_case_name (str): The name of the test case to run. If None, all tests are run.
+    Returns:
+        bool: True if the test(s) ran successfully, False otherwise.
     """
     try:
+        # Determine the test path
         if test_case_name:
-            # If test_case_name is provided, use the mark "generated_testing_case"
+            # Assuming PYTEST_FILE_PATH and PYTEST_FILE_NAME are defined globally
             test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME, f"::{test_case_name}")
-            mark_option = "-m generated_testing_case"
         else:
             # Otherwise, run the full test file
             test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME)
             mark_option = ""
 
-        result = subprocess.run(
-            ["python3.9", "-m", "pytest", mark_option, "--reportportal", "--color=yes", test_path],
-            capture_output=True,
-            text=True
-        )
-        return True
+        # Set any additional arguments to pass to pytest (e.g., reportportal integration)
+        additional_args = [
+            '--reportportal',  # Enable ReportPortal integration
+            '--color=yes',     # Enable colored output
+            # You can add other flags here based on your needs
+        ]
+
+        # Run pytest with the constructed test path and any additional arguments
+        result = pytest.main([test_path] + additional_args)
+
+        # Check if pytest ran successfully
+        if result == 0:
+            print("Tests ran successfully.")
+            return True
+        else:
+            print(f"pytest exited with code {result}.")
+            return False
+
     except Exception as e:
-        print(f'Error happened when executing pytest: {e}')
+        print(f"Error occurred while executing pytest: {e}")
         return False
 
     
 
 @tool(
-    name="GetFailCasesTool",
+    name_or_callable="GetFailCasesTool",
     description=(
         "Get the failed test cases from the pytest result. "
         "Input: None"
@@ -158,7 +172,7 @@ def get_fail_cases_func() -> list:
 
 
 @tool(
-    name="AnalyzeErrorTool",
+    name_or_callable="AnalyzeErrorTool",
     description=(
         "Analyze the pytest result to determine AP/AT error and the failure reason."
         "Input: \
@@ -182,7 +196,7 @@ def analysis_error_func(fail_case, flow_changed_func) -> str:
 
 
 @tool(
-    name="RefactorCodeTool",
+    name_or_callable="RefactorCodeTool",
     description=(
         "Refactor the test case code based on the failure reason (AT bug). "
         "Input:\
@@ -213,7 +227,7 @@ def refactor_code_func(path_settings: dict, test_case_name: str, error_reason: s
 
 
 # @tool(
-#     name="ReportBugTool",
+#     name_or_callable="ReportBugTool",
 #     description=(
 #         "建立 AP Bug 報告 (示範用，可整合到 Bug Tracking 系統)。"
 #         "輸入: pytest_result (string) 錯誤日誌。"
@@ -246,8 +260,13 @@ def setup_agent():
     llm = ChatOpenAI(
         model="gpt-4o",
         temperature=0.7,
-        system_message=SystemMessage(content=system_prompt)  # Add system prompt here
+        api_key=API_KEY
     )
+
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", system_prompt),
+        ("user", "{input}")
+    ])
 
     # Collect all tools
     tools = [
@@ -258,16 +277,13 @@ def setup_agent():
         # refactor_code_func
     ]
 
-    # Initialize agent
+    # Initialize agent (ensure you pass the correct agent type)
     agent = initialize_agent(
         tools=tools,
+        agent_type=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
         llm=llm,
-        agent=AgentType.CHAT_ZERO_SHOT_REACT_DESCRIPTION,
-        verbose=True,
-        handle_parsing_errors=True,
-        max_iterations=5
+        verbose=True
     )
-    
     return agent
 
 
@@ -284,15 +300,18 @@ def main():
     # """
 
     user_input = """
-    Please generate a test case "test_agent_func_21_1" for the following test steps:
+    Please Generate a test case "test_agent_func_21_1" for the following steps:
     1. Start APP
-    2. Enter Room (Media)(1)
+    2. Enter Room (Media)(1).
+    After generation, run the generated code.
     """
 
 
     # Run the agent
     response = agent.run(user_input)
-    print("\n[Agent Response]\n", response["output"])
+    print("\n[Agent Response]\n")
+    print("=====================\n")
+    print(response)
 
 
 if __name__ == "__main__":
