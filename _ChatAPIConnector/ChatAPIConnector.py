@@ -44,6 +44,5 @@ class ChatAPIConnector():
 
 if __name__ == "__main__":
     chat_api = ChatAPIConnector()
-
-    # response = chat_api.generate_chat_response("How do I reset my password?", "You can reset your password by following these steps:")
-    # print(response)
+    response = chat_api.generate_chat_response("How do I reset my password?", "You can reset your password by following these steps:")
+    print(response)

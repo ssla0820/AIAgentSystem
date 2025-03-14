@@ -6,12 +6,29 @@ import sys
 parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_path)
 
-from GenTestCaseCode.db.mapping_table import class_mapping
+from _Database.mapping_table import class_mapping
 
-class ExtractorClass():
-    def __init__(self, max_lines=50000):
+class TestCase_PageFunction_Extractor():
+    def __init__(self, path_settings, max_lines=50000):
         self.max_lines = max_lines
         self.class_mapping = class_mapping
+        self.page_function_json = path_settings['page_functions_json']
+        self.test_case_json = path_settings['test_case_json']
+        
+
+        if path_settings['page_functions_dir']:
+            self.page_function_files = [
+                os.path.join(path_settings['page_functions_dir'], f)
+                for f in os.listdir(path_settings['page_functions_dir'])
+                if os.path.isfile(os.path.join(path_settings['page_functions_dir'], f))
+            ]
+
+        if path_settings['test_case_dir']:
+            self.test_case_files = [
+                os.path.join(path_settings['test_case_dir'], f)
+                for f in os.listdir(path_settings['test_case_dir'])
+                if os.path.isfile(os.path.join(path_settings['test_case_dir'], f))
+            ]
 
     def _get_content_from_file(self, file_path):
         """Load content from file (limit to max_lines if necessary)."""
@@ -156,11 +173,18 @@ class ExtractorClass():
         print(f"✅ Found {len(extracted_content)} {file_type}(s) in {file_path}")
         return extracted_content
 
-    def extracted_all_data(self, file_type, file_path_list, json_path):
+    def extract_process(self, file_type):
         """
         Extract data from multiple files and save the result to a JSON file.
         file_type: 'page_function' or 'test_case'
         """
+        if file_type == 'page_function':
+            json_path = self.page_function_json
+            file_path_list = self.page_function_files
+        elif file_type == 'test_case':
+            json_path = self.test_case_json
+            file_path_list = self.test_case_files
+
         content_list = []
         for file in file_path_list:
             content_list.extend(self._organize_analyzed_data(file, file_type))

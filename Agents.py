@@ -15,9 +15,9 @@ from langchain.schema import SystemMessage, HumanMessage
 from langchain.agents import AgentExecutor, initialize_agent, AgentType
 from langchain.tools import tool
 
-
-
-from GenTestCaseCode.Generator import GenerateCase
+from TestCasePageFunctionExtractor.Extractor import TestCase_PageFunction_Extractor
+from PageFunctionMapper.PageFunctionMapper import SearchPageFunctions
+from TestCodeGenerator.Generator import GenerateCase
 from GetFailCases.FailedCollector import FailedCollector
 from ErrorAnalyzer.Analyzer_v2 import ErrorAnalyzer
 from CaseRefactor.CaseRefactor import CaseRefactor
@@ -31,7 +31,7 @@ def read_config():
     """
     global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH, \
            TEST_CASE_PATH, TEST_CASE_JSON_PATH, TEST_CASE_FAISS_PATH, \
-           PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, \
+           PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, PAGE_FUNCTIONS_FILTERED_JSON_PATH, \
            SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY
 
     if not os.path.exists(CONFIG_FILE):
@@ -53,6 +53,7 @@ def read_config():
     PAGE_FUNCTIONS_PATH = config.get('General', 'PAGE_FUNCTIONS_PATH')
     PAGE_FUNCTIONS_JSON_PATH = config.get('General', 'PAGE_FUNCTIONS_JSON_PATH')
     PAGE_FUNCTIONS_FAISS_PATH = config.get('General', 'PAGE_FUNCTIONS_FAISS_PATH')
+    PAGE_FUNCTIONS_FILTERED_JSON_PATH = config.get('General', 'PAGE_FUNCTIONS_FILTERED_JSON_PATH')
     SAVE_REFACTOR_TEST_CASE_PATH = config.get('General', 'SAVE_REFACTOR_TEST_CASE_PATH')
 
     # ap_fail = config.get("APFail", "ErrorReasons")
@@ -63,10 +64,70 @@ def read_config():
     API_KEY = config.get('General', 'API_KEY')
 
 @tool(
+    name_or_callable="ExtractTestCaseCodePageFunctionTool",
+    description=(
+        "Extract test case code and page function from the given directory. "
+        "Input: None"
+        "Output: Extracted test case code and page function to JSON file. (Gloable Variables)"
+    )
+)
+def extract_test_case_code_page_function_to_json_func(input_str: str) -> str:
+    path_settings = {
+        'page_functions_dir': PAGE_FUNCTIONS_PATH,
+        'test_case_dir': TEST_CASE_PATH,
+        'page_functions_json': PAGE_FUNCTIONS_JSON_PATH,
+        'test_case_json': TEST_CASE_JSON_PATH,
+    }
+    extract_obj = TestCase_PageFunction_Extractor(path_settings=path_settings)
+    extract_obj.extract_process('test_case')
+    extract_obj.extract_process('page_function')
+
+@tool(
+    name_or_callable="SearchRelevantFunctionsTool",
+    description=(
+        "Search relevant functions from the given test steps."
+        "Input: test_steps (string) as test steps."
+        "Output: A list contains the relevant functions."
+    )
+)
+def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
+    """
+    Search relevant functions step by step from the given test steps.
+    args:
+        test_steps: str: The test steps of the test case.
+    return:
+        list: The relevant functions
+    """
+
+    path_settings = {
+        'page_functions_json': PAGE_FUNCTIONS_JSON_PATH,
+        'page_functions_faiss': PAGE_FUNCTIONS_FAISS_PATH,
+        'page_functions_filtered_json': PAGE_FUNCTIONS_FILTERED_JSON_PATH,
+    }
+    relevant_page_functions = []
+    search = SearchPageFunctions(path_settings['page_functions_json'], path_settings['page_functions_faiss'], path_settings['page_functions_filtered_json'])
+    for step in test_steps.split("\n"):
+        relevant_functions = search.extract_relevant_functions_step_by_step(step)
+        # Add only functions that aren't already in the list
+        for func in relevant_functions:
+            if func not in relevant_page_functions:
+                relevant_page_functions.append(func)
+        else:
+            # call generate page function tool
+            pass
+    return relevant_page_functions
+
+
+
+@tool(
     name_or_callable="GenTestCaseCodeTool",
     description=(
-        "Create a test case code file via the given test case name and test steps. "
-        "Input: input_str (string) as test_case_name; test_steps; force_update"
+        "Create a test case code file via the given test case name and test steps."
+        "Input: Format must be 'test_case_name;test_steps;force_update;relevant_functions' where:"
+        " - test_case_name: The name of the test case"
+        " - test_steps: The test steps description"
+        " - force_update: Boolean (True/False) to force update"
+        " - relevant_functions: List of function dictionaries with 'name' and 'description' from SearchRelevantFunctionsTool"
         "Output: Generate test case successfully or not."
     )
 )
@@ -77,10 +138,14 @@ def gen_test_case_code_func(input_str: str) -> str:
         test_case_name: str: The name of the test case.
         test_steps: str: The test steps of the test case.
         force_update: bool: Whether to force update the generator.
+
     return:
         str: Generate test case successfully or not.
     """
-    test_case_name, test_steps, force_update = input_str.split(';')
+    test_case_name, test_steps, force_update, relevant_functions = input_str.split(';')
+    # change relevant_functions frm str to list
+    relevant_functions = relevant_functions.split(',')
+
     path_settings = {
         'page_functions_dir': PAGE_FUNCTIONS_PATH,
         'test_case_dir': TEST_CASE_PATH,
@@ -91,7 +156,7 @@ def gen_test_case_code_func(input_str: str) -> str:
         'pytest_file_name': PYTEST_FILE_NAME,
         'pytest_file_path': PYTEST_FILE_PATH
     }
-    gen = GenerateCase(path_settings=path_settings, force_update=bool(force_update))
+    gen = GenerateCase(relevant_functions, path_settings=path_settings, force_update=bool(force_update))
 
     return gen.generate_process(test_case_name, test_steps)
 
@@ -270,8 +335,10 @@ def setup_agent():
 
     # Collect all tools
     tools = [
+        extract_test_case_code_page_function_to_json_func,
+        search_relevant_functions_step_by_step_func,
         gen_test_case_code_func,
-        run_pytest_func,
+        # run_pytest_func,
         # get_fail_cases_func,
         # analysis_error_func,
         # refactor_code_func
@@ -300,10 +367,12 @@ def main():
     # """
 
     user_input = """
-    Please Generate a test case "test_agent_func_21_1" for the following steps:
+    Extract test case code and page function from the given directory.
+    Then search relevant functions for these steps:
     1. Start APP
     2. Enter Room (Media)(1).
-    After generation, run the generated code.
+    After finding the relevant functions, use them to generate a test case "test_agent_func_21_1" with the same steps.
+    Make sure to pass the results from the search function to the generate function.
     """
 
 
