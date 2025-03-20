@@ -2,6 +2,7 @@ import os
 import subprocess
 import configparser
 import pytest
+import ast
 
 # from langchain.agents import tool, initialize_agent, AgentType
 
@@ -17,7 +18,8 @@ from langchain.tools import tool
 
 from TestCasePageFunctionExtractor.Extractor import TestCase_PageFunction_Extractor
 from PageFunctionMapper.PageFunctionMapper import SearchPageFunctions
-from TestCodeGenerator.Generator import GenerateCase
+from TestStepGenerator.TestStepGenerator import TestStepGenerator
+from TestCodeGenerator.TestCodeGenerator import GenerateCase
 from GetFailCases.FailedCollector import FailedCollector
 from ErrorAnalyzer.Analyzer_v2 import ErrorAnalyzer
 from CaseRefactor.CaseRefactor import CaseRefactor
@@ -29,10 +31,11 @@ def read_config():
     Reads the app.config file and assigns each parameter from the [General]
     section to a global variable.
     """
-    global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH, \
+    global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH,\
            TEST_CASE_PATH, TEST_CASE_JSON_PATH, TEST_CASE_FAISS_PATH, \
            PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, PAGE_FUNCTIONS_FILTERED_JSON_PATH, \
-           SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY
+           SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY,\
+            SAVE_HTML_PAGE_FOLDER, SAVE_JSON_PAGE_FOLDER, SAVE_FULL_HELP_JSON_FILE_NAME
 
     if not os.path.exists(CONFIG_FILE):
         raise FileNotFoundError(f"Config file '{CONFIG_FILE}' not found.")
@@ -55,6 +58,9 @@ def read_config():
     PAGE_FUNCTIONS_FAISS_PATH = config.get('General', 'PAGE_FUNCTIONS_FAISS_PATH')
     PAGE_FUNCTIONS_FILTERED_JSON_PATH = config.get('General', 'PAGE_FUNCTIONS_FILTERED_JSON_PATH')
     SAVE_REFACTOR_TEST_CASE_PATH = config.get('General', 'SAVE_REFACTOR_TEST_CASE_PATH')
+    SAVE_HTML_PAGE_FOLDER = config.get('General', 'SAVE_HTML_PAGE_FOLDER')
+    SAVE_JSON_PAGE_FOLDER = config.get('General', 'SAVE_JSON_PAGE_FOLDER')
+    SAVE_FULL_HELP_JSON_FILE_NAME = config.get('General', 'SAVE_FULL_HELP_JSON_FILE_NAME')
 
     # ap_fail = config.get("APFail", "ErrorReasons")
     AP_FAIL_REASONS = [item.strip() for line in config.get('General', "AP_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
@@ -83,6 +89,33 @@ def extract_test_case_code_page_function_to_json_func(input_str: str) -> str:
     extract_obj.extract_process('page_function')
 
 @tool(
+    name_or_callable="GenTestStepsTool",
+    description=(
+        "Generate the test steps based on the given current status and desired goal."
+        "Input: Format must be 'current status;desired goal' where:"
+        " - current status (list): The current status of the application UI"
+        " - desired goal (list): The desired goal of the steps to reach"
+        " - For example: ['In media room'];['Import stock media', 'The first stock media', 'Add the media to timeline']"
+        "Output: The generated test steps."
+    )
+)
+def gen_test_steps_func(input_str: str) -> str:
+    """
+    Generate the test steps based on the given current status and desired goal.
+    args:
+        input_str: str: The input string containing the current status and desired goal. 
+    return:
+        str: The generated test steps.
+    """
+    list_strs = input_str.split(';')
+
+    current_status = ast.literal_eval(list_strs[0])
+    desired_goal = ast.literal_eval(list_strs[1])
+
+    generator = TestStepGenerator(TEST_CASE_JSON_PATH, SAVE_FULL_HELP_JSON_FILE_NAME, current_status, desired_goal)
+    return generator.generate_process()
+
+@tool(
     name_or_callable="SearchRelevantFunctionsTool",
     description=(
         "Search relevant functions from the given test steps."
@@ -94,7 +127,7 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
     """
     Search relevant functions step by step from the given test steps.
     args:
-        test_steps: str: The test steps of the test case.
+        test_steps: str: The test steps of the test case that generated from "GenTestStepsTool".
     return:
         list: The relevant functions
     """
@@ -118,7 +151,6 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
     return relevant_page_functions
 
 
-
 @tool(
     name_or_callable="GenTestCaseCodeTool",
     description=(
@@ -137,8 +169,7 @@ def gen_test_case_code_func(input_str: str) -> str:
     args:
         test_case_name: str: The name of the test case.
         test_steps: str: The test steps of the test case.
-        force_update: bool: Whether to force update the generator.
-
+        relevant_functions: List of function dictionaries with 'name' and 'description' from SearchRelevantFunctionsTool
     return:
         str: Generate test case successfully or not.
     """
@@ -147,16 +178,13 @@ def gen_test_case_code_func(input_str: str) -> str:
     relevant_functions = relevant_functions.split(',')
 
     path_settings = {
-        'page_functions_dir': PAGE_FUNCTIONS_PATH,
         'test_case_dir': TEST_CASE_PATH,
-        'page_functions_json': PAGE_FUNCTIONS_JSON_PATH,
         'test_case_json': TEST_CASE_JSON_PATH,
-        'page_functions_faiss': PAGE_FUNCTIONS_FAISS_PATH,
         'test_case_faiss': TEST_CASE_FAISS_PATH,
         'pytest_file_name': PYTEST_FILE_NAME,
-        'pytest_file_path': PYTEST_FILE_PATH
+        'pytest_file_path': PYTEST_FILE_PATH,
     }
-    gen = GenerateCase(relevant_functions, path_settings=path_settings, force_update=bool(force_update))
+    gen = GenerateCase(relevant_functions, path_settings=path_settings)
 
     return gen.generate_process(test_case_name, test_steps)
 
@@ -336,6 +364,7 @@ def setup_agent():
     # Collect all tools
     tools = [
         extract_test_case_code_page_function_to_json_func,
+        gen_test_steps_func,
         search_relevant_functions_step_by_step_func,
         gen_test_case_code_func,
         # run_pytest_func,
@@ -358,23 +387,15 @@ def main():
     """Main execution function for the testing agent."""
     # Initialize the agent
     agent = setup_agent()
-    
-    # Example user input
-    # user_input = """
-    # Please help me generate a test case named 'login_flow' that tests the user login flow.
-    # After generating the test case, run it, analyze any errors, and fix them if possible.
-    # If it's an application issue, prepare a bug report.
-    # """
 
-    user_input = """
+    current_status = ['In media room']
+    desired_goal = ['Open Stock Media', 'Import the first media', 'Add the media to timeline']
+
+    user_input = f"""
     Extract test case code and page function from the given directory.
-    Then search relevant functions for these steps:
-    1. Start APP
-    2. Enter Room (Media)(1).
-    After finding the relevant functions, use them to generate a test case "test_agent_func_21_1" with the same steps.
-    Make sure to pass the results from the search function to the generate function.
+    Generate test step from current status {current_status} to desired goal {desired_goal}.
+    After generated test steps and found the relevant page functions, generate test code with test name 'test_agent_test_11_1'.
     """
-
 
     # Run the agent
     response = agent.run(user_input)
