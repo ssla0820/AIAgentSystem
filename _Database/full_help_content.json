@@ -1,0 +1,2083 @@
+{
+"blocks": [
+    {
+        "block_title": "Introduction & Launcher",
+        "sections": [
+            {
+                "heading": "PowerDirector Launcher",
+                "summary": "When you launch the program from the start menu, or the CyberLink PowerDirector shortcut on the desktop, the PowerDirector launcher is displayed, providing you with quick access to some of the most popular features in the program. Click New Project to open PowerDirector and start a new video project. You can also quickly access Recent Projects, or click Open Project to open and edit another video project that you worked on previously. Note: before clicking New Project, be sure to set the Aspect Ratio for your project: 16:9, 21:9, 1:1, 4:5, 9:16, or 4:3. Deselect the Show launcher after closing program option if you don't want this launcher to display after closing the program.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/powerdirectorlauncher.jpg"
+                ],
+                "file": "02_00_00_powerdirector_launcher.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Workspace & Modules",
+        "sections": [
+            {
+                "heading": "Workspace",
+                "summary": "This chapter outlines the CyberLink PowerDirector workspace, and all of its features. The workspace is where you will spend most of your time when using CyberLink PowerDirector, so getting familiar with everything it has to offer is recommended. A - Rooms, B - Import Media, C - Library Window, D - Expandable Workspace, E - Library Preview Window, F - Project Preview Window, G - Timeline/Editing Workspace, H - Range Selection, I - Function Buttons, J - Timeline Ruler, K - Nested Projects/Sequences, L - View Entire Video, M - Track Manager.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pdrui.jpg"
+                ],
+                "file": "03_00_00_the_pdr_workspace.html"
+            },
+            {
+                "heading": "Modules",
+                "summary": "Within the main program window of CyberLink PowerDirector, there are two main modules available: Edit and Export. In the edit module you can edit and trim your imported media, arrange it in your video production, add effects, titles, PiP objects, transitions, music, subtitles, and more. In the Export module you can output your created production to a video file or upload it to YouTube and Vimeo.",
+                "images": [],
+                "file": "03_01_00-powerdirector-modules.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Rooms",
+        "sections": [
+            {
+                "heading": "Rooms",
+                "summary": "The various rooms in the edit module of CyberLink PowerDirector are where you can access all of your media, effects, titles, and transitions when editing your video production. You can also gain access to controls for recording and mixing audio, or adding subtitles. By default, the library window displays the Media Room.",
+                "images": [],
+                "file": "03_02_00_rooms.html"
+            },
+            {
+                "heading": "Media Room",
+                "summary": "Click to open the Media Room and access your media library. The media library contains the video, audio, and image files you imported into PowerDirector. It also provides direct access to asset folders containing useful color boards, saved projects, and background music/sound clips. Management options include sorting, selecting all media, changing thumbnail icon size, emptying the library, or removing unused content.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/managemediabutt.jpg"
+                ],
+                "file": "03_02_01_media_rooms.html"
+            },
+            {
+                "heading": "Video Intro Room",
+                "summary": "Click to open the Video Intro Room and use a video intro template to start your video project. For more information on this feature, see Using Video Intro Templates.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/introvideoroom.jpg"
+                ],
+                "file": "03_02_02_intro_video_room.html"
+            },
+            {
+                "heading": "Title Room",
+                "summary": "Click the button to open the Title Room and view the library of title effects that allow you to add video titles, screen captions, credits, etc. For more details, see Adding Title Effects. Note: for subtitles, refer to the Subtitle Room.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleroom.jpg"
+                ],
+                "file": "03_02_03_title_room.html"
+            },
+            {
+                "heading": "Transition Room",
+                "summary": "Click the button to open the Transition Room, which contains transitions to control how media appears and disappears in your project and transitions between clips. For more details, see Using Transitions.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transitionroom.jpg"
+                ],
+                "file": "03_02_04_transition_room.html"
+            },
+            {
+                "heading": "Effect Room",
+                "summary": "Click the button to open the Effect Room, which contains a library of special effects for your video files and images. For more details, see Adding Effects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effectsroom.jpg"
+                ],
+                "file": "03_02_05_effectroom.html"
+            },
+            {
+                "heading": "Video Overlay (PiP Objects) Room",
+                "summary": "Click the button to open the Video Overlay (PiP Objects) Room, which contains a library of PiP objects (graphics) that can be layered on top of your video or images. For more details, see Adding PiP Objects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipeffects.jpg"
+                ],
+                "file": "03_02_06_pip_objects_room.html"
+            },
+            {
+                "heading": "Particle Room",
+                "summary": "Click the button to open the Particle Room, which contains a library of effects that add particle objects (like snow, clouds, smoke) on top of video or images. For more information, see Adding Particle Effects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/particleeffects.jpg"
+                ],
+                "file": "03_02_07_particle_room.html"
+            },
+            {
+                "heading": "Audio Mixing Room",
+                "summary": "Click the button to open the Audio Mixing Room to access controls for mixing all audio tracks in your project. For more details, see Mixing Audio and Recording Voice-Overs.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audiomixroom.jpg"
+                ],
+                "file": "03_02_08_audio_mixing_room.html"
+            },
+            {
+                "heading": "Voice-Over Recording Room",
+                "summary": "Click to open the Voice-Over Recording Room where you can record a voice-over for your video production while watching playback. For more details, see Recording Voice-Overs.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/voroom.jpg"
+                ],
+                "file": "03_02_09_voice-over.html"
+            },
+            {
+                "heading": "Subtitle Room",
+                "summary": "Click to open the Subtitle Room where you can manually add subtitles to your video production. For more details, see Adding Subtitles.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitleroom.jpg"
+                ],
+                "file": "03_02_11_subtitle_room.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Library Window & Media Management",
+        "sections": [
+            {
+                "heading": "Library Window",
+                "summary": "The library window displays all of your media in CyberLink PowerDirector, including videos, images, and audio files. Its content and available buttons change based on the room you are in. You can resize media thumbnails using options in the library menu.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/librarywindow.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/managemediabutt.jpg"
+                ],
+                "file": "03_03_00_library_window.html"
+            },
+            {
+                "heading": "Explorer View",
+                "summary": "Select the button to display the explorer view within the library window. In this view, you can see asset folders, use tags to categorize media, and filter items. Options include adding, deleting, and filtering by tags.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/dhexplorer.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/assetfolders.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addtag.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/removetag.jpg"
+                ],
+                "file": "03_03_01_explorer_view.html"
+            },
+            {
+                "heading": "Searching the PowerDirector Library",
+                "summary": "To find specific media, effects, or templates, enter a keyword in the search field atop the library window. PowerDirector then filters the content based on your keywords. A clear button is available to reset the search.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/search1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/search2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clearbutt.jpg"
+                ],
+                "file": "03_03_02_searching_for_media_i.html"
+            },
+            {
+                "heading": "Filtering Media in the Library",
+                "summary": "Use the buttons above the library window to filter media files by file type, so you can more easily locate specific media.",
+                "images": [],
+                "file": "03_03_03_filter_media.html"
+            },
+            {
+                "heading": "Library Window View",
+                "summary": "Switch between two views in the library window: a detailed list view with sortable information and a thumbnail view. Thumbnail sizes can be adjusted in the library menu.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/listview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/thumbnailview.jpg"
+                ],
+                "file": "03_03_04_library_win_view.html"
+            },
+            {
+                "heading": "Library Menu",
+                "summary": "Access the library menu to sort content by various attributes, select all items, or change thumbnail sizes. Additional options such as emptying the library or removing unused content are also available depending on the current room.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/librarymenu.jpg"
+                ],
+                "file": "03_03_05_library_menu.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Workspace Customization & Preview",
+        "sections": [
+            {
+                "heading": "Expanding the Workspace",
+                "summary": "Customize the layout of your workspace by dragging the borders of the preview window and timeline. You can also undock and reposition windows to make the most of your display.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/expandable.jpg"
+                ],
+                "file": "03_04_00_expanding_workspace.html"
+            },
+            {
+                "heading": "Undocking Windows",
+                "summary": "Undock windows such as the library preview, project preview, media window, and timeline for a more flexible workspace. Once undocked, windows can be moved, resized, minimized, maximized, or re-docked as needed.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/undoclpw.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/viewatfspw.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/greendot-maximizewin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/yellowdot-minimizewin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/restorebuttmac.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/restorebuttmac.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/restorebuttmac.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/restorebuttmac.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/redockpw.jpg"
+                ],
+                "file": "03_04_01_undock_pw.html"
+            },
+            {
+                "heading": "Preview Window",
+                "summary": "Preview your media in the library preview window and view your entire video project in the project preview window as you edit.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/previewwins.jpg"
+                ],
+                "file": "03_05_00_preview_window.html"
+            },
+            {
+                "heading": "Library Preview Window",
+                "summary": "The library preview window allows you to preview media files separately, add clip markers, and perform single trims before inserting clips into the timeline. It offers controls for setting trim marks and inserting the trimmed clip.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediapreviewwin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/trimmarkin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lpw-markin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/trimmarkout.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lpw-markout.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lpw-addtotlbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lpw-overwritebutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lpw-clipmarker.jpg"
+                ],
+                "file": "03_05_01_library_preview_win.html"
+            },
+            {
+                "heading": "Project Preview Window",
+                "summary": "The project preview window lets you view your editing project as you work on it. Features include zoom controls, render preview for smoother playback, a volume meter, and an aspect ratio drop-down to adjust the project\u2019s aspect ratio.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/projectpreviewwin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/displaypreviewqualbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/changeaspectratio.jpg"
+                ],
+                "file": "03_05_02_project_preview_win.html"
+            },
+            {
+                "heading": "Taking a Screen Snapshot",
+                "summary": "While previewing media, you can take a screen snapshot that saves as an image file in your media library. The snapshot resolution is 1920x1080 (or 3840x2160 for Ultra HD projects). For best results, take snapshots from the media library if you want the original clip\u2019s resolution.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/snapshot.jpg"
+                ],
+                "file": "03_05_02_take_snapshot.html"
+            },
+            {
+                "heading": "Preview Player Controls",
+                "summary": "The preview player controls let you play, pause, stop, move frame by frame, and drag the playback slider to navigate your project. You can also enter a timecode to jump to a specific scene and undock the preview for a larger view.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/gotoprevframes.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/gotonextframes.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/undoclpw.jpg"
+                ],
+                "file": "03_05_04_preview_controls.html"
+            },
+            {
+                "heading": "Preview/Display Options",
+                "summary": "Set the preview quality, display grid lines, and view the audio levels in your project using the preview and display options. Adjust settings for grid lines, snapping, and preview resolution as needed.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/displaypreviewqualbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/displaypreviewqualbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/displaypreviewqualbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/displaypreviewqualbutt.jpg"
+                ],
+                "file": "03_05_05_display_preview_options.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Editing & Timeline",
+        "sections": [
+            {
+                "heading": "Editing Workspace",
+                "summary": "The editing workspace is where you build your project by adding media, applying effects, transitions, and title effects.",
+                "images": [],
+                "file": "03_06_00_editing_workspace.html"
+            },
+            {
+                "heading": "Full (Timeline) Mode",
+                "summary": "In full timeline mode, all PowerDirector features are available and you can view your project\u2019s entire running time. The timeline shows all tracks (video, audio, effects, SVRT, subtitle, clip markers) and supports features like snapping, range selection, grouping, and marker addition for precise editing.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/timelineorder1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/timelineorder2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/videotrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audiotrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effecttrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/svrttrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitletrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/musicbeattrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/commandkey.gif",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/timelineruler.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/viewentiremovie.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/timelineslider.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tlmarker1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tlmarker2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tlmarker3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tlmarkerex1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tlmarkerex2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tlmarkerex3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addclipmarker1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addclipmarker2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addclipmarker5.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clipmarkerex1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clipmarkerex2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clipmarkerex3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fbmenu.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fbmenu.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tmbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tracknames.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/tracknames2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reordertrack1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reordertrack2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/adjusttrackheight.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/locktrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/unlockedtrack.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/disabletrack1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/disabletrack2.jpg"
+                ],
+                "file": "03_06_01_timeline_view.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Projects Management",
+        "sections": [
+            {
+                "heading": "PowerDirector Projects",
+                "summary": "Save your video production as a .pds project file, which contains a list of media clips, effects, and edit logs. Projects can be imported directly into the timeline. For saving all project files in one place, use the Pack Project Materials function.",
+                "images": [],
+                "file": "04_00_00_pdr_projects.html"
+            },
+            {
+                "heading": "Setting Project Aspect Ratio",
+                "summary": "Set the aspect ratio for your project and output video by selecting from options such as 16:9, 21:9, 1:1, 4:5, 9:16, or 4:3 located below the project preview window. Individual clip aspect ratios can also be adjusted on the timeline.",
+                "images": [],
+                "file": "04_01_00_settingprojectaspectratio.html"
+            },
+            {
+                "heading": "Exporting Projects",
+                "summary": "Export your projects by packing all materials into a folder on your hard drive or CyberLink Cloud. This enables you to import the project on another computer running PowerDirector.",
+                "images": [],
+                "file": "04_02_00_exporting_projects.html"
+            },
+            {
+                "heading": "Reusing PowerDirector Projects",
+                "summary": "Saved PowerDirector projects are reusable as templates for future productions. To reuse a project, drag it from the media library to the timeline. When inserted, its media is automatically re-imported, and you can replace elements without altering the project structure.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/replacemedia1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/replacemedia2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/replacemedia3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/replacemedia4.jpg"
+                ],
+                "file": "04_03_00_reusing_powerdirector.html"
+            },
+            {
+                "heading": "Nested Projects",
+                "summary": "Nested projects are saved projects that can be added to the timeline like any other media clip. Once added, they can be moved, resized, rotated, and reshaped to meet your project requirements.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/nestedexample1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/nestedexample2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/nestedexample3.jpg"
+                ],
+                "file": "04_03_01_nested_projects.html"
+            },
+            {
+                "heading": "CyberLink Cloud Projects",
+                "summary": "Upload and download your projects via CyberLink Cloud. When opened, packed projects are downloaded to your local computer based on the CyberLink Cloud Preferences.",
+                "images": [],
+                "file": "04_05_00_cldrive_projects.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Importing & Downloading Media",
+        "sections": [
+            {
+                "heading": "Importing Media",
+                "summary": "Import a wide variety of media formats into PowerDirector. Media imported is saved in the current project, and you have the option to merge the media into new projects or maintain it in the library.",
+                "images": [],
+                "file": "05_00_00_importing.html"
+            },
+            {
+                "heading": "Supported File Formats",
+                "summary": "PowerDirector supports various file formats for video, audio, and images. This includes popular formats such as AVI, MKV, MP4 for videos; MP3, AAC for audio; and JPEG, PNG for images, as well as several RAW formats.",
+                "images": [],
+                "file": "05_01_01_support_file_formats.html"
+            },
+            {
+                "heading": "Importing PowerDirector Projects",
+                "summary": "Previously saved PowerDirector project files (.pds) can be imported directly into your timeline as nested or expanded projects, based on your settings.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/nestedproject2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/nestedproject3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/expandedproject4.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/expandedproject5.jpg"
+                ],
+                "file": "05_01_04_importing_powerdirect.html"
+            },
+            {
+                "heading": "Importing Media Files",
+                "summary": "Import video, audio, and image files directly into the media library from your computer or removable devices. It is recommended to copy files locally for best performance.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importmediabutt.jpg"
+                ],
+                "file": "05_01_0_importing_media.html"
+            },
+            {
+                "heading": "Downloading Background Music",
+                "summary": "Download background music from CyberLink, Meta, or Soundstripe. Filter by keywords or genre, preview the audio, and then download the file to your media library.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/backgroundmusic-meta.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadbgm.jpg"
+                ],
+                "file": "05_02_01_download_music.html"
+            },
+            {
+                "heading": "Downloading Stock Videos and Photos from Getty Images",
+                "summary": "Download Getty Images videos and photos included with PowerDirector 365. Search using keywords, preview media (watermarked), select favorites, and download your chosen media files. Premium content is limited to 30 files per month.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importmediabutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/sssearchbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/smfilterbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-previewvideo.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-preview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/sm-myfavourites.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/download-resolution.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/sm-downloaded.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/premiumicon.jpg"
+                ],
+                "file": "05_02_02_download_gi.html"
+            },
+            {
+                "heading": "Downloading Content from DirectorZone/CyberLink Cloud",
+                "summary": "Download templates and effects from DirectorZone or your CyberLink Cloud account. Content is imported into the media library once downloaded, and you can filter and search through your DirectorZone uploads, history, or favorites.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/dhexplorer.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importmediabutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importmediabutt.jpg"
+                ],
+                "file": "05_02_03_downloading_from_dz_clc.html"
+            },
+            {
+                "heading": "Downloading Media and Effects",
+                "summary": "Download media from Getty Images as well as media and effects from DirectorZone and CyberLink Cloud, importing all content into the PowerDirector library.",
+                "images": [],
+                "file": "05_02_0_downloading_media.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Plugins & Collage",
+        "sections": [
+            {
+                "heading": "Plugins",
+                "summary": "CyberLink PowerDirector includes plugins such as the Collage Designer to help create video content. For more details, see Creating Video Collages.",
+                "images": [],
+                "file": "06_00_00_powerdirector_plug-in.html"
+            },
+            {
+                "heading": "Creating Video Collages",
+                "summary": "In the Video Collage Designer, you can create professional video edits by selecting media, choosing collage templates, and arranging media clips within template frames. When finished, click OK to save changes and add the collage to the timeline.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/collagedesignerui.jpg"
+                ],
+                "file": "06_09_00_video-collage.html"
+            },
+            {
+                "heading": "Creating a Video Collage",
+                "summary": "To create a video collage, select Plugins > Video Collage. All media from the library loads into the Video Collage Designer where you can import additional media, choose a layout template, drag media clips into frames, reposition them, and finalize your collage.",
+                "images": [],
+                "file": "06_09_01_creating_a_video-coll.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Media Arrangement & Templates",
+        "sections": [
+            {
+                "heading": "Arranging Media in the Editing Workspace",
+                "summary": "Once you have your media in the media library, you can begin putting your video production together by adding media clips to the editing workspace in the edit module. The clips are arranged in a sequence that tells your story.",
+                "images": [],
+                "file": "07_00_00_arranging_media_in_workspace.html"
+            },
+            {
+                "heading": "Using Video Intro and Outro Templates",
+                "summary": "Open the Video Intro/Outro Room to use a video intro template for starting your project or an outro template for closing it. The room provides various tags\u2014My Profile, My Favorites, Saved Templates, New, Outro, Intro: Theme, and Intro: Style\u2014to help you filter, download, add to the timeline, or edit templates in the Video Intro/Outro Designer.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/introvideoroom.jpg"
+                ],
+                "file": "07_00_00_video_intro_templates.html"
+            },
+            {
+                "heading": "Adding Intro/Outro Video Templates to Favorites",
+                "summary": "Quickly access frequently used video intro/outro templates by adding them to the My Favorites tag. Hover over the desired template and click the heart icon to add or remove it from favorites.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/iv-addtofavorites1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/iv-addtofavorites2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/iv-addtofavorites3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/iv-addtofavorites4.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/iv-addtofavorites5.jpg"
+                ],
+                "file": "07_01_00_add_ivt_favorites.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Adding Media Elements",
+        "sections": [
+            {
+                "heading": "Adding Media to the Workspace",
+                "summary": "Begin creating your video production by adding video clips and images to the timeline in the edit module. You can place media at any position and use timeline markers for precise positioning. If media is dropped on existing clips, ripple editing options are provided to insert, overwrite, replace, or adjust timing.",
+                "images": [],
+                "file": "07_01_00_adding_media.html"
+            },
+            {
+                "heading": "Adding Video Clips and Images",
+                "summary": "Video clips and images can be added to any video track at any position. Options include inserting clips via clicking, right-clicking, or dragging and dropping. When clips overlap existing content, you can choose from ripple editing options such as Overwrite, Insert, Insert and Move All Clips, Crossfade, or Replace.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addvideoclipbutt.jpg"
+                ],
+                "file": "07_01_01_adding_video_clips_an.html"
+            },
+            {
+                "heading": "Adding Color Boards",
+                "summary": "Color boards insert solid or gradient color frames into your video. They can serve as transitions or backgrounds for titles and credits. You can add a color board to the timeline using similar ripple editing options as with video clips, change its color after insertion, or create new custom color boards (solid or gradient) directly in the Media Room.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/explorerview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorboards.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addvideoclipbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reddot-closewin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipobject.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addcolor-glow.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient4.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reddot-closewin.jpg"
+                ],
+                "file": "07_01_02_adding_color_boards_a.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Audio Management & Profile",
+        "sections": [
+            {
+                "heading": "Adding Audio Clips",
+                "summary": "Add audio clips\u2014such as music, sound effects, or voice-over\u2014to your project from the media library or by downloading stock audio from CyberLink, Meta, or Soundstripe. Audio clips can be inserted with various ripple editing options (Overwrite, Insert, Crossfade, Replace, Trim to Fit, or Speed up to Fit) to integrate seamlessly into the timeline.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/backgroundmusic.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadbgm.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/backgroundmusic-meta2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadbgm.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mediaroombutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/backgroundmusic-soundstripe.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadbgm.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/soundeffects.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadbgm.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addvideoclipbutt.jpg"
+                ],
+                "file": "07_02_00_adding_audio_clips.html"
+            },
+            {
+                "heading": "Viewing Your Profile and Templates",
+                "summary": "In the Video Intro/Outro Room, access the My Profile tag to open the My Profile & Creations window. Here you can view and edit your profile details, see the templates you have shared, and manage your creations with options such as Edit Details, Edit in Designer, Add to Timeline, View on DirectorZone, or Delete.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/introvideoroom.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/myprofilecreationswin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editcrprofile.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivt-editprofilepic.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/viewcrprofile.jpg"
+                ],
+                "file": "07_02_00_my_profile.html"
+            },
+            {
+                "heading": "Syncing Audio",
+                "summary": "Ensure that independent audio clips are synchronized with your video by using the displayed audio waveform on the timeline. Zoom in for precision editing and use timeline markers to achieve accurate audio-video synchronization.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audiowf1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audiowf2.jpg"
+                ],
+                "file": "07_02_01_syncing_audio.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Template Editing and Synchronization",
+        "sections": [
+            {
+                "heading": "Editing Templates in the Video Intro/Outro Designer",
+                "summary": "In the Video Intro/Outro Designer, you can edit templates by previewing them, adjusting their duration (with limits to maintain quality), replacing the background media (via import, color board, or Getty Images), selecting specific video ranges, cropping media, flipping content, applying color filters, adding title text, images, video overlays, editing background music, and adjusting volume. Note that video outro templates cannot currently be shared.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivdesignerui.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/introvideoroom.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivt-duration.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-replacemedia.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-selectrange.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-cropvideo.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-flip.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-colorlut.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-addtext.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-addimage.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-editbgm.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-volume.jpg"
+                ],
+                "file": "07_03_00_editing_templates_ivd.html"
+            },
+            {
+                "heading": "Syncing Clips by Audio",
+                "summary": "If you have multiple clips that share the same source audio, the Sync by Audio function aligns their starting positions on the timeline, ensuring both video and audio remain synchronized.",
+                "images": [],
+                "file": "07_03_00_syncing_by_audio.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Background Media Replacement",
+        "sections": [
+            {
+                "heading": "Replacing Background Media",
+                "summary": "Replace the sample background media in a video intro/outro template by importing your own media, using a color board, or downloading media from Getty Images. Once replaced, you can further adjust the clip by selecting a specific segment or cropping unwanted portions.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-replacemedia.jpg"
+                ],
+                "file": "07_03_01_replacing_media.html"
+            },
+            {
+                "heading": "Selecting Range of Imported Background Videos",
+                "summary": "In the Video Intro/Outro Designer, you can set the specific segment of an imported background video to use by adjusting the yellow selected range area to match the template\u2019s duration.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivt-duration.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-selectrange.jpg"
+                ],
+                "file": "07_03_02_select_range.html"
+            },
+            {
+                "heading": "Cropping Background Media Clips",
+                "summary": "Crop unwanted portions of the background video or photo within the Video Intro/Outro Designer using the crop tool, which allows for resizing, repositioning, and even rotating the crop area to refine the visual content.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-cropvideo.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-crop1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-crop2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/piporient.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-crop3.jpg"
+                ],
+                "file": "07_03_03_crop_media.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Text and Graphics Customization",
+        "sections": [
+            {
+                "heading": "Adding and Editing Text",
+                "summary": "Customize your template's text by editing existing title text or adding new text. You can change font properties, color, size, position, rotation, and apply in/out animations. Additionally, you can edit text backdrops including options for solid or gradient fills, opacity, and offset adjustments.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-deletebutton.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-addtext.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/textbackdrop.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/closebackdropsettings.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-textanimation.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-changeobjectorder.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-duplicate.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-textduration1.jpg"
+                ],
+                "file": "07_03_04_add-edit_text.html"
+            },
+            {
+                "heading": "Applying Color Filters on Photos/Videos",
+                "summary": "Apply a color filter to alter the look of background photos or videos in your template. Adjust the strength of the filter to achieve the desired visual effect, or select the No Effect option to remove any filter.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-clut.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/closebackdropsettings.jpg"
+                ],
+                "file": "07_03_04_applylut.html"
+            },
+            {
+                "heading": "Flipping Background Media, Images, Overlays",
+                "summary": "Flip your background media, PiP images, or overlays horizontally or vertically to adjust the visual orientation of elements in your template.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-flip.jpg"
+                ],
+                "file": "07_03_04_flip.html"
+            },
+            {
+                "heading": "Adding and Editing Images",
+                "summary": "Incorporate PiP images or color boards into your template by importing them or downloading from Getty Images. Once added, images can be resized, repositioned, rotated, cropped, duplicated, and their object settings (opacity, border, shadow) and animations can be adjusted.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-addimage.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-deletebutton.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-editcolorboard.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-replacemedia2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/sssearchbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-preview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-cropvideo.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/piporient.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-imageobjectsettings.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-duplicate.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-imageduration1.jpg"
+                ],
+                "file": "07_03_05_adding_images.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Video Overlays Editing",
+        "sections": [
+            {
+                "heading": "Adding Video Overlays (PiP Objects)",
+                "summary": "Add video overlays (PiP objects) to your video intro/outro templates by importing them into the designer. After importing, you can resize, reposition, rotate, and change the duration, as well as adjust object settings such as opacity, border, shadow, and add in/out animations. Duplicating and replacing overlays are also supported.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-addsticker.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-imageobjectsettings.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-duplicate.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vid-voduration1.jpg"
+                ],
+                "file": "07_03_06_adding_vo.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Audio Adjustments in Templates",
+        "sections": [
+            {
+                "heading": "Editing Background Music",
+                "summary": "Replace the template\u2019s sample background music by importing your own or downloading music from Meta. Trim the audio to fit the template duration and apply fade-in and fade-out effects to ensure a smooth audio transition.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-editbgm.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importmediabutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/add-trimbox.jpg"
+                ],
+                "file": "07_03_07_edit_ivt_bgm.html"
+            },
+            {
+                "heading": "Adjusting Video Intro/Outro Volume",
+                "summary": "Adjust the volume levels of both the video clip and background music within your template. Options include muting imported video audio and using sliders to fine-tune audio mixing for a balanced sound output.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-volume.jpg"
+                ],
+                "file": "07_03_08_ivt_designer_settings.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Finalizing Templates",
+        "sections": [
+            {
+                "heading": "Saving, Sharing, and Advanced Editing",
+                "summary": "Finalize your video intro/outro templates by saving them for future use, sharing them on DirectorZone (note that video outro templates cannot be shared), or adding them to the timeline for further advanced editing. The process includes naming the template, selecting a thumbnail, adding a description and categories, and confirming terms of use.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ivd-removecats.jpg"
+                ],
+                "file": "07_03_09_produce.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Media Transformations",
+        "sections": [
+            {
+                "heading": "Resizing, Moving, Rotating Media Clips",
+                "summary": "This section explains how images, videos, and overlay effects (PiP objects, title templates, particle objects) can be resized, moved, and rotated within the preview window to create custom overlays. For more precise adjustments, the PiP Designer offers enhanced control.",
+                "images": [],
+                "file": "08_09_00_resizemoverotate.html"
+            },
+            {
+                "heading": "Resizing and Moving Images/Videos/PiP Objects",
+                "summary": "In the project preview window or PiP Designer, media clips display resizing nodes that let you adjust size while optionally preserving aspect ratio. You can also move clips by dragging them. Holding modifier keys temporarily disables snapping for smoother adjustments.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizenodes1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/optionkey.gif",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizenodes2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizenodes3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizenodes4.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizenodes5.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mousecursormove.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/moveclips1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/moveclips2.jpg"
+                ],
+                "file": "08_09_01_move_resize_media.html"
+            },
+            {
+                "heading": "Rotating Images/Videos/Effects",
+                "summary": "Learn how to rotate media clips by hovering near a resizing node in the preview window until the cursor changes, then clicking and dragging to adjust the rotation. Modifier keys can be used to disable snapping for smoother rotation.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/rotate1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/optionkey.gif",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/rotate2.jpg"
+                ],
+                "file": "08_09_02_rotate_media.html"
+            },
+            {
+                "heading": "Changing the Shape of Media Clips",
+                "summary": "CyberLink PowerDirector allows you to change a media clip's shape by adjusting the freeform position of its four corners. This freeform transformation enables custom, non-rectangular shapes for images, videos, and PiP objects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reshape1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reshape2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/reshape3.jpg"
+                ],
+                "file": "08_10_00_creating_shape.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Fix and Enhance Media",
+        "sections": [
+            {
+                "heading": "Fixing and Enhancing Media Clips",
+                "summary": "Apply instant fixes and enhancements such as lighting adjustments, lens correction, video stabilization, noise reduction, and more. The section covers both automatic fixes and manual enhancements including color adjustments, HDR effects, and audio improvements.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorpicker-wb.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadlps.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importlps.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/switch-r&t.jpg"
+                ],
+                "file": "08_11_00_fix_and_enhance.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Keyframes",
+        "sections": [
+            {
+                "heading": "Utilizing Keyframes on Media",
+                "summary": "This section describes how to use keyframes to define the start and end points for fixes, enhancements, or effects on media clips. It includes adjusting properties such as position, size, opacity, rotation, and freeform shape over time.",
+                "images": [],
+                "file": "08_12_00_utilizing_keyframes_o.html"
+            },
+            {
+                "heading": "Adding Keyframes",
+                "summary": "Learn how to add, modify, and remove keyframes in the Keyframe Settings panel. Keyframes allow you to set specific moments where media properties change, and you can copy keyframe attributes to apply the same effects to other clips.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/keyframesettingstl.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addkf1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addkf2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/removekf.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resetkf.jpg"
+                ],
+                "file": "08_12_01_adding_and_editing_ke.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Fade Effects",
+        "sections": [
+            {
+                "heading": "Adding Fade In/Out to Media Clips",
+                "summary": "This section covers how to add fade transitions to media clips. You can use the fade transition from the transitions library or create fades directly in the PiP Designer, adjusting clip opacity to control the fade-in and fade-out effects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition01.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition02.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition03.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition04.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadepipdesigner01.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadepipdesigner02.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadepipdesigner03.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadepipdesigner04.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clipopacity1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clipopacity2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/clipopacity3.jpg"
+                ],
+                "file": "08_13_00_adding_fade_in_out_to.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Audio Editing",
+        "sections": [
+            {
+                "heading": "Muting Media Clips",
+                "summary": "Learn how to mute or unmute audio in a clip directly from the timeline. Right-clicking on a clip gives you the option to mute, hiding any pre-existing audio volume keys.",
+                "images": [],
+                "file": "08_14_00_muting_clips.html"
+            },
+            {
+                "heading": "Editing Audio",
+                "summary": "A brief overview indicating that audio editing can be performed within CyberLink PowerDirector\u2019s Audio Editor.",
+                "images": [],
+                "file": "08_15_00_editing_audio.html"
+            },
+            {
+                "heading": "Editing Audio in the Audio Editor",
+                "summary": "A detailed guide to using the Audio Editor to enhance audio clips. This includes dynamic range compression, pitch shift, vocal transformation, equalizer adjustments, echo, reverb, and special effects like radio and phone filters. The section explains how to preview and apply these effects for improved audio quality.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/multichannelbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/singlechannelbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ae-rangeselection.jpg"
+                ],
+                "file": "08_15_01_editing_audio_ae.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Advanced Effects and Keyframe Enhancements",
+        "sections": [
+            {
+                "heading": "Utilizing Keyframes on Media",
+                "summary": "This section (also covered earlier) explains how keyframes can be used to animate fixes, enhancements, and property changes like position, size, opacity, rotation, and freeform shape, with the ability to copy keyframe attributes between clips.",
+                "images": [],
+                "file": "08_12_00_utilizing_keyframes_o.html"
+            },
+            {
+                "heading": "Adding Keyframes",
+                "summary": "Detailing the process of adding, modifying, and removing keyframes in a clip's mini timeline. Keyframes help in creating smooth transitions and effects over time within your video production.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/keyframesettingstl.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addkf1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addkf2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/removekf.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resetkf.jpg"
+                ],
+                "file": "08_12_01_adding_and_editing_ke.html"
+            },
+            {
+                "heading": "Adding Fade In/Out to Media Clips",
+                "summary": "This section explains how to add fade transitions to media clips either via the transitions library or directly in the PiP Designer. Manual opacity adjustments can also be made to fine-tune the fade effects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition01.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition02.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition03.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/fadetransition04.jpg"
+                ],
+                "file": "08_13_00_adding_fade_in_out_to.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Additional Media Adjustments",
+        "sections": [
+            {
+                "heading": "Editing Audio in the Audio Editor",
+                "summary": "A comprehensive section on audio editing, including applying effects such as dynamic range compression, pitch shift, vocal transformation, equalizer, echo, reverb, and special effects that simulate radio or phone sounds.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/multichannelbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/singlechannelbutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ae-rangeselection.jpg"
+                ],
+                "file": "08_15_01_editing_audio_ae.html"
+            },
+            {
+                "heading": "Muting Media Clips",
+                "summary": "Instructions on how to mute or unmute media clips directly from the timeline by right-clicking, which hides or reveals any existing audio volume adjustments.",
+                "images": [],
+                "file": "08_14_00_muting_clips.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Advanced Media Enhancements",
+        "sections": [
+            {
+                "heading": "Fixing and Enhancing Media Clips",
+                "summary": "Beyond basic fixes, this section details enhancements like color adjustments (exposure, brightness, contrast, hue, saturation), split toning, HDR effects including glow and edge enhancements, and speech enhancement for improved dialogue clarity.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorpicker-wb.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadlps.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importlps.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/switch-r&t.jpg"
+                ],
+                "file": "08_11_00_fix_and_enhance.html"
+            },
+            {
+                "heading": "Editing Audio",
+                "summary": "A brief overview indicating that audio editing is available, with more detailed editing provided in the Audio Editor section.",
+                "images": [],
+                "file": "08_15_00_editing_audio.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Basic Tools and Clip Transformations",
+        "sections": [
+            {
+                "heading": "Using the Tools",
+                "summary": "CyberLink PowerDirector provides various tools accessible via the Tools button. These include the PiP Designer, Mask Designer, Crop/Rotate, Pan/Zoom, Video/Audio Speed, Reverse functions, Blending Mode, and Audio Editor, which help you apply creative effects and edits to your media clips.",
+                "images": [],
+                "file": "09_00_00_using_the_tools.html"
+            },
+            {
+                "heading": "Cropping and Rotating Clips",
+                "summary": "Learn how to crop a video or image clip by resizing the crop area and repositioning it to display only the desired portion. You can also rotate the view of a clip by dragging outside the crop box to alter its appearance without permanently rotating the clip.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cropimagebutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/crop-rotatewin1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/crop-rotatewin2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/crop-rotatewin3.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/crop-rotatewin4.jpg"
+                ],
+                "file": "09_01_00_crop_rotate.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Pan & Zoom Effects",
+        "sections": [
+            {
+                "heading": "Panning and Zooming in Videos/Images",
+                "summary": "Apply pan and zoom effects to both video clips and images to create engaging motion. Use keyframes to set the focus area, adjust the motion path, add rotation, and utilize grid lines or TV safe zones for precise positioning. The Motion Designer allows further customization for images.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/hmfile_hash_6892bcd1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addkfpip.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/dupkf.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mmzoom.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/gridlines-pip.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mmdesignerui.jpg"
+                ],
+                "file": "09_02_00_pan_zoom.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Speed and Duration Adjustments",
+        "sections": [
+            {
+                "heading": "Adjusting Video Speed in the Video Speed Designer",
+                "summary": "Change the speed of an entire video clip or a selected range using the Video Speed Designer. Adjust the speed via a multiplier or by entering a new duration, and use ease in/out options for smoother transitions. Audio settings allow you to retain pitch when the speed changes.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/videospeeddesignerui.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/acc-zoomslider.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vsd-createts1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/vsd-createts2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/acc-settingsbutt.jpg"
+                ],
+                "file": "09_04_00_adjusting_video_speed.html"
+            },
+            {
+                "heading": "Adjusting Audio Duration Using Smart Fit",
+                "summary": "Use Smart Fit for Duration to automatically remix an audio clip to a desired length. Options include fitting to the playhead position, end of project, or a custom duration, with bias adjustments to refine the remix.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/shiftkey.gif"
+                ],
+                "file": "09_05_00_smart_fit_duration.html"
+            },
+            {
+                "heading": "Using the Power Tools (Reverse Video/Audio)",
+                "summary": "Reverse the playback direction of video or audio clips by selecting the reverse option from the Tools menu. To revert, simply deselect the reverse option.",
+                "images": [],
+                "file": "09_06_00_reverse_video-audio.html"
+            },
+            {
+                "heading": "Adjusting Audio Speed",
+                "summary": "Modify the speed of an audio clip by entering a new duration or using the speed multiplier. This allows you to slow down or speed up the audio as needed.",
+                "images": [],
+                "file": "09_07_00_audiospeed.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Motion Tracking",
+        "sections": [
+            {
+                "heading": "Motion Tracker",
+                "summary": "The Motion Tracker tool tracks the movement of objects in a video clip. Once applied, you can add effects such as title text or PiP objects that follow the tracked object. Adjust the tracker timeline to define the duration of tracking.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/motiontrackerui.jpg"
+                ],
+                "file": "09_08_00_mt.html"
+            },
+            {
+                "heading": "Tracking the Motion of Objects in Videos",
+                "summary": "Select a video clip and use the Motion Tracker to define a selection box over the object to be tracked. Set the tracking start and end points, then track the object so effects can be applied to follow its movement.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-markin.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-addtracker1a.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-addtracker1.jpg"
+                ],
+                "file": "09_08_01_tracking_objects_in_v.html"
+            },
+            {
+                "heading": "Adding and Editing Trackers",
+                "summary": "After tracking an object, additional trackers can be added for multiple objects. You can adjust the duration of tracking by dragging tracker endpoints, hide or delete trackers, and edit their properties as needed.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-trackertimeline1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-trackertimeline2.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-deletetracker.jpg"
+                ],
+                "file": "09_08_02_adding_and_editing_tr.html"
+            },
+            {
+                "heading": "Adding Motion Tracking Effects",
+                "summary": "Apply motion tracking effects such as moving title text, media clips, or mosaic/blur effects that follow the tracked object. Customize properties like font, backdrop, or grid scale for mosaic, and adjust effects for a dynamic visual result.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-titlebutt.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-titletext1.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mt-pickbcolor.jpg"
+                ],
+                "file": "09_08_03_adding_tracking_effec.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Additional Motion and Audio Tools",
+        "sections": [
+            {
+                "heading": "Adjusting Video Speed in the Video Speed Designer",
+                "summary": "Change the playback speed of a video clip or a selected range using keyframes in the Video Speed Designer, with options for gradual easing and audio pitch preservation.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/videospeeddesignerui.jpg"
+                ],
+                "file": "09_04_00_adjusting_video_speed.html"
+            },
+            {
+                "heading": "Adjusting Audio Duration Using Smart Fit",
+                "summary": "Remix an audio clip to fit a specific duration using the Smart Fit feature. Choose from options like fitting to the playhead, end of project, or a custom duration with bias adjustments.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/shiftkey.gif"
+                ],
+                "file": "09_05_00_smart_fit_duration.html"
+            },
+            {
+                "heading": "Adjusting Audio Speed",
+                "summary": "Change the speed of an audio clip by setting a new duration or using a speed multiplier, allowing for slow-motion or fast-motion audio effects.",
+                "images": [],
+                "file": "09_07_00_audiospeed.html"
+            },
+            {
+                "heading": "Using the Power Tools (Reverse Video/Audio)",
+                "summary": "Reverse the playback direction of video or audio clips easily from the Tools menu. To undo, simply deselect the reverse option.",
+                "images": [],
+                "file": "09_06_00_reverse_video-audio.html"
+            },
+            {
+                "heading": "Motion Tracker - Additional Tools",
+                "summary": "Use the Motion Tracker and its associated tools to fine-tune tracking effects, ensuring that added elements like title text or media clips follow the motion of objects accurately.",
+                "images": [],
+                "file": "09_08_00_mt.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Blending and Audio Ducking",
+        "sections": [
+            {
+                "heading": "Blending Mode (Blending Clips on the Timeline)",
+                "summary": "Blend any video or image clip on a timeline track with the media above it to create unique overlay effects. Choose from eight blending modes\u2014Normal, Darken, Multiply, Lighten, Screen, Overlay, Difference, and Hue\u2014to achieve various visual effects.",
+                "images": [],
+                "file": "09_09_00-blending_clips_tl.html"
+            },
+            {
+                "heading": "Audio Ducking",
+                "summary": "Automatically optimize the audio mix by lowering the volume of a selected clip when dialogue or narration is present in other clips. Customize sensitivity, ducking level, and fade durations to balance the audio across your project.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audioduckinglevels.jpg"
+                ],
+                "file": "09_10_00_audio_ducking.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Video Style and Effects",
+        "sections": [
+            {
+                "heading": "Adding Effects",
+                "summary": "Add a variety of effects\u2014including style effects, color look-up tables, body effects, and blending effects\u2014to enhance your video production.",
+                "images": [],
+                "file": "10_00_00_adding_videos_effects.html"
+            },
+            {
+                "heading": "Adding Video Style Effects",
+                "summary": "Access over 100 video style effects in the Effect Room. Effects like mosaic, blur, and black & white can be applied to an entire clip or to portions of a clip, with options to insert, overwrite, or crossfade between effects.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effectsroom.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/styleeffect-remove.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addeffectbutt.jpg"
+                ],
+                "file": "10_01_00_adding_video_effects.html"
+            },
+            {
+                "heading": "Modifying a Video Effect",
+                "summary": "Customize the properties of video style effects either in Clip Mode for the entire duration or in Keyframe Mode for dynamic changes over time. Adjust parameters such as intensity, position, and blending to suit your production.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/styleeffect-remove.jpg"
+                ],
+                "file": "10_01_01_modify_video_effects.html"
+            },
+            {
+                "heading": "Applying Color Look-up Tables",
+                "summary": "Transform the color scheme of a video clip by applying color look-up tables (CLUTs). Download various CLUT formats and adjust the intensity of the effect to ensure consistency across clips.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effectsroom.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importpreset.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadtemplate.jpg"
+                ],
+                "file": "10_03_00_cluts.html"
+            },
+            {
+                "heading": "Applying Overlay Blending Effects",
+                "summary": "Create unique overlay effects by applying blending effect templates. Drag and drop a blending effect onto a clip and adjust its duration and opacity within the timeline. Additional customization is available via the PiP Designer.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effectsroom.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadtemplate.jpg"
+                ],
+                "file": "10_04_00_blending_effect.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Body Effects",
+        "sections": [
+            {
+                "heading": "Using Body Effects",
+                "summary": "Apply AI-powered effects to selectively enhance objects such as people or pets in your videos. Customize a range of body effects like Aura, Body Flicker, Butterfly Glow, Cloud Swirl, and more, with detailed control over size, color, opacity, and offset.",
+                "images": [],
+                "file": "10_04_01_ai_object_selection.html"
+            }
+        ]
+    },
+    {
+        "block_title": "PiP (Picture-in-Picture) Effects",
+        "sections": [
+            {
+                "heading": "Creating Video Overlays (PiP Effects)",
+                "summary": "Utilize PiP effects to overlay additional video or images on top of your main video. This includes using chroma key effects and layering media on timeline tracks to achieve a picture-in-picture presentation.",
+                "images": [],
+                "file": "11_00_00_creating_pip.html"
+            },
+            {
+                "heading": "Adding PiP Objects",
+                "summary": "Access a library of PiP objects in the Video Overlays (PiP Objects) Room. Insert PiP objects or paint animation objects by adding them to a video track with ripple editing options available for seamless integration.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipeffects.jpg"
+                ],
+                "file": "11_01_00_adding_pip_objects.html"
+            },
+            {
+                "heading": "Types of PiP Objects",
+                "summary": "Discover various types of PiP objects including static graphics, animated graphics, motion graphics, decorative borders, and customizable shapes created via the Shape Designer. Options for color modification and blending are available.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/piporient.jpg"
+                ],
+                "file": "11_01_01-types-of-pip-objects.html"
+            },
+            {
+                "heading": "Creating Custom PiP Objects",
+                "summary": "Design custom PiP objects using your own graphics. Import an image file into the Video Overlays (PiP Objects) room and open it in the PiP Designer to edit its properties and integrate it seamlessly into your project.",
+                "images": [
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipeffects.jpg",
+                    "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipobject.jpg"
+                ],
+                "file": "11_01_02_creating_custom_pip_o.html"
+            },
+            {
+                "heading": "Oops, our apologies .. page not found.",
+                "summary": "This page indicates that the requested PiP design resource is missing. It provides quick links to other products, downloads, and support areas for further assistance.",
+                "images": [],
+                "file": "11_06_00_pip_designles.html"
+            }
+        ]
+    },
+    {
+        "block_title": "Title Effects Overview",
+        "sections": [
+        {
+            "file": "13_00_00_creating_titles.html",
+            "heading": "Adding Title Effects",
+            "summary": "Click the button to open the Title Room to access a library of title effect templates that allow you to add movie titles, screen captions, credits, etc. to your videos. Title effect templates are added to video tracks in the timeline. To insert a title effect to the timeline, do one of the following: Note : the latest title effect packs will auto display in the title effect library. Browse through them and then click on an effect thumbnail to download the individual title into the library. • use the timeline slider to set the position where you want the title, select the title effect template in the library, and then click to add it to the selected video track. • use the timeline slider to set the position where you want the title, right-click on the title effect template in the library, and then select Add to Timeline to add it to the selected video track. • manually drag and drop a title effect template to a desired position on any video track to add it to the timeline. When adding a title effect to the timeline (inserting or dragging and dropping), if the timeline slider is over an existing clip, or you drop it on an existing clip, you are prompted to use one of the ripple editing options to insert the clip: • Overwrite : select to overwrite the existing clip with the title effect. • Insert : select to split the clip and insert the title effect between the two portions. CyberLink PowerDirector also only moves the clips on the same track to the right. • Insert and Move All Clips : select to split the clip and insert the title effect between the two portions. CyberLink PowerDirector also moves all of the media clips on the timeline that lie to the right of the inserted clip. • Crossfade : select to lay the title effect over a portion of the existing clip and auto add a fade transition between the two clips. Note : the Crossfade option does not overwrite the content on the track, instead adding an overlap transition between the two clips. The Crossfade option is only available if the end of the new clip is not over any existing content on the track. • Replace : select to replace a current clip on the timeline with the title effect. Use this option if you don't want to change the structure of the current content on the timeline. Note : if the duration of the clip you are replacing is longer or shorter than the title effect, CyberLink PowerDirector automatically resizes it to fit the original clip's duration. If the timeline slider is in a gap between two clips on a timeline track when inserting a title effect, you are prompted to use this ripple editing option to insert the clip: • Trim to Fit : select to have CyberLink PowerDirector auto set the duration of the title effect to fit the gap to the right of the timeline slider. Once added to the timeline, you can click on it in the preview window to type in the title text you want. For more advanced editing, select the title effect template on the timeline and then click the Designer button to edit it in the Title Designer. See Modifying Titles in the Title Designer for more information. For information on setting the amount of time the title effect appears in your video production, see Setting a Media Clip's Duration.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadtemplate.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addvideoclipbutt.jpg"
+            ]
+        },
+        {
+            "file": "13_01_00-types-of-title-effect.html",
+            "heading": "Title Effect Categories",
+            "summary": "Title effects allow you to add movie titles, screen captions, credits, and more to your videos. They are available in these title effect categories: • Standard 2D Title Effects • Motion Graphics Titles • Title Effects with Sound",
+            "images": []
+        }
+        ]
+    },
+    {
+        "block_title": "Types of Title Effects",
+        "sections": [
+        {
+            "file": "13_01_01-standard-2d-title-eff.html",
+            "heading": "Standard 2D Title Effects",
+            "summary": "Standard 2D title effects are the title text used in most standard, non-3D video projects, which have a 4:3, 16:9, or 9:16 aspect ratio. Click in title room and then select 2D Title to create a new 2D title effect in the Title Designer. Standard 2D title effects may consist of title text, particle effects, images, and inserted backgrounds. See Modifying Titles in the Title Designer - Advanced for a complete list and description of all the features available for these types of title effects.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipobject.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/2dtitleeffect.jpg"
+            ]
+        },
+        {
+            "file": "13_01_02_motion_graphics_title.html",
+            "heading": "Motion Graphics Titles",
+            "summary": "Click the button and then on the Motion Graphics tag to view the available motion graphics titles. These titles contain animated graphics with your title text. The available editing options for motion graphics titles are more limited than for other title effect templates. Editing Title Text: To edit the title text, just select one of the title tracks in the preview window to enable editing in the box on the left. Once selected, enter the title text you want on that title track in the field provided. Note: you cannot add additional title tracks to motion graphics titles. Changing Font Face and Color: You can edit the title text font face and weight just below the title text box. To edit the color of the text for the selected title track, click the colored rectangle in the Title section. In the color picker window, choose one of the basic colors or enter the color's HSL or RGB color code in the fields provided. Click OK to use the new color. You can also click the button to use the eye dropper to select a font color from the preview window. Changing Graphics Color: Some motion graphics titles let you modify one or more of the graphics colors in the title template. To change a graphics color, click the colored rectangle next to it and select a new color, or use the eye dropper to pick a color from the preview window. Modifying Motion Graphics Position, Size, and Orientation: In the Object Settings panel you can adjust the X and Y position, use Scale sliders to change the size, or rotate the title by entering a value or dragging near the nodes.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/motiongraphicstitles.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editmgt1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editmgt2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editmgt3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg"
+            ]
+        },
+        {
+            "file": "13_01_03_title_effects_sound.html",
+            "heading": "Title Effects with Sound",
+            "summary": "Some title effects have an embedded sound clip, which will play audio when played in your project. You can find them in the Title Room by looking for the speaker icon displayed on the title effect's thumbnail. When added to the timeline, these title effects will have an audio track. You can right click on the title effect and then select Extract Sound from Template to extract the audio from the title effect template.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffect-sound1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffect-sound2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffect-sound3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffect-sound4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffect-sound5.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Editing and Customizing Titles",
+        "sections": [
+        {
+            "file": "13_02_00_modifying-in-td_basic.html",
+            "heading": "Modifying Titles in the Title Designer - Express",
+            "summary": "To open the Title Designer, select a title effect on the timeline and then click the Designer button. Click on the Express button to use a more simplified version of the Title Designer, which allows you to just apply some text on your video. The interface includes: A - Text Properties Tab, B - Title Text Properties, C - Insert Text, D - Background Video, E - Enter Basic Editing, F - Title Text, G - Zoom Tools, H - Share on DirectorZone, and I - Title Keyframe Timeline. You can also open the Title Designer by clicking in the Title Room or selecting an existing title effect and clicking to edit it.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titledesignerui-basic.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipobject.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editpipbutt.jpg"
+            ]
+        },
+        {
+            "file": "13_02_01_title_zoom_tools.html",
+            "heading": "Zoom Tools",
+            "summary": "Use the zoom tools to zoom in and out on the preview window when modifying the title effect. You can also select the viewer zoom amount from the drop-down menu to set the size of the title effect preview. Select 'Fit' to resize the title effect so that it fits within the Title Designer's viewer window.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipzoomout.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipzoomin.jpg"
+            ]
+        },
+        {
+            "file": "13_02_02_adding-text.html",
+            "heading": "Adding Additional Title Text",
+            "summary": "You can add additional title text boxes that contain the text you want to display in your video production. To add new title text, click on the button and then click in the preview window to add the title text box to the desired position. Type in the required text in the new title text box. See Modifying Title Text Properties for more information on customizing the added title text's properties.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addtt.jpg"
+            ]
+        },
+        {
+            "file": "13_02_03_modifying_title_ef.html",
+            "heading": "Modifying Title Effect Position, Size, and Orientation",
+            "summary": "You can change the position, size, and orientation of the title text and images in a title effect quickly and easily. To modify title text and image position or orientation: • click on the title text or an image and drag it to a new position; • click and drag one of the eight size nodes to resize the title text (note that depending on which node you select, the resizing behavior may vary, and you can also change the font size in title text properties); • for 2D titles, hover near a node until the cursor changes to two curved arrows and then drag to rotate; • for title effects containing an image, select the image and drag a corner or side to resize it.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizingnodes.jpg"
+            ]
+        },
+        {
+            "file": "13_02_04_modifying_text_prop.html",
+            "heading": "Modifying Title Text Properties",
+            "summary": "On the Object tab you can change the properties of selected title text inserted into the title effect. Options include applying character presets, customizing font and paragraph settings (font type, size, spacing, alignment, and kerning), and editing font face options such as blur and opacity. You can choose between a solid color or a color gradient for the text fill. Additional options include applying a border (with size, color, opacity, and blur adjustments), setting border gradients, and adding a shadow with customizable direction, distance, opacity, and blur. Further, you can add and customize a backdrop for the title text by selecting a backdrop type (solid background bar, fit with title, or various rectangle styles), and then adjusting its fill type, color, gradient, image, width, height, opacity, and offset.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/charpresetbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/font-gradient-character.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/font-gradient-line.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/font-gradient-title.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lineargradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/radialgradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cornergradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addcolor-glow.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/4colorgradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg"
+            ]
+        },
+        {
+            "file": "13_02_05_set_tt_length.html",
+            "heading": "Setting Title Text Duration",
+            "summary": "You can set the duration of all the title text individually in your title effect. To do this: 1. Select a title text object in the Title Designer. 2. Drag the mark in/out sliders as required to set the title text length, which determines when the title text appears and disappears as the title effect plays on the timeline.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/selectttobject.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/selectttobject2.jpg"
+            ]
+        },
+        {
+            "file": "13_02_06_saving_and_sharing_ti.html",
+            "heading": "Saving and Sharing Title Templates",
+            "summary": "Once you finish modifying your title template you can save it to your title effects library for future use, upload it to DirectorZone to share it with others, or back it up on CyberLink Cloud. To do this: • click on Share to upload your custom template to DirectorZone or back it up on CyberLink Cloud (see Sharing and Backing Up Title Templates for more information), • click on Save As to save a modified template as a new template to the Title Room, or • click on OK to save a new template to the Title Room. To share and back up your title templates, follow these steps: 1. In the Title Designer, click on Share, enter a name for the custom template, and click OK, or select the title template in the library and click the designated button. 2. In the upload window, fill in details such as Upload to, Title, Style, Type, Tags (separate each with a space and use quotes for multi-word tags), Collection, and Description. 3. Click Next, confirm the copyright disclaimer, then click Next again, and finally click on Finish to close the upload window.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/uploadbutt.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Advanced Title Designer",
+        "sections": [
+        {
+            "file": "13_03_00_modifying_in_td.html",
+            "heading": "Modifying Titles in the Title Designer - Advanced",
+            "summary": "Open the Title Designer by selecting a title effect on the timeline and clicking the Designer button. Then click the Advanced button to access full customization features including character presets, animation, and background options. The interface includes tabs for text properties, title animation effects, motion, inserting various elements (text, images, particles, backgrounds), background video, zoom tools, keyframe timeline display, grid lines, and object alignment. You can also open the designer from the Title Room by selecting an existing title effect.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titledesignerui-advanced.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipobject.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editpipbutt.jpg"
+            ]
+        },
+        {
+            "file": "13_03_01_title_zoom_tools.html",
+            "heading": "Zoom Tools",
+            "summary": "Use the zoom tools to zoom in and out on the preview window in the Title Designer. You can also select a viewer zoom amount from the drop-down menu and choose the Fit option to resize the title effect so that it fits within the viewer window.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipzoomout.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pipzoomin.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Adding and Modifying Title Elements",
+        "sections": [
+        {
+            "file": "13_03_02_adding_text_stuff_.html",
+            "heading": "Adding Text, Particles, Images, and Backgrounds",
+            "summary": "Each title effect template can include multiple text boxes, particle effects, images, and backgrounds. You can add additional title text boxes by clicking the designated button and positioning them in the preview window. Similarly, particle effects can be added by selecting the desired effect, and images or background images can be inserted by browsing and selecting files from your computer. Once added, these elements can be resized and repositioned as needed.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addtt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpe-titlee.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addimagebutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addbgimage.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/removebg.jpg"
+            ]
+        },
+        {
+            "file": "13_03_03_modifying_title_ef.html",
+            "heading": "Modifying Title Effect Position, Size, and Orientation",
+            "summary": "Easily adjust the position, size, and orientation of title text and images. You can drag elements to new positions or use the X and Y fields for precise adjustments. Resizing is done via eight size nodes, and rotation is achieved by dragging near the nodes. Grid lines and snapping to reference lines help ensure accurate placement on the master video.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/gridlines-pip.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/resizingnodes.jpg"
+            ]
+        },
+        {
+            "file": "13_03_04_modifying_text_proper.html",
+            "heading": "Modifying Title Text and Image Properties",
+            "summary": "On the Object tab, customize properties of selected title text or images. Options include applying character presets, adjusting font and paragraph settings (type, size, spacing, alignment, and kerning), and editing font face with options for blur and opacity. You can also choose between solid colors and color gradients for both text and borders. Additional modifications include applying chroma key for transparency, adding shadows, and customizing backdrops with adjustable size, position, opacity, and fill type.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/charpresetbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/font-gradient-character.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/font-gradient-line.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/font-gradient-title.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lineargradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/radialgradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cornergradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addcolor-glow.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/4colorgradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ckbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/td-addborder.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/td-deleteborder.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/border-gradient-character.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/border-gradient-line.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/border-gradient-title.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/lineargradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/radialgradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cornergradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addcolor-glow.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/colorgradient4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/4colorgradient.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pickcolorfrompreview.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/rendermethod1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/rendermethod2.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Animation and Motion Effects",
+        "sections": [
+        {
+            "file": "13_03_05_applying_ttmotion.html",
+            "heading": "Applying Animation Effects to Title Text",
+            "summary": "Within the Animation tab, apply in/out animations (such as fades, motion, or wipes) to text. Adjust the speed of the animations by dragging keyframes in the timeline. You can also add loop animation to continuously play an effect for the duration of the title effect and apply motion blur to smooth the animation.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titledesigner-inanimation.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titledesigner-outanimation.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titledesigner-loopanimation.jpg"
+            ]
+        },
+        {
+            "file": "13_03_06_adding_motion_to_tt.html",
+            "heading": "Adding Motion to Title Text",
+            "summary": "Access the Motion tab to add motion paths to title text. Choose from predefined motion path templates or create a custom motion by adding and adjusting keyframes. Customize the motion path, speed, and duration by dragging keyframes, altering path lines, and adjusting properties on the Object Settings tab.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kfm1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kfm2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kfm3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kfpath1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kfpath2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kfpath3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/pip-addkeyframe.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kftimeline-showbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titlekftl1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titlekftl2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/savepathbutt.jpg"
+            ]
+        },
+        {
+            "file": "13_03_07_utilizing_te_keyframes.html",
+            "heading": "Utilizing Title Effect Keyframes",
+            "summary": "Use keyframes to define the start and end points of various text effects in the Title Designer. Options include linear or hold keyframes, and you can add, duplicate, modify, or remove keyframes for properties like position, scale, opacity, rotation, and more. The keyframe timeline helps in fine-tuning these effects to achieve smooth transitions.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/kftimeline-showbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipkf.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addtekf.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipkf.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addtekf2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans3b.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans5.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans6.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/titleeffecttrans7.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addpipkf.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Saving and Sharing Title Templates",
+        "sections": [
+        {
+            "file": "13_03_08_saving_and_sharing_ti.html",
+            "heading": "Saving and Sharing Title Templates",
+            "summary": "After modifying your title template, you can save it to your title effects library, upload it to DirectorZone to share with others, or back it up on CyberLink Cloud. Options include clicking Share to upload/back up, using Save As to create a new template, or clicking OK to save. The upload process involves entering details like upload destination, title, style, type, tags, collection, and description, followed by confirming copyright and finalizing the upload.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/uploadbutt.jpg"
+            ]
+        }
+        ]
+    },
+    {
+    "block_title": "Transitions",
+    "sections": [
+        {
+        "file": "15_00_00_using_transitions.html",
+        "heading": "Using Transitions",
+        "summary": "Open the Transition Room to access a library of transitions for video, image, and audio clips. Transitions control how media appears and disappears, and can be applied to a single clip or between two clips on a track.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transitionroom.jpg"
+        ]
+        },
+        {
+        "file": "15_01_00_adding_transitions_to.html",
+        "heading": "Adding Transitions to a Single Clip",
+        "summary": "Add transitions to a single clip to control its appearance or disappearance, for example with Picture-in-Picture video, images, or effects. Open the Transition Room, select a transition effect from the library, and drag it to the beginning (prefix) or end (postfix) of the clip. You can also adjust the duration and apply transitions to all clips on a track using preset options.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transitionroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadtemplate.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/durationbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/prefix1a.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/postfix1a.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/librarymenu.jpg"
+        ]
+        },
+        {
+        "file": "15_02_00_adding_transitions_be.html",
+        "heading": "Adding Transitions Between Two Clips",
+        "summary": "To transition between two clips (video, image, or audio), open the Transition Room, select a transition effect, and drag it between the clips. Adjust the transition duration as needed, and you can also apply transitions to all clips on a track using preset options.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transitionroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadtemplate.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transbclips1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/durationbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/librarymenu.jpg"
+        ]
+        },
+        {
+        "file": "15_03_00_using_audio_transitio.html",
+        "heading": "Using Audio Transitions",
+        "summary": "Audio transitions allow smooth changes between two audio clips or between video clips containing audio. In the Transition Room, switch to the Audio tag, select a transition, and drag it to the desired position. Adjust the duration as needed; note that when added between video clips, a fade transition is automatically applied to the corresponding video track.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transitionroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audiotransition1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/durationbutt.jpg"
+        ]
+        },
+        {
+        "file": "15_04_00_setting_transition_be.html",
+        "heading": "Setting Transition Behavior",
+        "summary": "After adding a transition between two clips, set its behavior. Choose between a Cross Transition (clips side by side with a bridging effect) or an Overlap Transition (clips play over each other). Adjust the behavior by selecting the transition, clicking Modify, and then setting the desired parameters in the Transition Settings panel.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/trans-cross.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/trans-overlap.jpg"
+        ]
+        },
+        {
+        "file": "15_05_00_modifying_transition_settings.html",
+        "heading": "Modifying Transition Settings",
+        "summary": "Some transitions offer adjustable settings such as background color, direction, and effect type. To modify these settings, select the transition on the timeline and click the Modify button to open the Transition Settings panel. Adjust any available options to achieve the desired visual effect.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/transitionsettingspnael.jpg"
+        ]
+        }
+    ]
+    },
+    {
+    "block_title": "Subtitles and Speech to Text",
+    "sections": [
+        {
+        "file": "18_01_00_auto_transcribe_sub.html",
+        "heading": "Using Speech to Text",
+        "summary": "CyberLink PowerDirector can auto transcribe video or audio files to create subtitles. Select the clip or a portion of it, open the Subtitle Room, click the Speech to Text button, and set options like audio track, language, and range selection. The program will then transcribe the audio and generate subtitles, which can be further edited.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitleroom.jpg"
+        ]
+        },
+        {
+        "file": "18_02_00_adding_subtitles.html",
+        "heading": "Creating Subtitles Manually",
+        "summary": "Manually create subtitles by adding subtitle markers in the Subtitle Room. After selecting the clip, click the Create Subtitles Manually button and use player controls to add markers at desired positions. Once markers are added, edit the subtitle text as needed.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitleroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addsubtitle-manual.jpg"
+        ]
+        },
+        {
+        "file": "18_03_00_importing_subtitles.html",
+        "heading": "Importing Subtitles from a File",
+        "summary": "You can import subtitles from external files (SRT or TXT) into CyberLink PowerDirector. Open the Subtitle Room, click Import Subtitles from File, and select the subtitle file. For SRT files, markers are created automatically; for TXT files, ensure the subtitle markers already exist and match the number of text lines.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitleroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/importsub.jpg"
+        ]
+        },
+        {
+        "file": "18_04_00_editing_subtitles.html",
+        "heading": "Editing Subtitles",
+        "summary": "Edit the subtitles in the Subtitle Room by double-clicking on markers to modify text, replacing text using search and replace functions, adding or removing markers, splitting or merging subtitles, and adjusting subtitle position using X and Y sliders. Additional formatting options are also available.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/replacesubtitle.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/addsubtitle-manual.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/removesubtitle.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/separatesubtitles.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/commandkey.gif",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mergesubtitlesbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitleposition.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitletextbutt.jpg"
+        ]
+        },
+        {
+        "file": "18_04_01_syncing_subtitles.html",
+        "heading": "Syncing Subtitles with Dialogue",
+        "summary": "Manually adjust the timing of subtitle markers to sync with dialogue. Set start and end times by double-clicking the respective time columns or by dragging the markers on the timeline. You can also set the duration of each subtitle marker via the Duration Settings window.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/durationbutt.jpg"
+        ]
+        },
+        {
+        "file": "18_05_00_exporting_subtitles.html",
+        "heading": "Exporting Subtitles",
+        "summary": "Export the created subtitles in SRT format. In the Subtitle Room, click the export button and choose between exporting with or without SubRip style formatting. Then name and save the SRT file.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/subtitleoptionsbutt.jpg"
+        ]
+        }
+    ]
+    },
+    {
+        "block_title": "Exporting and Output Options",
+        "sections": [
+        {
+            "file": "19_00_00_producing_your_project.html",
+            "heading": "Exporting Your Project",
+            "summary": "Compile your edited project into a playable file using various export options suited for different uses. CyberLink PowerDirector provides multiple settings to meet your requirements.",
+            "images": []
+        },
+        {
+            "file": "19_01_00_producing_range.html",
+            "heading": "Exporting Selected Range on Timeline",
+            "summary": "Export only a specific portion of your timeline for preview or focused output by selecting a range with the orange nodes and clicking the Export Range button.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/selectedrange1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/selectedrange2.jpg"
+            ]
+        },
+        {
+            "file": "19_01_00_profile_analyzer.html",
+            "heading": "Profile Analyzer",
+            "summary": "Utilize the Profile Analyzer to choose the optimal video profile based on your project’s source footage and modifications. Intelligent SVRT assists by suggesting the best profile to ensure quality and efficiency.",
+            "images": []
+        },
+        {
+            "file": "19_02_00_produce_window.html",
+            "heading": "Outputting Project to a File",
+            "summary": "Use the Export window to compile your project into a file for local playback or online sharing. Options include exporting to a local file or directly uploading to online platforms.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/produceui.jpg"
+            ]
+        },
+        {
+            "file": "19_02_01_outtputting_file.html",
+            "heading": "Outputting to a File",
+            "summary": "Select the file format, video profile, and export options to output your project as a video file. Customize settings like resolution, container type, and quality, and even create custom profiles.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/browsebutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/profiledetailsbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/createnewprofilebutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/editprofilebutt.jpg"
+            ]
+        },
+        {
+            "file": "19_02_02_image_sequence.html",
+            "heading": "Outputting as Animated GIF/PNG/Image Sequence",
+            "summary": "Export your project as an animated GIF, animated PNG, or a sequence of images. Set the image type, resolution, and frames per second for your desired output.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/browsebutt.jpg"
+            ]
+        },
+        {
+            "file": "19_02_03_audio_file.html",
+            "heading": "Exporting Audio Only",
+            "summary": "Output just the audio track from your project by selecting the audio export option and choosing the desired file format and quality settings.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/audioonly.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/browsebutt.jpg"
+            ]
+        },
+        {
+            "file": "19_02_05_uploading.html",
+            "heading": "Uploading to Online Web Site",
+            "summary": "Export your project and automatically upload it to online platforms such as YouTube or Vimeo. Configure title, description, privacy, and other upload settings in the Export window.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/browsebutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/browsebutt.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Preferences and Settings",
+        "sections": [
+        {
+            "file": "96_00_00_preferences.html",
+            "heading": "PowerDirector Preferences",
+            "summary": "Open the Preferences window to adjust various settings within CyberLink PowerDirector, tailoring the program to your workflow.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_01_00_general_preferences.html",
+            "heading": "General Preferences",
+            "summary": "Configure general settings such as undo levels, audio channels, timeline frame rate, and language options to match your editing requirements.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_02_00_editing_preferences.html",
+            "heading": "Editing Preferences",
+            "summary": "Set up timeline behavior, default transition settings, and durations for images and effects. Options include snapping, timeline order, and default insert behavior for projects.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_03_00_file_preferences.html",
+            "heading": "File Preferences",
+            "summary": "Adjust default locations for importing and exporting media, and set filename conventions for snapshots and other files.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_03_01_cache_preferences.html",
+            "heading": "Media Cache Preferences",
+            "summary": "Manage temporary files and storage for downloaded media. Configure auto deletion of temporary files and set limits on hard drive space for downloaded content.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/iopendlwin.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Preferences",
+        "sections": [
+        {
+            "file": "96_04_00_display_preferences.html",
+            "heading": "Display Preferences",
+            "summary": "Set the default preview quality for your timeline, enable snapping to reference lines, and choose the number of grid lines to overlay on your video preview for precise placement of PiP media and title text.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_06_00_project_preferences.html",
+            "heading": "Project Preferences",
+            "summary": "Configure project-related settings such as the number of recent projects shown, auto-loading the last project or sample clips on startup, and setting auto save intervals along with specifying a custom folder for auto save files.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_07_00_produce_preferences.html",
+            "heading": "Produce Preferences",
+            "summary": "Choose whether exported files are automatically imported into your media room after export, ensuring a seamless workflow between production and media management.",
+            "images": []
+        },
+        {
+            "file": "96_09_00_confirmation_preferences.html",
+            "heading": "Confirmation Preferences",
+            "summary": "Reset 'Don't show again' dialogs to restore all confirmation prompts to their default settings, ensuring you see all informational dialogs again.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_11_00_cld_preferences.html",
+            "heading": "CyberLink Cloud Preferences",
+            "summary": "Manage CyberLink Cloud settings by backing up and restoring preferences, choosing a download folder for cloud content, clearing the offline cache, and signing out of the cloud service.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        },
+        {
+            "file": "96_12_00_ip_preferences.html",
+            "heading": "Improvement Program Preferences",
+            "summary": "Opt into the CyberLink Product Improvement Program to allow PowerDirector to upload usage data for research purposes, with full details provided via the linked Privacy Policy.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/preferencesbutt.jpg"
+            ]
+        }
+        ]
+    },
+    {
+        "block_title": "Hotkeys",
+        "sections": [
+        {
+            "file": "97_00_00_hotkeys.html",
+            "heading": "PowerDirector Hotkeys",
+            "summary": "An overview of the keyboard shortcuts available in CyberLink PowerDirector to speed up your video editing workflow.",
+            "images": []
+        },
+        {
+            "file": "97_01_00_default_hotkeys.html",
+            "heading": "Default Keyboard Shortcuts",
+            "summary": "A list of default shortcuts including categories for the application menu bar, system, library, workspace, and designer functions.",
+            "images": []
+        },
+        {
+            "file": "97_01_01_amb_hotkeys.html",
+            "heading": "Application Menu Bar Shortcuts",
+            "summary": "Detailed shortcuts for menu commands such as creating a new project, opening existing projects, saving, importing media files, and various editing commands.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/commandkey.gif",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/shiftkey.gif"
+            ]
+        },
+        {
+            "file": "97_01_02_system_hotkeys.html",
+            "heading": "System Shortcuts",
+            "summary": "Shortcuts for system-level functions including opening the help file, deleting items, viewing the hotkey list, and exiting the application.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/macdelete.gif",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/shiftkey.gif"
+            ]
+        },
+        {
+            "file": "97_01_04_edit_hotkeys.html",
+            "heading": "Edit Hotkeys",
+            "summary": "Shortcuts related to editing tasks such as selecting all media, importing files or folders, and other common editing operations.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/commandkey.gif"
+            ]
+        },
+        {
+            "file": "97_01_05_workspace_hotkeys.html",
+            "heading": "Workspace Shortcuts",
+            "summary": "Shortcuts for managing the timeline workspace, including actions for dropping clips with various behaviors and temporarily disabling snap-to features.",
+            "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/shiftkey.gif",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/optionkey.gif"
+            ]
+        },
+        {
+            "file": "97_01_06_designer_hotkeys.html",
+            "heading": "Designer Hotkeys",
+            "summary": "Keyboard shortcuts for moving objects within the Title Designer, including arrow keys for directional adjustments.",
+            "images": []
+        }
+        ]
+    },
+    {
+    "block_title": "Appendix & FAQs",
+    "sections": [
+        {
+        "file": "98_00_00_appendix.html",
+        "heading": "Appendix",
+        "summary": "This chapter contains additional information about the SVRT feature.",
+        "images": []
+        },
+        {
+        "file": "98_01_00_how_to_pop_search.html",
+        "heading": "Frequently Ask Questions",
+        "summary": "A collection of common questions about PowerDirector 365 for Mac, covering topics such as feature differences with the Windows version, installation, watermark removal, supported file formats, content packs, effects pack downloads, media downloads, cutting videos, file conversion, exporting projects, rotation, chroma keying, audio editing, video speed adjustment, and LUTs.",
+        "images": []
+        }
+    ]
+    },
+    {
+    "block_title": "Installation & Media Downloads",
+    "sections": [
+        {
+        "file": "98_01_01_cl_install_cam.html",
+        "heading": "How Do I Download and Install the CyberLink Application Manager (CAM)",
+        "summary": "Learn how to download and install the CyberLink Application Manager (CAM) which is required for PowerDirector 365 for Mac. CAM provides centralized access to your CyberLink software, effect packs, and stock media. Follow the provided link, download CAM, install it, sign in, and then use it to install PowerDirector.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install5.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install6.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install7.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install8.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-install9.jpg"
+        ]
+        },
+        {
+        "file": "98_01_02_watermarks.html",
+        "heading": "How Do I Remove the Watermark From Videos Edited with PowerDirector?",
+        "summary": "To remove the watermark from exported videos, you must upgrade to PowerDirector 365 for Mac. If you previously used PowerDirector Essential, uninstall it and reinstall the full version using CAM to eliminate the watermark.",
+        "images": []
+        },
+        {
+        "file": "98_01_03_install_effects_stock.html",
+        "heading": "How Do I Download the Effects Pack and Stock Media?",
+        "summary": "Download effect packs (including titles, transitions, LUTs, stickers, etc.) directly within the PowerDirector effects library. Browse in the effect room, search or filter using tags, and click on an effect thumbnail to add it to your library.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-effects1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-effects2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/downloadtemplate.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-effects3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/cam-effects4.jpg"
+        ]
+        },
+        {
+        "file": "98_01_04_dl_ge.html",
+        "heading": "How Do Download Getty Images Media?",
+        "summary": "Download videos and photos from Getty Images within the media room. Once downloaded, the media is available in the Downloaded folder for use in your project.",
+        "images": []
+        },
+        {
+        "file": "98_01_04_dl_meta.html",
+        "heading": "How Do I Download Stock Music from Meta?",
+        "summary": "Download background music from Meta for your projects. Once downloaded, the music files are stored in the Background Music folder in the media room.",
+        "images": []
+        }
+    ]
+    },
+    {
+    "block_title": "Project Export & Cutting",
+    "sections": [
+        {
+        "file": "98_01_05_how_to_trim.html",
+        "heading": "How Do I Cut a Video Into Smaller Segments/Files?",
+        "summary": "Learn various methods to cut or trim video clips into smaller segments. After cutting, remember to render the segments in the Export module before sharing or using them in other projects.",
+        "images": []
+        },
+        {
+        "file": "98_01_07_convert_pds.html",
+        "heading": "How Do I Convert a .PDS File to a Video File?",
+        "summary": ".PDS files are project files exclusive to PowerDirector. To convert them into playable video files, open the .PDS project in PowerDirector and export it using the Export module.",
+        "images": []
+        },
+        {
+        "file": "98_01_07_produce.html",
+        "heading": "How Do I Export a Video Project in PowerDirector?",
+        "summary": "An overview of the video exporting process including rendering, codecs, file containers, and video profiles. It explains how the rendering process compiles all edits and effects into a final video file.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/produceex-1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/produceex-2.jpg"
+        ]
+        }
+    ]
+    },
+    {
+    "block_title": "Clip & Effects Editing",
+    "sections": [
+        {
+        "file": "98_01_12_how_to_rotate.html",
+        "heading": "How Do I Rotate a Clip?",
+        "summary": "Rotate video clips or images in the PiP Designer or directly in the preview window by hovering near a resizing node until the cursor changes, then clicking and dragging to adjust rotation.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/rotatepip1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/rotatepip2.jpg"
+        ]
+        },
+        {
+        "file": "98_01_13_green_screen.html",
+        "heading": "How Do I Perform Chroma Keying (Green Screen Effect)?",
+        "summary": "Use the chroma key feature in the PiP Designer to remove a specific color (typically green) from your clip. Enable the Cutout option, select Chroma Key, and then choose the color to replace with transparency.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/ckbutt.jpg"
+        ]
+        },
+        {
+        "file": "98_01_15_audio.html",
+        "heading": "How Do I Edit Audio?",
+        "summary": "Edit project audio using the Audio Mixing Room or Audio Editor. This includes adjusting audio levels, mixing tracks, and refining background music.",
+        "images": []
+        },
+        {
+        "file": "98_01_17_speed.html",
+        "heading": "How Do I Adjust Video Speed?",
+        "summary": "Adjust the speed of video clips in the Video Speed Designer by entering a new duration or using the speed multiplier slider. This feature allows you to create slow motion or fast motion effects.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/videospeed1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/videospeed2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/videospeed3.jpg"
+        ]
+        },
+        {
+        "file": "98_01_18_masks.html",
+        "heading": "How Do I Apply a Mask on a Video?",
+        "summary": "Apply masks using the Mask Designer to create effects or hide parts of a video. Select a clip, open the Mask Designer, choose a default mask or create a custom one, and then apply it.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mask1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mask2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mask3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/mask4.jpg"
+        ]
+        },
+        {
+        "file": "98_01_19_luts.html",
+        "heading": "What Are LUTS and How Do I Apply Them?",
+        "summary": "LUTs (color lookup tables) can transform the colors in your videos. To apply a LUT, open the Effects Room, select the Color LUT tag, and drag a LUT onto your selected video clip.",
+        "images": [
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effectsroom.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effects1.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effects2.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effects3.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effects4.jpg",
+            "https://help.cyberlink.com/stat/help/powerdirector/2024/mac/enu/images/effects5.jpg"
+        ]
+        }
+    ]
+    },
+    {
+    "block_title": "Advanced Rendering (SVRT)",
+    "sections": [
+        {
+        "file": "98_02_00_svrt_when.html",
+        "heading": "SVRT: When Is It Used?",
+        "summary": "SVRT (Smart Video Rendering Technology) is applied to clips that meet specific criteria – such as matching frame rate, size, bitrate, and TV format – to avoid unnecessary rendering. Clips that are altered or require effects will be fully rendered.",
+        "images": []
+        }
+    ]
+    }
+]
+}
+
+
+        
