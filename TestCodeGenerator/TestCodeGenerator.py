@@ -93,7 +93,6 @@ Generate a complete pytest test function using the given test steps.
             # Indent each line of the code with the defined prefix
             indented_code = f'\n\n    @pytest.mark.generated_testing_case\n{textwrap.indent(code, prefix)}'
 
-            print(f"Mark list: {new_gen_mark_list}")
             for test_case_content in self.test_case_json_content:
                 if test_name == test_case_content['name']:
                     old_mark_list = test_case_content['tags']
@@ -118,11 +117,15 @@ Generate a complete pytest test function using the given test steps.
 
                     break
 
-            # write json file to python file
-            with open(self.pytest_entire_file_path, 'w', encoding='utf-8') as f:
-                f.write(self.template_content)
-                for test_case_content in self.test_case_json_content:
-                    f.write(test_case_content['full_code'])
+                # write json file to python file
+                with open(self.pytest_entire_file_path, 'w', encoding='utf-8') as f:
+                    f.write(self.template_content)
+                    for test_case_content in self.test_case_json_content:
+                        f.write(f"\n\n    {test_case_content['full_code']}")
+                return True
+            
+            # for the case is not in the json file
+            pass
 
             return True
         
@@ -134,6 +137,6 @@ Generate a complete pytest test function using the given test steps.
         prompt = self._generate_prompts(test_name, test_steps)
         # print(f'Generated Prompt is:\n {prompt}')
         generated_code = self._ask_llm(prompt)
-        # print(f'Generated code is:\n {generated_code}')
+        print(f'Generated code is:\n {generated_code}')
         return self._write_generated_test(test_name, generated_code)
 

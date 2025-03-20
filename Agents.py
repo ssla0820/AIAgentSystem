@@ -31,7 +31,7 @@ def read_config():
     Reads the app.config file and assigns each parameter from the [General]
     section to a global variable.
     """
-    global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH,\
+    global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH, PYTEST_TEMPLATE_NAME,\
            TEST_CASE_PATH, TEST_CASE_JSON_PATH, TEST_CASE_FAISS_PATH, \
            PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, PAGE_FUNCTIONS_FILTERED_JSON_PATH, \
            SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY,\
@@ -50,6 +50,7 @@ def read_config():
     PYTEST_FILE_NAME = config.get('General', 'PYTEST_FILE_NAME')
     PYTEST_LOG_PATH = config.get('General', 'PYTEST_LOG_PATH')
     PYTEST_LOG_JSON_PATH = config.get('General', 'PYTEST_LOG_JSON_PATH')
+    PYTEST_TEMPLATE_NAME = config.get('General', 'PYTEST_TEMPLATE_NAME')
     TEST_CASE_PATH = config.get('General', 'TEST_CASE_PATH')
     TEST_CASE_JSON_PATH = config.get('General', 'TEST_CASE_JSON_PATH')
     TEST_CASE_FAISS_PATH = config.get('General', 'TEST_CASE_FAISS_PATH')
@@ -183,6 +184,7 @@ def gen_test_case_code_func(input_str: str) -> str:
         'test_case_faiss': TEST_CASE_FAISS_PATH,
         'pytest_file_name': PYTEST_FILE_NAME,
         'pytest_file_path': PYTEST_FILE_PATH,
+        'pytest_template_name': PYTEST_TEMPLATE_NAME,
     }
     gen = GenerateCase(relevant_functions, path_settings=path_settings)
 
@@ -394,7 +396,7 @@ def main():
     user_input = f"""
     Extract test case code and page function from the given directory.
     Generate test step from current status {current_status} to desired goal {desired_goal}.
-    After generated test steps and found the relevant page functions, generate test code with test name 'test_agent_test_11_1'.
+    After generated test steps and found the relevant page functions, generate test code with test name 'test_sss_func_30_4'.
     """
 
     # Run the agent

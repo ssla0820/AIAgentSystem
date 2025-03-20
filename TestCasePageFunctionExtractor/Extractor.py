@@ -139,7 +139,7 @@ class TestCase_PageFunction_Extractor():
                 tags.remove("name")
             description_list = [step.strip() for step in description.split("\n") if step.strip()]
             test_content_cleaned = test_content.strip()
-            full_code = full_markers + f"def {test_name}(self):\n    '''{description}'''\n" + test_content_cleaned
+            full_code = full_markers + f"def {test_name}(self):\n    '''{description}'''\n        " + test_content_cleaned
             extracted_tests.append({
                 "name": test_name,
                 "tags": tags,
