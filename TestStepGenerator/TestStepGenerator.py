@@ -8,9 +8,13 @@ sys.path.append(parent_path)
 
 from _ChatAPIConnector.ChatAPIConnector import ChatAPIConnector
 class TestStepGenerator():
-    def __init__(self, test_case_json_file_path, full_help_content_json_file_path, current_status, desired_goal):
+    def __init__(self, test_case_json_file_path, page_function_json_file, full_help_content_json_file_path, current_status, desired_goal):
         with open(full_help_content_json_file_path, "r", encoding="utf-8") as file:
             self.full_help_content = json.load(file)
+
+        with open(page_function_json_file, 'r', encoding='utf-8') as file:
+            self.page_function_content = json.load(file)
+
         self.threshold = 0.5
         with open(test_case_json_file_path, 'r', encoding='utf-8') as f:
             self.test_cases_content = json.load(f)
@@ -21,7 +25,6 @@ class TestStepGenerator():
 
         self.current_status = current_status
         self.desired_goal = desired_goal
-
 
     def _get_related_func_in_help(self, query):
         results = []
@@ -44,62 +47,15 @@ class TestStepGenerator():
                         "similarity": similarity
                     })
 
-
         refer_data_list = []
+        refer_data_heading = []
         # Print the results
         for item in results:
             refer_data_list.append(f"{item['heading']}: {item['summary']}")
+            refer_data_heading.append(item['heading'])
         
-        return refer_data_list
+        return refer_data_list, refer_data_heading
 
-    def _get_prompt_for_generate_steps(self, refer_data_list, refer_test_steps_list):
-#         prompt = f'''Using the provided "Refer Data", current UI status, and desired goal, generate high-level, step-by-step instructions to transition the UI in PowerDirector.
-# - Each step must start with [Action] or [Verify].
-# - Use the formatting style from Refer Test Steps as a guideline, but ensure the output consists of original, clear, and high-level instructions rather than copying text.
-# - Wrap custom function parameters as (value) and functions as [function] (e.g., "third Track" becomes select track (3), Click [Cancel] button).
-# - Do not break down steps into overly detailed sub-steps; use concise instructions (e.g., use "Enter Stock media" instead of listing every click).
-# Refer Data: {refer_data_list}
-# Refer Test Steps: {refer_test_steps_list}
-# Current Status: {self.current_status}
-# Desired Goal: {self.desired_goal}'''
-
-#         prompt = f'''Using the provided "Refer Data", current UI status, and desired goal, generate high-level, step-by-step instructions to transition the UI in PowerDirector.
-# - Each step must start with [Action] or [Verify].
-# - Follow the formatting style in refer_test_steps_lists, but ensure the output consists of original, clear, and high-level instructions rather than simply copying text.
-# - Wrap custom function parameters as (value) and functions as [function] (e.g., "third Track" becomes select track (3), Click [Cancel] button).
-# - Do not break down steps into overly detailed sub-steps; use concise instructions (e.g., use "Enter Stock media" instead of listing every click).
-# Refer Data: {refer_data_list}
-# Refer Test Steps: {refer_test_steps_list}
-# Current Status: {self.current_status}
-# Desired Goal: {self.desired_goal}'''
-#         prompt = f'''I will provide the current status of our PowerDirector UI and the desired goal. Please refer to following "Refer Data" for details. Now, generate only the step-by-step instructions required to transition from the current UI to the desired state. Steps must include:
-# - Action: Describe the specific change or modification to be made. Add [Action] at the beginning.
-# - Verify: Specify how to confirm that the change has been successfully implemented. Add [Verify] at the beginning.
-# List the steps sequentially with no additional commentary. Only Focus on to the steps to reach the desired goal only.
-
-# Refer Data: {refer_data_list}
-# Current Status: {self.current_status}
-# Desired Goal: {self.desired_goal}
-# '''
-
-        prompt = f'''Generate precise operation steps for PowerDirector software with the following requirements:
-- Each step must begin with an incremental number followed by [Action] or [Verify], e.g., "1. [Action]"
-- Present steps as a single, continuous numbered list (1, 2, 3, etc.), NOT grouped by function
-- Do NOT create separate sections with headers or sub-numbering
-- Strictly adhere to PowerDirector's official terminology and UI element names
-- Wrap function parameters as (value), e.g., select track (3)
-- Represent buttons or options as [name], e.g., Click [Cancel] button
-- Make each step atomic and focused on a single action or verification
-- List the steps sequentially with no additional commentary. Only Focus on to the steps to reach the desired goal only
-
-
-Reference Data: {refer_data_list}
-Reference Test Steps: {refer_test_steps_list}
-Current Status: {self.current_status}
-Desired Goal: {self.desired_goal}'''
-
-        return prompt
-    
     def _get_simliary_test_case(self):
         # 定義查詢條件
         query = f"{self.current_status}, {self.desired_goal}"
@@ -132,8 +88,25 @@ Desired Goal: {self.desired_goal}'''
             result.append(tc.get("description"))
             result_name.append(tc.get("name"))
         return result, result_name
+    
+    def _get_prompt_for_generate_steps(self, refer_data_list, refer_test_steps_list):
+        prompt = f'''Generate precise operation steps for PowerDirector software with the following requirements:
+- Each step must begin with an incremental number followed by [Action] or [Verify], e.g., "1. [Action]"
+- Present steps as a single, continuous numbered list (1, 2, 3, etc.), NOT grouped by function
+- Do NOT create separate sections with headers or sub-numbering
+- Strictly adhere to PowerDirector's official terminology and UI element names
+- Wrap function parameters as (value), e.g., select track (3)
+- Represent buttons or options as [name], e.g., Click [Cancel] button
+- Make each step atomic and focused on a single action or verification
+- List the steps sequentially with no additional commentary. Only Focus on to the steps to from the current status to reach the desired goal only
 
+Reference Data: {refer_data_list}
+Reference Test Steps: {refer_test_steps_list}
+Current Status: {self.current_status}
+Desired Goal: {self.desired_goal}'''
 
+        return prompt
+    
     def _ask_llm_to_generate_steps(self, prompt):
         system_role_msg = """
         You are a PowerDirector software expert with comprehensive knowledge of all its features and UI operations.
@@ -153,30 +126,86 @@ Desired Goal: {self.desired_goal}'''
         """
         return self.chat_api_connector.generate_chat_response(prompt, system_role_msg)
     
+    def _get_related_page_functions_from_refer_data(self, refer_data_list, threshold=0.4):
+        # Generate embeddings for descriptions
+        descriptions = [item['description'] for item in self.page_function_content]
+        embeddings = self.model.encode(descriptions, convert_to_tensor=True)
+
+        unique_descriptions = set()  # Set to ensure unique descriptions
+        related_page_function_descriptions_list = []
+
+        # Iterate through the refer_data_list
+        for query in refer_data_list:
+            # Encode the query
+            query_embedding = self.model.encode([query], convert_to_tensor=True)
+            
+            # Calculate cosine similarity
+            cosine_scores = util.cos_sim(query_embedding, embeddings)[0]
+
+            # Iterate over cosine scores and add descriptions with scores above threshold
+            for idx, score in enumerate(cosine_scores):
+                if score >= threshold:  # Check if the similarity score meets the threshold
+                    most_similar_description = descriptions[idx]
+                    if most_similar_description not in unique_descriptions:
+                        unique_descriptions.add(most_similar_description)
+                        related_page_function_descriptions_list.append(most_similar_description)
+
+        return related_page_function_descriptions_list
+    
+    def _get_prompt_to_rewrite_test_step(self, raw_steps, refer_page_functions):
+        prompt = f'''
+Your task is to align raw_steps with the functions provided in refer_page_functions as follows:
+ - If a step in raw_steps corresponds exactly to a function in refer_page_functions, replace it with the format used in refer_page_functions.
+ - If multiple steps in raw_steps correspond to a single function in refer_page_functions, combine them into one step.
+ - Each step should begin with an incremental number followed by [Action] or [Verify], e.g., "1. [Action]".
+ - Present all steps as a continuous, numbered list (1, 2, 3, etc.), without grouping them by function.
+ - Wrap function parameters in parentheses, e.g., select track (3).
+ - Represent buttons or options as [name], e.g., Click [Cancel] button.
+
+raw_steps: {raw_steps}
+refer_page_functions: {refer_page_functions}
+'''
+        return prompt
+
+    def _ask_llm_to_rewrite_test_step(self, prompt):
+        system_role_msg = """
+        You are a tool designed to transform raw test steps into a standardized format. You need to match the raw steps with predefined functions and reformat them according to the rules provided. Your task is to align raw steps to the custom format and ensure consistency across the steps.
+        """
+        return self.chat_api_connector.generate_chat_response(prompt, system_role_msg)
+    
     def generate_process(self):
         refer_data_list = []
+        refer_data_heading = []
         # Get Related Function in Help for Current Status
         for query in self.current_status:
-            refer_data_list += self._get_related_func_in_help(query)
+            data_list, data_heading = self._get_related_func_in_help(query)
+            refer_data_list.extend(data_list)
+            refer_data_heading.extend(data_heading)
         for query in self.desired_goal:
-            refer_data_list += self._get_related_func_in_help(query)
+            data_list, data_heading = self._get_related_func_in_help(query)
+            refer_data_list.extend(data_list)
+            refer_data_heading.extend(data_heading)
         refer_test_steps_list, refer_test_name_list = self._get_simliary_test_case()
+        related_page_function_descriptions_list = self._get_related_page_functions_from_refer_data(refer_data_heading)
+
+        print(f'related_page_function_descriptions_list: {related_page_function_descriptions_list}')
 
         prompt_to_gen_step = self._get_prompt_for_generate_steps(refer_data_list, refer_test_steps_list)
-        generated_steps = self._ask_llm_to_generate_steps(prompt_to_gen_step)
-
-        # prompt_to_gen_test_name = self._get_prompt_for_generate_steps(refer_data_list, refer_test_name_list)
-
+        generated_raw_steps = self._ask_llm_to_generate_steps(prompt_to_gen_step)
+        # print(f'generated_raw_steps:\n{generated_raw_steps}')
+        prompt_to_rewrite_test_step = self._get_prompt_to_rewrite_test_step(generated_raw_steps, related_page_function_descriptions_list)
+        generated_steps = self._ask_llm_to_rewrite_test_step(prompt_to_rewrite_test_step)
+        # print(f'generated_steps\n{generated_steps}')
 
         # print(generated_steps)
         return generated_steps
 
 
-
 if __name__ == "__main__":
     test_case_json_file_path = r"E:\Debby\9_Scripts\AIAgentSystem\_Database\test_cases_code.json"
     full_help_content_json_file_path = r"E:\Debby\9_Scripts\AIAgentSystem\_Database\full_help_content.json"
+    page_function_json_file_path = r"E:\Debby\9_Scripts\AIAgentSystem\_Database\page_functions.json"
     current_status = ['In media room']
-    desired_goal = ['Import stock media', 'Import the first stock media', 'add the media to timeline']
-    generator = TestStepGenerator(test_case_json_file_path, full_help_content_json_file_path, current_status, desired_goal)
+    desired_goal = ['Eneter Title Room', 'Choose Title Template ("Default")', 'Add to Timeline']
+    generator = TestStepGenerator(test_case_json_file_path, page_function_json_file_path, full_help_content_json_file_path, current_status, desired_goal)
     generated_steps_string = generator.generate_process()

@@ -18,7 +18,7 @@ class_mapping = {
             "Title_Room": "title_room_page",
             "DownloadFromCLDZ": "download_from_cl_dz_page",
             "pip_designer": "pip_designer_page",
-            "PIP_Room": "pip_room_page",
+            "pip_room": "pip_room_page",
             "Shape_Designer": "shape_designer_page",
             "particle_room": "particle_room_page",
             "particle_designer": "particle_designer_page",

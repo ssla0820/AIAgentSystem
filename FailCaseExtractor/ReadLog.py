@@ -81,7 +81,7 @@ def parse_log_file(log_path, output_json_path):
         json.dump(test_items, out_f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
-    log_file_path = "pytest_0228_1350.log"  # 請確認此檔案路徑
+    log_file_path = r"E:\Debby\5_ATCases\230721_Organize\PDRMac_BFT_reportportal\pytest.log"  # 請確認此檔案路徑
     output_json = "output.json"
     parse_log_file(log_file_path, output_json)
     print(f"解析完成，結果輸出至 {output_json}")

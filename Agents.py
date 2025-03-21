@@ -3,6 +3,7 @@ import subprocess
 import configparser
 import pytest
 import ast
+import json
 
 # from langchain.agents import tool, initialize_agent, AgentType
 
@@ -35,7 +36,8 @@ def read_config():
            TEST_CASE_PATH, TEST_CASE_JSON_PATH, TEST_CASE_FAISS_PATH, \
            PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, PAGE_FUNCTIONS_FILTERED_JSON_PATH, \
            SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY,\
-            SAVE_HTML_PAGE_FOLDER, SAVE_JSON_PAGE_FOLDER, SAVE_FULL_HELP_JSON_FILE_NAME
+            SAVE_HTML_PAGE_FOLDER, SAVE_JSON_PAGE_FOLDER, SAVE_FULL_HELP_JSON_FILE_NAME,\
+            TEMP_GENERATED_TEST_STEPS, TEMP_EXTRACTED_PAGE_FUNCTION
 
     if not os.path.exists(CONFIG_FILE):
         raise FileNotFoundError(f"Config file '{CONFIG_FILE}' not found.")
@@ -63,6 +65,9 @@ def read_config():
     SAVE_JSON_PAGE_FOLDER = config.get('General', 'SAVE_JSON_PAGE_FOLDER')
     SAVE_FULL_HELP_JSON_FILE_NAME = config.get('General', 'SAVE_FULL_HELP_JSON_FILE_NAME')
 
+    TEMP_GENERATED_TEST_STEPS = config.get('General', 'TEMP_GENERATED_TEST_STEPS')
+    TEMP_EXTRACTED_PAGE_FUNCTION = config.get('General', 'TEMP_EXTRACTED_PAGE_FUNCTION')
+
     # ap_fail = config.get("APFail", "ErrorReasons")
     AP_FAIL_REASONS = [item.strip() for line in config.get('General', "AP_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
     AT_FAIL_REASONS = [item.strip() for line in config.get('General', "AT_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
@@ -70,6 +75,16 @@ def read_config():
     # API Key
     API_KEY = config.get('General', 'API_KEY')
 
+def _save_to_json(data, file):
+    """Save data to a JSON file."""
+    with open(file, 'w') as f:
+        json.dump(data, f, indent=4)
+
+def _read_from_json(file):
+    """Read data from a JSON file."""
+    with open(file, 'r') as f:
+        return json.load(f)
+    
 @tool(
     name_or_callable="ExtractTestCaseCodePageFunctionTool",
     description=(
@@ -113,8 +128,12 @@ def gen_test_steps_func(input_str: str) -> str:
     current_status = ast.literal_eval(list_strs[0])
     desired_goal = ast.literal_eval(list_strs[1])
 
-    generator = TestStepGenerator(TEST_CASE_JSON_PATH, SAVE_FULL_HELP_JSON_FILE_NAME, current_status, desired_goal)
-    return generator.generate_process()
+    generator = TestStepGenerator(TEST_CASE_JSON_PATH, PAGE_FUNCTIONS_JSON_PATH, SAVE_FULL_HELP_JSON_FILE_NAME, current_status, desired_goal)
+    generated_steps = generator.generate_process()
+
+    _save_to_json(generated_steps, TEMP_GENERATED_TEST_STEPS)
+
+    
 
 @tool(
     name_or_callable="SearchRelevantFunctionsTool",
@@ -128,7 +147,7 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
     """
     Search relevant functions step by step from the given test steps.
     args:
-        test_steps: str: The test steps of the test case that generated from "GenTestStepsTool".
+        test_steps: str: None
     return:
         list: The relevant functions
     """
@@ -140,6 +159,8 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
     }
     relevant_page_functions = []
     search = SearchPageFunctions(path_settings['page_functions_json'], path_settings['page_functions_faiss'], path_settings['page_functions_filtered_json'])
+    
+    test_steps = _read_from_json(TEMP_GENERATED_TEST_STEPS)
     for step in test_steps.split("\n"):
         relevant_functions = search.extract_relevant_functions_step_by_step(step)
         # Add only functions that aren't already in the list
@@ -149,18 +170,18 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
         else:
             # call generate page function tool
             pass
-    return relevant_page_functions
+    # return relevant_page_functions
+    _save_to_json(relevant_page_functions, TEMP_EXTRACTED_PAGE_FUNCTION)
 
 
 @tool(
     name_or_callable="GenTestCaseCodeTool",
     description=(
         "Create a test case code file via the given test case name and test steps."
-        "Input: Format must be 'test_case_name;test_steps;force_update;relevant_functions' where:"
+        "Input: Format must be 'test_case_name;test_steps;force_update where:"
         " - test_case_name: The name of the test case"
         " - test_steps: The test steps description"
         " - force_update: Boolean (True/False) to force update"
-        " - relevant_functions: List of function dictionaries with 'name' and 'description' from SearchRelevantFunctionsTool"
         "Output: Generate test case successfully or not."
     )
 )
@@ -176,6 +197,7 @@ def gen_test_case_code_func(input_str: str) -> str:
     """
     test_case_name, test_steps, force_update, relevant_functions = input_str.split(';')
     # change relevant_functions frm str to list
+    relevant_functions = _read_from_json(TEMP_EXTRACTED_PAGE_FUNCTION)
     relevant_functions = relevant_functions.split(',')
 
     path_settings = {
@@ -396,7 +418,7 @@ def main():
     user_input = f"""
     Extract test case code and page function from the given directory.
     Generate test step from current status {current_status} to desired goal {desired_goal}.
-    After generated test steps and found the relevant page functions, generate test code with test name 'test_sss_func_30_4'.
+    After generated test steps and found the relevant page functions, generate test code with test name 'test_lhjkjgk_func_31_45'.
     """
 
     # Run the agent
