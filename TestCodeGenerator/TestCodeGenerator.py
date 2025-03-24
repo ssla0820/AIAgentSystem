@@ -115,17 +115,47 @@ Generate a complete pytest test function using the given test steps.
                     with open(self.test_case_json, 'w', encoding='utf-8') as file:
                         json.dump(self.test_case_json_content, file, indent=4, ensure_ascii=False)
 
-                    break
-
-                # write json file to python file
-                with open(self.pytest_entire_file_path, 'w', encoding='utf-8') as f:
-                    f.write(self.template_content)
-                    for test_case_content in self.test_case_json_content:
-                        f.write(f"\n\n    {test_case_content['full_code']}")
-                return True
+                    # write json file to python file
+                    with open(self.pytest_entire_file_path, 'w', encoding='utf-8') as f:
+                        f.write(self.template_content)
+                        for test_case_content in self.test_case_json_content:
+                            f.write(f"\n\n    {test_case_content['full_code']}")
+                    return True
             
             # for the case is not in the json file
-            pass
+            test_patterns = re.findall(
+                r"((?:\s*@pytest\.mark\.[^\n]+\n\s*)+)(?:@[\w_]+\n\s*)*def (\w+)\(.*?\):\s+[\"']{3}([\s\S]+?)[\"']{3}\s*([\s\S]+?)(?=\n\s*@pytest\.mark|\Z)",
+                indented_code, re.DOTALL
+            )
+            if not test_patterns:
+                print("❌ No test cases found. Please check file format.")
+                return []
+            
+            for full_markers, test_name, description, test_content in test_patterns:
+                tags = re.findall(r"@pytest\.mark\.(\w+)", full_markers)
+                marked_name_match = re.search(r"@pytest\.mark\.name\('([^']+)'\)", full_markers)
+                marked_name = marked_name_match.group(1) if marked_name_match else test_name
+                if "name" in tags:
+                    tags.remove("name")
+                description_list = [step.strip() for step in description.split("\n") if step.strip()]
+                test_content_cleaned = test_content.strip()
+                full_code = full_markers + f"def {test_name}(self):\n    '''{description}'''\n        " + test_content_cleaned
+                self.test_case_json_content.append({
+                    "name": test_name,
+                    "tags": tags,
+                    "marked_name": marked_name,
+                    "description": description_list,
+                    "full_code": indented_code
+                })
+
+            with open(self.test_case_json, 'w', encoding='utf-8') as file:
+                json.dump(self.test_case_json_content, file, indent=4, ensure_ascii=False)
+
+            # write json file to python file
+            with open(self.pytest_entire_file_path, 'w', encoding='utf-8') as f:
+                f.write(self.template_content)
+                for test_case_content in self.test_case_json_content:
+                    f.write(f"\n\n    {test_case_content['full_code']}")
 
             return True
         
@@ -135,8 +165,71 @@ Generate a complete pytest test function using the given test steps.
         
     def generate_process(self, test_name, test_steps):
         prompt = self._generate_prompts(test_name, test_steps)
-        # print(f'Generated Prompt is:\n {prompt}')
+        print(f'Generated Prompt is:\n {prompt}')
+        # return prompt
         generated_code = self._ask_llm(prompt)
         print(f'Generated code is:\n {generated_code}')
         return self._write_generated_test(test_name, generated_code)
 
+
+
+if __name__ == "__main__":
+    code = """ @pytest.mark.stock_media_func
+@pytest.mark.media_room
+@pytest.mark.stock_media
+@pytest.mark.name('[test_sss_func_30_4] Click [Stock Media] button in the Media Room and perform actions')
+@exception_screenshot
+def test_sss_func_30_4(self):
+    '''
+    1. [Action] Click [Stock Media] button in the Media Room.
+    2. [Verify] Check if the Stock Media window is opened.
+    3. [Action] Select the first media in the Stock Media window.
+    4. [Action] Click [Import] to add the media to the Media Room.
+    5. [Verify] Confirm the media is now listed in the Media Room.
+    6. [Action] Drag the imported media from the Media Room to the timeline.
+    7. [Verify] Ensure the media appears on the timeline.
+    '''
+    # Ensure the dependency test is run and passed
+    dependency_test = "test_stock_media_func_11_2"
+    if not self.ensure_dependency(dependency_test):
+        with step('[Initial] Launch APP and Enter Media Room'):
+            if not main_page.start_app() or not main_page.is_app_exist():
+                assert False, "Launch APP failed!"
+            main_page.enter_room(0)
+
+    with step('[Action] Click [Stock Media] button in the Media Room'):
+        main_page.click(L.media_room.btn_stock_media)
+
+    with step('[Verify] Check if the Stock Media window is opened'):
+        assert main_page.is_exist(L.download_from_shutterstock.window, timeout=15), "Stock Media window is not opened!"
+
+    with step('[Action] Select the first media in the Stock Media window'):
+        photo.select_thumbnail_then_download(0)
+
+    with step('[Action] Click [Import] to add the media to the Media Room'):
+        main_page.click(L.stock_media.btn_import)
+
+    with step('[Verify] Confirm the media is now listed in the Media Room'):
+        assert main_page.exist(L.media_room.imported_media), "Imported media is not listed in the Media Room!"
+
+    with step('[Action] Drag the imported media from the Media Room to the timeline'):
+        main_page.drag_and_drop(L.media_room.imported_media, L.timeline.track_area)
+
+    with step('[Verify] Ensure the media appears on the timeline'):
+        assert main_page.exist(L.timeline.media_on_track), "Media does not appear on the timeline!"
+
+    assert True"""
+    
+    path_settings = {
+        'test_case_json': r"E:\Debby\9_Scripts\AIAgentSystem\_Database\test_cases_code.json",
+        'test_case_faiss': r"E:\Debby\9_Scripts\AIAgentSystem\_Database\test_cases_code.faiss",
+        'pytest_file_path': r"E:\Debby\5_ATCases\230721_Organize\PDRMac_BFT_reportportal\SFT",
+        'pytest_file_name': "test_BFT_PDR23_stage1_reportportal_aiagent_testing.py",
+        'pytest_template_name': "test_BFT_PDR23_stage1_template.py"
+    }
+
+
+
+    test_name = "test_sss_func_30_4"
+    gen = GenerateCase([], path_settings=path_settings)
+    gen._write_generated_test(test_name, code)

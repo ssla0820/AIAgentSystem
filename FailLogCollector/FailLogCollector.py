@@ -2,7 +2,7 @@ import re
 import os
 import json
 
-class FailedCollector:
+class FailLogCollector:
     def __init__(self, path_setting):
         self.log_path = path_setting['log_path']
         if not os.path.exists(self.log_path):
@@ -104,10 +104,10 @@ class FailedCollector:
 
 if __name__ == "__main__":
     path_setting = {
-        'log_path': 'pytest_0228_1350.log',
-        'json_path': 'output.json'
+        'log_path': r"E:\Debby\5_ATCases\230721_Organize\PDRMac_BFT_reportportal\pytest.log",
+        'json_path': r"E:\Debby\9_Scripts\AIAgentSystem\_Database\pytest_error_log.json"
     }
-    collector = FailedCollector(path_setting)
+    collector = FailLogCollector(path_setting)
     fail_cases = collector.collect_process()
     print(f'There are {len(fail_cases)} failed test cases.\n Fail cases:')
     for case in fail_cases:
