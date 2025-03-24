@@ -21,7 +21,7 @@ from TestCasePageFunctionExtractor.Extractor import TestCase_PageFunction_Extrac
 from PageFunctionMapper.PageFunctionMapper import SearchPageFunctions
 from TestStepGenerator.TestStepGenerator import TestStepGenerator
 from TestCodeGenerator.TestCodeGenerator import GenerateCase
-from GetFailCases.FailedCollector import FailedCollector
+from FailLogCollector.FailLogCollector import FailLogCollector
 from ErrorAnalyzer.Analyzer_v2 import ErrorAnalyzer
 from CaseRefactor.CaseRefactor import CaseRefactor
 
@@ -281,7 +281,7 @@ def get_fail_cases_func() -> list:
     return:
         list: A list contains the failed test cases, log.
     """
-    collector = FailedCollector(path_setting={
+    collector = FailLogCollector(path_setting={
         "log_path": PYTEST_LOG_PATH,
         "json_path": PYTEST_LOG_JSON_PATH
     })
