@@ -27,9 +27,11 @@ class SearchPageFunctions(SearchBase):
 
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
 
-    def _get_descriptions(self):
+    def _get_descriptions(self, data=None):
         """Get descriptions for page functions."""
-        return [func["description"] for func in self.data]
+        if data is None:
+            data = self.data
+        return [func["description"] for func in data]
     
     def _regular_step(self, step):
         step = step.strip()
@@ -99,6 +101,7 @@ class SearchPageFunctions(SearchBase):
             json.dump(related_functions, f, indent=4)
 
         self._load_data(filtered_path=self.filtered_path)
+        self._load_or_build_faiss_index(True)
 
 
     def extract_relevant_functions_step_by_step(self, step, debug_mode=False):
@@ -122,6 +125,9 @@ class SearchPageFunctions(SearchBase):
         self._reload_filtered_data_to_extract_relevant(related_pages)
 
         relevant_items = self.extract_relevant_items(step, debug_mode=debug_mode, is_page_function=True)
+        if not relevant_items:
+            # print(f"[INFO] No relevant functions found for step: {step}")
+            return None
         
         for item in relevant_items:
             func_tuple = (item["name"], item["description"])
@@ -130,6 +136,8 @@ class SearchPageFunctions(SearchBase):
                 relevant_functions.append(item)
 
         return relevant_functions if relevant_functions else None
+    
+
 
 if __name__ == "__main__":
     test_steps = """1. Select Layout 10 and screenshot (locator=L.video_collage_designer.media_library)

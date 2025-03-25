@@ -37,7 +37,7 @@ def read_config():
            PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, PAGE_FUNCTIONS_FILTERED_JSON_PATH, \
            SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY,\
             SAVE_HTML_PAGE_FOLDER, SAVE_JSON_PAGE_FOLDER, SAVE_FULL_HELP_JSON_FILE_NAME,\
-            TEMP_GENERATED_TEST_STEPS, TEMP_EXTRACTED_PAGE_FUNCTION
+            TEMP_GENERATED_TEST_STEPS, TEMP_EXTRACTED_PAGE_FUNCTION, TEMP_FAIL_CASES, TEMP_ERROR_REASON_ANALYSIS
 
     if not os.path.exists(CONFIG_FILE):
         raise FileNotFoundError(f"Config file '{CONFIG_FILE}' not found.")
@@ -67,6 +67,8 @@ def read_config():
 
     TEMP_GENERATED_TEST_STEPS = config.get('General', 'TEMP_GENERATED_TEST_STEPS')
     TEMP_EXTRACTED_PAGE_FUNCTION = config.get('General', 'TEMP_EXTRACTED_PAGE_FUNCTION')
+    TEMP_FAIL_CASES = config.get('General', 'TEMP_FAIL_CASES')
+    TEMP_ERROR_REASON_ANALYSIS = config.get('General', 'TEMP_ERROR_REASON_ANALYSIS')
 
     # ap_fail = config.get("APFail", "ErrorReasons")
     AP_FAIL_REASONS = [item.strip() for line in config.get('General', "AP_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
@@ -103,6 +105,7 @@ def extract_test_case_code_page_function_to_json_func(input_str: str) -> str:
     extract_obj = TestCase_PageFunction_Extractor(path_settings=path_settings)
     extract_obj.extract_process('test_case')
     extract_obj.extract_process('page_function')
+    return True
 
 @tool(
     name_or_callable="GenTestStepsTool",
@@ -132,6 +135,8 @@ def gen_test_steps_func(input_str: str) -> str:
     generated_steps = generator.generate_process()
 
     _save_to_json(generated_steps, TEMP_GENERATED_TEST_STEPS)
+    print(f'Generated test steps:\n{generated_steps}')
+    return True
 
     
 
@@ -161,6 +166,7 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
     search = SearchPageFunctions(path_settings['page_functions_json'], path_settings['page_functions_faiss'], path_settings['page_functions_filtered_json'])
     
     test_steps = _read_from_json(TEMP_GENERATED_TEST_STEPS)
+    print(f'Get the test_steps from json file:\n{test_steps}')
     for step in test_steps.split("\n"):
         relevant_functions = search.extract_relevant_functions_step_by_step(step)
         # Add only functions that aren't already in the list
@@ -172,34 +178,30 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
             pass
     # return relevant_page_functions
     _save_to_json(relevant_page_functions, TEMP_EXTRACTED_PAGE_FUNCTION)
+    return True
 
 
 @tool(
     name_or_callable="GenTestCaseCodeTool",
     description=(
         "Create a test case code file via the given test case name and test steps."
-        "Input: Format must be 'test_case_name;test_steps;force_update where:"
-        " - test_case_name: The name of the test case"
-        " - test_steps: The test steps description"
-        " - force_update: Boolean (True/False) to force update"
+        "Input: test_case_name: The name of the test case"
         "Output: Generate test case successfully or not."
     )
 )
-def gen_test_case_code_func(input_str: str) -> str:
+def gen_test_case_code_func(test_case_name: str) -> str:
     """
     Generate the test case code file by openai API via the given test case name and test steps.
     args:
         test_case_name: str: The name of the test case.
-        test_steps: str: The test steps of the test case.
-        relevant_functions: List of function dictionaries with 'name' and 'description' from SearchRelevantFunctionsTool
     return:
         str: Generate test case successfully or not.
     """
-    test_case_name, test_steps, force_update, relevant_functions = input_str.split(';')
-    # change relevant_functions frm str to list
-    relevant_functions = _read_from_json(TEMP_EXTRACTED_PAGE_FUNCTION)
-    relevant_functions = relevant_functions.split(',')
+    test_steps = _read_from_json(TEMP_GENERATED_TEST_STEPS)
+    print(f'Get the test_steps from json file:\n{test_steps}')
 
+    relevant_functions = _read_from_json(TEMP_EXTRACTED_PAGE_FUNCTION)
+    print(f'Get the relevant functions from json file:\n{relevant_functions}')
     path_settings = {
         'test_case_dir': TEST_CASE_PATH,
         'test_case_json': TEST_CASE_JSON_PATH,
@@ -209,8 +211,9 @@ def gen_test_case_code_func(input_str: str) -> str:
         'pytest_template_name': PYTEST_TEMPLATE_NAME,
     }
     gen = GenerateCase(relevant_functions, path_settings=path_settings)
+    gen.generate_process(test_case_name, test_steps)
 
-    return gen.generate_process(test_case_name, test_steps)
+    return True
 
 
 @tool(
@@ -261,7 +264,7 @@ def run_pytest_func(test_case_name: str = None) -> bool:
 
     except Exception as e:
         print(f"Error occurred while executing pytest: {e}")
-        return False
+        return None
 
     
 
@@ -273,7 +276,7 @@ def run_pytest_func(test_case_name: str = None) -> bool:
         "Output: A list contains the failed test cases, log."
     )
 )
-def get_fail_cases_func() -> list:
+def get_fail_cases_func(input_str: str = None) -> list:
     """
     Get the failed test cases from the pytest result.
     args:
@@ -285,75 +288,44 @@ def get_fail_cases_func() -> list:
         "log_path": PYTEST_LOG_PATH,
         "json_path": PYTEST_LOG_JSON_PATH
     })
-    return collector.collect_process()
+    fail_cases = collector.collect_process()
+    _save_to_json(fail_cases, TEMP_FAIL_CASES)
+    return fail_cases
 
 
 @tool(
     name_or_callable="AnalyzeErrorTool",
     description=(
         "Analyze the pytest result to determine AP/AT error and the failure reason."
-        "Input: \
-            pytest_result (string) containing the result of the execution.\
-            flow_changed_func (string) the function that the flow changed."
+        "Input: Input: Format must be 'fail_case;flow_changed_func' where:"
+            "fail_case (string) The failed test case name."
+            "flow_changed_func (string) the function that the flow changed."
         "Output: 'AP Error' or 'AT Error' and the failure reason."
     )
 )
-def analysis_error_func(fail_case, flow_changed_func) -> str:
+def analysis_error_func(input_str: str) -> str:
     """
     Analyze the pytest result to determine AP/AT error and the failure reason.
     args:
-        fail_case: str: The failed test case.
+        fail_case: str: The failed test case name.
         flow_changed_func: str: The function that the flow changed.
     return:
         str: 'AP Error' or 'AT Error' and the failure reason
     """
-
-    error_analyzer = ErrorAnalyzer(fail_case, flow_changed_func, AP_FAIL_REASONS, AT_FAIL_REASONS)
-    return error_analyzer.analysis_process()
-
-
-@tool(
-    name_or_callable="RefactorCodeTool",
-    description=(
-        "Refactor the test case code based on the failure reason (AT bug). "
-        "Input:\
-            path_settings: dict: The path settings for the refactoring.\
-            test_case_name: str: The name of the test case.\
-            error_reason: str: The failure reason"
-        "Output: file_path (string) the path of the refactored test case code."
-    )
-)
-def refactor_code_func(path_settings: dict, test_case_name: str, error_reason: str) -> str:
-    """
-    Refactor the test case code based on the failure reason (AT bug).
-    args:
-        path_settings: dict: The path settings for the refactoring.
-        test_case_name: str: The name of the test case.
-        error_reason: str: The failure reason
-    return:
-        str: The path of the refactored test case code.
-    """
     path_settings = {
         'test_case_json': TEST_CASE_JSON_PATH,
-        'save_path': SAVE_REFACTOR_TEST_CASE_PATH
+        'pytest_log_json_path': PYTEST_LOG_JSON_PATH,
     }
 
-    # Get the test case name and error reason from the pytest result
-    refactor = CaseRefactor(test_case_name, error_reason, path_settings)
-    return refactor.refactor_process()
+    fail_case, flow_changed_func = input_str.split(';')
 
+    error_analyzer = ErrorAnalyzer(flow_changed_func, path_settings)
 
-# @tool(
-#     name_or_callable="ReportBugTool",
-#     description=(
-#         "建立 AP Bug 報告 (示範用，可整合到 Bug Tracking 系統)。"
-#         "輸入: pytest_result (string) 錯誤日誌。"
-#         "輸出: Bug 報告建立結果 (string)。"
-#     )
-# )
-# def report_bug_func(pytest_result: str) -> str:
-#     # 這裡僅示範輸出訊息，實際上可整合 Jira / GitHub Issue 等系統
-#     return f"AP Bug 已回報。錯誤日誌如下：\n{pytest_result}"
+    error_reason = error_analyzer.analysis_process(fail_case)
+    _save_to_json(error_reason, TEMP_ERROR_REASON_ANALYSIS)
+
+    return error_reason["error_type"] + error_reason["error_condition"]
+
 
 def setup_agent():
     """Setup and return the LangChain agent with all tools."""
@@ -391,10 +363,9 @@ def setup_agent():
         gen_test_steps_func,
         search_relevant_functions_step_by_step_func,
         gen_test_case_code_func,
-        # run_pytest_func,
-        # get_fail_cases_func,
-        # analysis_error_func,
-        # refactor_code_func
+        run_pytest_func,
+        get_fail_cases_func,
+        analysis_error_func,
     ]
 
     # Initialize agent (ensure you pass the correct agent type)
@@ -414,12 +385,27 @@ def main():
 
     current_status = ['In media room']
     desired_goal = ['Open Stock Media', 'Import the first media', 'Add the media to timeline']
+    test_name = 'test_afdsafdsg_room_func_100_1'
 
     user_input = f"""
-    Extract test case code and page function from the given directory.
-    Generate test step from current status {current_status} to desired goal {desired_goal}.
-    After generated test steps and found the relevant page functions, generate test code with test name 'test_lhjkjgk_func_31_45'.
-    """
+Extract test case code and page function from the given directory.
+Generate test step from current status {current_status} to desired goal {desired_goal}.
+After generated test steps and found the relevant page functions, generate test code with test name '{test_name}'.
+Run the test case '{test_name}' by tool run_pytest_func.
+If the test fails (Return False), collect and analyze the failures, then:
+- If it's an AT Error:
+    o Incorrect order of test case steps => Call 'GenTestStepsTool' to generate the correct test steps
+    o Image comparison similarity threshold set too high or too low => Call 'GenTestCaseCodeTool' to refactor the threshold
+    o Incorrect verify value => Call 'GenTestCaseCodeTool' to refactor the value
+    o Interference from an upper dialog box => Call 'GenTestStepsTool' to generate the correct test steps
+    o Action executed before the previous step is complete => Call 'GenTestCaseCodeTool' or 'GenTestStepsTool' to refactor the test case
+    o Incorrect locator provided due to locator error => Call 'PageFunctionGeneratorTool' to generate the correct locator
+- If it's an AP Error, provide a detailed error report
+
+Just tell me which tool you want to use to deal with all fail cases.
+With the format 'test_name: want to use tool'
+"""
+
 
     # Run the agent
     response = agent.run(user_input)
