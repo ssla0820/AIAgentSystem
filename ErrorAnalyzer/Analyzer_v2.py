@@ -1,63 +1,111 @@
 import sys
 import os
+import json
+import re
 parent_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_path)
 
 from _ChatAPIConnector.ChatAPIConnector import ChatAPIConnector
+from _Database.fail_reason import fail_reasons
 
 from sentence_transformers import SentenceTransformer, util
 
 class ErrorAnalyzer:
-    def __init__(self, fail_case, flow_changed_func, fail_reasons):
-        self.fail_case = fail_case
+    def __init__(self, flow_changed_func, path_settings):
         self.flow_changed_func = flow_changed_func
+        self.fail_reasons = fail_reasons
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
-        self.ap_fail_reasons = fail_reasons["AP"]
-        self.at_fail_reasons = fail_reasons["AT"]
         self.chat_api_connector = ChatAPIConnector()
+        with open(path_settings['test_case_json'], "r", encoding="utf-8") as f:
+            self.test_code_json_content = json.load(f)
 
+        with open(path_settings['pytest_log_json_path'], "r", encoding="utf-8") as f:
+            self.test_log_json_content = json.load(f)
+
+    def _get_error_screen_shot(self):
+        for line in self.fail_case_content_dict["test_log"]:
+            if "Exception screenshot:" in line:
+                match = re.search(r'Exception screenshot:(.*)', line)
+                if match:
+                    return match.group(1).strip()
+
+    def _get_fail_case_test_code(self):
+        for test_case_content in self.test_code_json_content:
+            if test_case_content["name"] == self.fail_case_content_dict["test_name"]:
+                return test_case_content["full_code"]
 
     def _generate_prompt(self):
         """根據失敗測試案例生成詳細的 prompt。""" # 將多行 log 組合成一個字串（可根據需求進行格式調整） 
-        error_log = "\n".join(self.fail_case.get("test_log", [])) 
-        # ap_fail_str = "\n".join(self.ap_fail_reasons)
-        # at_fail_str = "\n".join(self.at_fail_reasons)
-        ap_fail_str =''
-        at_fail_str = ''
+        error_log = "\n".join(self.fail_case_content_dict.get("test_log", [])) 
+        fail_str = ''
+        for key, value in self.fail_reasons.items():
+            fail_str += f" - Error Message: [{key}]:\n"
+            for sub_key, sub_value in value.items():
+                for sub_sub_key, sub_sub_value in sub_value.items():
+                    fail_str += f"    o [{sub_key}][{sub_sub_key}]  {sub_sub_value}\n"
+               
+        fail_test_code = self._get_fail_case_test_code()
 
-        for key, value in self.ap_fail_reasons.items():
-            ap_fail_str += f"{key}: {value}\n"
+        prompt = f'''
+Analyze the provided error log, screenshot, and test case code to identify the single most likely error reason for the auto testing failure.
 
-        for key, value in self.at_fail_reasons.items():
-            at_fail_str += f"{key}: {value}\n"
+Steps to Follow:
+ - Review the Error Log: Examine the details in the error log.
+ - Examine the Screenshot: Check the provided screenshot for visual clues.
+ - Analyze the Test Case Code: Look over the test case code for potential issues.
+ - Verify UI Components:
+    Ensure that all prerequisite UI elements are visible and active before any interactions occur.
+ - Image Comparison (if needed):
+    Compare the two provided images to support your analysis.
+ - Cross-Check Error Messages:
+    Because multiple issues can produce the same error messages, refer to the provided Error Categories to match the corresponding error messages and reasons, then carefully pinpoint the actual cause of the error.
+Error Categories:
+{fail_str}
 
-        self.prompt = f"""Analyze the provided error log, screenshot, and test case code to identify the single most likely error reason for the auto testing failure. In your answer, clearly indicate whether the error falls under AP Fail or AT Fail. Then, propose a concrete fix for the error.
-Note: If necessary, analyze the two compared images to support your findings.
-Possible Error Categories:
-AP Fail:
-{ap_fail_str}
-AT Fail:
-{at_fail_str}
 Additional Information:
-Affected Functions (UI flow change): {self.flow_changed_func}
-Error Log: 
+ - Affected Functions (UI flow change): {self.flow_changed_func}
+
+Error Log:
 {error_log}
+
+Test Code:
+    {fail_test_code}
+
 Instruction:
-Please analyze the above details and return only one error reason (the most likely cause). In your response, include whether this is an AT Fail or an AP Fail error, and propose a concrete fix for it."""
+ - Data Analysis
+    o Review the current status of the UI components, the test code, and the error log.
+    o Verify that the steps provided in the test case are executed as expected.
+ - Error Identification
+    o Identify the most likely error cause.
+    o Return only one error reason.
+    o Clearly state whether the error is an AT Fail (assume AT Fail at the beginning if not in Affected Functions) or an AP Fail.
+ - Proposed Fix
+    o Provide a one-sentence explanation that includes both the error reason and the fix plan.
+'''
+        return prompt
 
-
-    def _ask_llm(self, image_path=None):
+    def _ask_llm(self, prompt, image_path=None):
         system_role_msg = "You are an expert in analyzing auto testing failures. Your task is to examine error logs, test case code, and screenshots to determine the single most likely cause of failure. Categorize the error as either an AP Fail (application issue) or an AT Fail (automation script issue). Provide a concrete fix based on your analysis."
-        self.error_reason = self.chat_api_connector.generate_chat_response(self.prompt, system_role_msg, image_path=image_path)
+        return self.chat_api_connector.generate_chat_response(prompt, system_role_msg, image_path=image_path)
 
+    def _get_fail_conditions(self):
+        # Using set comprehension to avoid duplicates:
+        unique_subkeys = {sub_key 
+                        for outer in self.fail_reasons.values() 
+                        for inner in outer.values() 
+                        for sub_key in inner}
 
-    def _reorganize_error_reason(self):
+        # Convert the set to a list:
+        unique_subkeys_list = list(unique_subkeys)
+        return unique_subkeys_list
+    
+    def _reorganize_error_reason(self, error_reason):
         error_types = ["AP Fail", "AT Fail"]
 
-        error_conditions = self.ap_fail_reasons + self.at_fail_reasons
+        error_conditions = self._get_fail_conditions()
 
         # 產生嵌入
-        error_msg_embedding = self.model.encode(self.error_reason, convert_to_tensor=True)
+        error_msg_embedding = self.model.encode(error_reason, convert_to_tensor=True)
         condition_embeddings = self.model.encode(error_conditions, convert_to_tensor=True)
         type_embeddings = self.model.encode(error_types, convert_to_tensor=True)
 
@@ -73,20 +121,29 @@ Please analyze the above details and return only one error reason (the most like
         selected_error_type = error_types[best_match_type_idx]
 
         # 整理結果
-        self.organized_error_reason = {
+        organized_error_reason = {
             "error_type": selected_error_type,
             "error_condition": selected_condition,
-            "full_error_reason": self.error_reason
+            "full_error_reason": error_reason
         }
 
+        return organized_error_reason
 
-    def analysis_process(self, image_path=None):
-        self._generate_prompt()
-        print(self.prompt)
-        # self._ask_llm(image_path)
-        # self._reorganize_error_reason()
+    def _get_detail_log_content(self, case_name):
+        for test_log in self.test_log_json_content:
+            if test_log["test_name"] == case_name:
+                return test_log
 
-        # return self.organized_error_reason
+
+    def analysis_process(self, case_name, image_path=None):
+        self.fail_case_content_dict = self._get_detail_log_content(case_name)
+        image_path = self._get_error_screen_shot()
+        prompt = self._generate_prompt()
+        image_path = None
+        error_reason = self._ask_llm(prompt, image_path)
+        organized_error_reason = self._reorganize_error_reason(error_reason)
+
+        return organized_error_reason
 
     
 
@@ -112,6 +169,9 @@ if __name__ == "__main__":
       "DEBUG    ATFramework:log.py:80  Exception: Exception occurs. log=Fail to find element."
     ]
   }
+
+
+
     flow_changed_func = None
 
     import configparser
@@ -126,30 +186,15 @@ if __name__ == "__main__":
     # AP_FAIL_REASONS = [item.strip() for line in config.get('General', "AP_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
     # AT_FAIL_REASONS = [item.strip() for line in config.get('General', "AT_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
 
-
-    fail_reasons = {
-    "AP": {
-        "Locator change": "Locator for element has changed.",
-        "No response after an action": "No system response after action.",
-        "Image comparison result is really not as expected": "Image comparison did not match expected result.",
-        "UI flow change": "UI flow has changed."
-    },
-    "AT": {
-        "Incorrect locator provided due to incorrect order of test case steps": "Locator attempted before prior steps finished.",
-        "Incorrect locator provided due to locator error": "Locator is incorrect or outdated.",
-        "Incorrect locator provided due to previous steps not being completed": "Previous steps not completed before locator was used.",
-        "Action executed before the previous step is complete": "Action performed before prior step finished.",
-        "Image comparison similarity threshold set too high or too low": "Image comparison threshold is incorrectly set.",
-        "Incorrect order of test case steps": "Test case steps executed in wrong order.",
-        "Interference from an upper dialog box": "Dialog box blocks interaction with element.",
-        "Incorrect verify value": "Wrong verification value used."
-    }
+    path_settings = {
+        'test_case_json': config.get('General', 'TEST_CASE_JSON_PATH'),
+        'pytest_log_json_path': config.get('General', 'PYTEST_LOG_JSON_PATH'),
     }
 
-
-    error_analyzer = ErrorAnalyzer(fail_case, flow_changed_func, fail_reasons)
-    result = error_analyzer.analysis_process(image_path=image_path)
-    print(result)
+    error_analyzer = ErrorAnalyzer(flow_changed_func, path_settings)
+    result = error_analyzer.analysis_process(case_name='test_intro_room_func_3_17')
+    for key, value in result.items():
+        print(f"\n\n{key}: {value}")
 
 
 
