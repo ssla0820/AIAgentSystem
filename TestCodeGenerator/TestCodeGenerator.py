@@ -165,10 +165,10 @@ Generate a complete pytest test function using the given test steps.
         
     def generate_process(self, test_name, test_steps):
         prompt = self._generate_prompts(test_name, test_steps)
-        print(f'Generated Prompt is:\n {prompt}')
+        # print(f'Generated Prompt is:\n {prompt}')
         # return prompt
         generated_code = self._ask_llm(prompt)
-        print(f'Generated code is:\n {generated_code}')
+        # print(f'Generated code is:\n {generated_code}')
         return self._write_generated_test(test_name, generated_code)
 
 

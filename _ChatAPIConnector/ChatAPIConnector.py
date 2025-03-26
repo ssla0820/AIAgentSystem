@@ -20,18 +20,18 @@ class ChatAPIConnector():
         config.read(CONFIG_FILE)
         return config.get('General', 'API_KEY')
 
-    def _encode_image(image_path):
+    def _encode_image(self, image_path):
         with open(image_path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode("utf-8")
     
-    def generate_chat_response(self, prompt, system_role_msg, has_image=False, model="gpt-4o"):
+    def generate_chat_response(self, prompt, system_role_msg, image_path=None, model="gpt-4o"):
         messages=[
             {"role": "system", "content": system_role_msg},
             {"role": "user", "content": prompt}
         ]
 
-        if has_image:
-            image_path = "path/to/image.png"
+        if image_path:
+            print(image_path)
             image_base64 = self._encode_image(image_path)
             messages.append({"role": "user", "content": "Here is the screenshot for reference.", "image_url": f"data:image/png;base64,{image_base64}"})
 
