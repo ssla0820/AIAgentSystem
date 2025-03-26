@@ -98,7 +98,10 @@ class TestStepGenerator():
 - Wrap function parameters as (value), e.g., select track (3)
 - Represent buttons or options as [name], e.g., Click [Cancel] button
 - Make each step atomic and focused on a single action or verification
-- List the steps sequentially with no additional commentary. Only Focus on to the steps to from the current status to reach the desired goal only
+- List the steps sequentially with no additional commentary. 
+- Focus on to the steps to from the "current status" to reach the "desired goal" only
+- Consider carefully how to perform each operation in PowerDirector to ensure accuracy and clarity
+- If necessary, refer to the related test steps to ensure the steps are accurate and detailed
 
 Reference Data: {refer_data_list}
 Reference Test Steps: {refer_test_steps_list}
@@ -192,7 +195,7 @@ refer_page_functions: {refer_page_functions}
 
         prompt_to_gen_step = self._get_prompt_for_generate_steps(refer_data_list, refer_test_steps_list)
         generated_raw_steps = self._ask_llm_to_generate_steps(prompt_to_gen_step)
-        # print(f'generated_raw_steps:\n{generated_raw_steps}')
+        print(f'generated_raw_steps:\n{generated_raw_steps}')
         prompt_to_rewrite_test_step = self._get_prompt_to_rewrite_test_step(generated_raw_steps, related_page_function_descriptions_list)
         generated_steps = self._ask_llm_to_rewrite_test_step(prompt_to_rewrite_test_step)
         # print(f'generated_steps\n{generated_steps}')

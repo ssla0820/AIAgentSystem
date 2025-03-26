@@ -35,7 +35,7 @@ def read_config():
     global PYTEST_FILE_PATH, PYTEST_FILE_NAME, PYTEST_LOG_PATH, PYTEST_LOG_JSON_PATH, PYTEST_TEMPLATE_NAME,\
            TEST_CASE_PATH, TEST_CASE_JSON_PATH, TEST_CASE_FAISS_PATH, \
            PAGE_FUNCTIONS_PATH, PAGE_FUNCTIONS_JSON_PATH, PAGE_FUNCTIONS_FAISS_PATH, PAGE_FUNCTIONS_FILTERED_JSON_PATH, \
-           SAVE_REFACTOR_TEST_CASE_PATH, AP_FAIL_REASONS, AT_FAIL_REASONS, API_KEY,\
+           SAVE_REFACTOR_TEST_CASE_PATH, API_KEY,\
             SAVE_HTML_PAGE_FOLDER, SAVE_JSON_PAGE_FOLDER, SAVE_FULL_HELP_JSON_FILE_NAME,\
             TEMP_GENERATED_TEST_STEPS, TEMP_EXTRACTED_PAGE_FUNCTION, TEMP_FAIL_CASES, TEMP_ERROR_REASON_ANALYSIS
 
@@ -69,10 +69,6 @@ def read_config():
     TEMP_EXTRACTED_PAGE_FUNCTION = config.get('General', 'TEMP_EXTRACTED_PAGE_FUNCTION')
     TEMP_FAIL_CASES = config.get('General', 'TEMP_FAIL_CASES')
     TEMP_ERROR_REASON_ANALYSIS = config.get('General', 'TEMP_ERROR_REASON_ANALYSIS')
-
-    # ap_fail = config.get("APFail", "ErrorReasons")
-    AP_FAIL_REASONS = [item.strip() for line in config.get('General', "AP_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
-    AT_FAIL_REASONS = [item.strip() for line in config.get('General', "AT_ErrorReasons").splitlines() for item in line.split(';') if item.strip()]
 
     # API Key
     API_KEY = config.get('General', 'API_KEY')
@@ -169,13 +165,15 @@ def search_relevant_functions_step_by_step_func(test_steps: str) -> list:
     print(f'Get the test_steps from json file:\n{test_steps}')
     for step in test_steps.split("\n"):
         relevant_functions = search.extract_relevant_functions_step_by_step(step)
-        # Add only functions that aren't already in the list
-        for func in relevant_functions:
-            if func not in relevant_page_functions:
-                relevant_page_functions.append(func)
-        else:
+        if not relevant_functions:
             # call generate page function tool
-            pass
+            continue
+        else:
+            # Add only functions that aren't already in the list
+            for func in relevant_functions:
+                if func not in relevant_page_functions:
+                    relevant_page_functions.append(func)
+
     # return relevant_page_functions
     _save_to_json(relevant_page_functions, TEMP_EXTRACTED_PAGE_FUNCTION)
     return True
@@ -238,7 +236,7 @@ def run_pytest_func(test_case_name: str = None) -> bool:
         # Determine the test path
         if test_case_name:
             # Assuming PYTEST_FILE_PATH and PYTEST_FILE_NAME are defined globally
-            test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME, f"::{test_case_name}")
+            test_path = f"{os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME)}::{test_case_name}"
         else:
             # Otherwise, run the full test file
             test_path = os.path.join(PYTEST_FILE_PATH, PYTEST_FILE_NAME)
@@ -383,16 +381,16 @@ def main():
     # Initialize the agent
     agent = setup_agent()
 
-    current_status = ['In media room']
-    desired_goal = ['Open Stock Media', 'Import the first media', 'Add the media to timeline']
+    current_status = ['APP is not launched']
+    desired_goal = ['Enter Room (Title)']
     test_name = 'test_afdsafdsg_room_func_100_1'
 
-    user_input = f"""
-Extract test case code and page function from the given directory.
-Generate test step from current status {current_status} to desired goal {desired_goal}.
-After generated test steps and found the relevant page functions, generate test code with test name '{test_name}'.
-Run the test case '{test_name}' by tool run_pytest_func.
-If the test fails (Return False), collect and analyze the failures, then:
+    user_input = f"""Please follw the steps to complete the assigned task:
+1. Extract test case code and page function from the given directory.
+2. Generate test step from current status {current_status} to desired goal {desired_goal}.
+3. After generated test steps and found the relevant page functions, generate test code with test name '{test_name}'.
+4. Run the test case '{test_name}' by tool run_pytest_func.
+5. If the test fails (Return False), collect and analyze the failures, then:
 - If it's an AT Error:
     o Incorrect order of test case steps => Call 'GenTestStepsTool' to generate the correct test steps
     o Image comparison similarity threshold set too high or too low => Call 'GenTestCaseCodeTool' to refactor the threshold
@@ -402,8 +400,8 @@ If the test fails (Return False), collect and analyze the failures, then:
     o Incorrect locator provided due to locator error => Call 'PageFunctionGeneratorTool' to generate the correct locator
 - If it's an AP Error, provide a detailed error report
 
-Just tell me which tool you want to use to deal with all fail cases.
-With the format 'test_name: want to use tool'
+    Just tell me which tool you want to use to deal with all fail cases.
+    With the format 'test_name: want to use tool'
 """
 
 
